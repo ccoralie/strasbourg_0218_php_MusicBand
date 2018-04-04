@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dc5b90b0-b036-4987-b785-81848a42bf82" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -23,17 +24,27 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../../../CHECKPOINT/CHECKPOINT 1/php_0218_checkpoint1_Strasbourg_eleves/public/index.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-473">
-              <caret line="8" column="29" lean-forward="true" selection-start-line="8" selection-start-column="29" selection-end-line="8" selection-end-column="29" />
+              <caret line="8" column="29" lean-forward="false" selection-start-line="8" selection-start-column="29" selection-end-line="8" selection-end-column="29" />
               <folding>
                 <marker date="1522512636851" expanded="true" signature="247:347" ph="SELECT * FRO... contact" />
                 <marker date="1522512636851" expanded="true" signature="480:530" ph="INSERT INTO civility... " />
                 <marker date="1522512636851" expanded="true" signature="548:687" ph="INSERT INTO contact... " />
                 <marker date="1522512636851" expanded="true" signature="612:662" ph="SELECT id FR... civility" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="75">
+              <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -62,6 +73,7 @@
         <option value="$PROJECT_DIR$/hardcore_MVC-master/src/View/Pages/galerie.html.twig" />
         <option value="$PROJECT_DIR$/hardcore_MVC-master/src/View/Pages/header.html.twig" />
         <option value="$PROJECT_DIR$/hardcore_MVC-master/app/db.php" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -203,12 +215,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1522849985453</updated>
-      <workItem from="1522849987017" duration="2858000" />
+      <workItem from="1522849987017" duration="2977000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2858000" />
+    <option name="totallyTimeSpent" value="2977000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="806" extended-state="6" />
@@ -439,13 +451,21 @@
     <entry file="file://$PROJECT_DIR$/../../../CHECKPOINT/CHECKPOINT 1/php_0218_checkpoint1_Strasbourg_eleves/public/index.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-473">
-          <caret line="8" column="29" lean-forward="true" selection-start-line="8" selection-start-column="29" selection-end-line="8" selection-end-column="29" />
+          <caret line="8" column="29" lean-forward="false" selection-start-line="8" selection-start-column="29" selection-end-line="8" selection-end-column="29" />
           <folding>
             <marker date="1522512636851" expanded="true" signature="247:347" ph="SELECT * FRO... contact" />
             <marker date="1522512636851" expanded="true" signature="480:530" ph="INSERT INTO civility... " />
             <marker date="1522512636851" expanded="true" signature="548:687" ph="INSERT INTO contact... " />
             <marker date="1522512636851" expanded="true" signature="612:662" ph="SELECT id FR... civility" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
