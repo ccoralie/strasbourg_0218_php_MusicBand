@@ -1,0 +1,26 @@
+
+/* Partie Title */
+
+.worldTitle
+{
+    background-color: black;
+    text-align: center;
+}
+
+.worldTitle h1
+{
+    color: white;
+    font-weight: 3em;
+}
+
+/* Corps de la page */
+
+.worldSection
+{
+    background-image: url("../images/guitar-3131895_960_720.jpg");
+    background-repeat:no-repeat;
+    background-attachment:fixed;
+}
+
+/* table */
+
