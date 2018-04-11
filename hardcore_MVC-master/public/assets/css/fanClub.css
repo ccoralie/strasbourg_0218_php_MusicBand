@@ -275,7 +275,7 @@ body {
 }
 
 form {
-    border: 4px solid pink;
+    border: 4px solid transparent;
     position: absolute;
     right: 35%;
 }
