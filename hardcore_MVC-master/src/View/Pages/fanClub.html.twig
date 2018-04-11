@@ -1,0 +1,77 @@
+{% extends 'layout.html.twig' %}
+
+{% block content %}
+    <header class="main-header">
+
+        <!-- titre -->
+        <div class="main-header-inner clearfix">
+            <div class="main-brand">
+                <a href="#">Franck & the Wilders</a>
+            </div>
+            <div class="nav-trigger" onclick="document.querySelector('body').classList.toggle('nav-visible');">
+                <div class="fatw-icon"> <!-- LOGO -->
+                    <img class="img-responsive" src="Webp.net-resizeimage.png" alt="fatw">
+                </div>
+                <div class="hamburger-icon"><span></span></div>
+            </div>
+
+            <nav class="main-nav">
+                <div class="main-nav-inner">
+                    <div class="main-nav-brand">
+                        <a href="#">Franck and the Wilders</a>
+                    </div>
+                    <div class="main-nav-close">
+                        <button onclick="document.querySelector('body').classList.toggle('nav-visible');"><img src="https://ua-1.cdn-fullscreendirect.com/10523/2018_0202_10523_7980.svg" alt=""></button>
+                    </div>
+                    <div class="main-nav-site">
+
+                        <ul>
+                            <li><a href="#">Accueil</a></li>
+                            <li><a href="#">Prochains concerts</a></li>
+                            <li><a href="#">Discographie</a></li>
+                            <li><a href="#">Gallerie</a></li>
+                            <li><a href="#">Goodies</a></li>
+                            <li><a href="#">Fan club</a></li>
+
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+    </header>
+
+
+    <form action="action_page.php">
+        <div class="container center-block">
+        <div class="row">
+            <div class="col-xs-12 col-md-6 ">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+            <h2>Subscribe to our Newsletter</h2>
+            <p>Get the latest news from your favorite band!</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="container" style="background-color:transparent">
+
+            <input type="text" placeholder="Email address" name="mail" required>
+            <label>
+                <input type="checkbox" checked="checked" name="subscribe"> Daily Newsletter
+            </label>
+        </div>
+
+        <div class="container">
+            <input type="submit" value="Subscribe">
+        </div>
+        </div>
+        </div>
+    </form>
+
+
+
+
+
+
+{% endblock %}
