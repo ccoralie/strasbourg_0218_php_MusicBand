@@ -14,7 +14,11 @@ $dispatcher = FastRoute\simpleDispatcher(function(FastRoute\RouteCollector $r) {
     $r->addRoute('GET', '/item/add', 'Item/add');
     $r->addRoute('GET', '/item/edit/{id:\d+}', 'Item/edit');
     $r->addRoute('GET', '/admin', 'Admin/index');
-    $r->addRoute('Get', '/Atelier', 'Atelier/hello.html.twig');
+    $r->addRoute('GET', '/fanClub', 'Item/fanClub');
+    $r->addRoute('GET', '/Accueil', 'Item/Accueil');
+    $r->addRoute('GET', '/Goodies', 'Item/Goodies');
+    $r->addRoute('GET', '/Discographie', 'Item/Discographie');
+    $r->addRoute('GET', '/Worldtour', 'Item/Worldtour');
 });
 
 // Fetch method and URI from somewhere

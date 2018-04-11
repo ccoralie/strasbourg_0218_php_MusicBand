@@ -15,14 +15,14 @@ abstract class EntityManager
 
     protected $table;
 
-    public function __construct($table)
+   public function __construct($table)
     {
         $db = new Connection();
         $this->conn = $db->getPdo();
         $this->table = $table;
     }
 
-    /**
+     /**
      * @return array
      */
     public function findAll()

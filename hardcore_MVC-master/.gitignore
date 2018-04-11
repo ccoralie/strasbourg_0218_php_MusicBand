@@ -1,5 +1,8 @@
 vendor/
 app/db.php
+<<<<<<< HEAD
 .DS_Store
 ../.idea/
 
+=======
+>>>>>>> Kyle
