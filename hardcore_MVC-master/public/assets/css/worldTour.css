@@ -10,7 +10,9 @@
 .worldTitle h1
 {
     color: white;
-    font-size: 3em;
+    font-size: 4vw;
+    margin-bottom: 0px;
+    padding:2% 0 2% 0;
 }
 
 /* Corps de la page */
@@ -18,9 +20,10 @@
 .worldSection
 {
     background-image: url("../images/guitar-3131895_960_720.jpg");
+    height: 1000px;
+    background-size: 100%;
     background-repeat:no-repeat;
-    background-attachment:fixed;
-}
+    }
 
 /* table */
 
