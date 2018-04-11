@@ -19,11 +19,23 @@
 
 .worldSection
 {
-    background-image: url("../images/guitar-3131895_960_720.jpg");
-    height: 1000px;
-    background-size: 100%;
-    background-repeat:no-repeat;
+    background: url("../images/guitar-3131895_960_720.jpg") no-repeat center fixed  ;
+    -webkit-background-size: cover;
+    background-size: cover;
     }
 
 /* table */
 
+.table
+{
+    margin:5% 30% 5% 0;
+    background-color: white;
+    font-size: 1.5vw;
+    color: white;
+    text-shadow: 2px 0 0 black;
+}
+
+.tablechild
+{
+    width: 100%;
+}
