@@ -18,7 +18,7 @@ class ItemController extends AbstractController
 {
   public function hello()
   {
-    return $this->twig->render('Atelier/hello.html.twig', ['nom' => 'Coralie']);
+    return $this->twig->render('Pages/fanClub.html.twig', ['nom' => 'Coralie']);
   }
 
 }

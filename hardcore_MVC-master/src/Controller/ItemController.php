@@ -70,4 +70,61 @@ class ItemController extends AbstractController
         // TODO : delete the item with id $id
         return $this->twig->render('Item/index.html.twig');
     }
+
+    /**
+     * @return string
+     */
+
+    public function fanClub()
+    {
+        return $this->twig->render('Pages/fanClub.html.twig');
+    }
+
+    /**
+     * @return string
+     */
+
+    public function Accueil()
+    {
+        return $this->twig->render('Pages/accueil.html.twig');
+    }
+
+    /**
+     * @return string
+     */
+
+    public function Discographie()
+    {
+        return $this->twig->render('Pages/discographie.html.twig');
+    }
+
+    /**
+     * @return string
+     */
+
+    public function Goodies()
+    {
+        return $this->twig->render('Pages/goodies.html.twig');
+    }
+
+    /**
+     * @return string
+     */
+
+    public function Worldtour()
+    {
+        return $this->twig->render('Pages/worldtour.html.twig');
+    }
+
+    /**
+     * @return string
+     */
+
+    public function Gallerie()
+    {
+        return $this->twig->render('Pages/galerie.html.twig');
+    }
+
+
+
 }
