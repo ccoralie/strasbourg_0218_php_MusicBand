@@ -63,8 +63,14 @@
 
 .nav-trigger .fatw-icon{
   padding:10px 10px 0;
-
 }
+
+img.img-responsive.logo{
+    margin-bottom: -4px;
+    width: 100px;
+    height: 100px;
+}
+
 .nav-trigger .hamburger-icon{
   height:12px;
   position:relative;
