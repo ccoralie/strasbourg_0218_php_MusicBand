@@ -10,17 +10,34 @@
 .worldTitle h1
 {
     color: white;
-    font-weight: 3em;
+    font-size: 4vw;
+    margin-bottom: 0px;
+    padding:2% 0 2% 0;
+
+
 }
 
 /* Corps de la page */
 
-.worldSection
-{
-    background-image: url("../images/guitar-3131895_960_720.jpg");
-    background-repeat:no-repeat;
-    background-attachment:fixed;
-}
+body{
+    background: url("../images/guitar-3131895_960_720.jpg") no-repeat center fixed  ;
+    -webkit-background-size: cover;
+    background-size: cover;
+    padding-top: 80px;
+    }
 
 /* table */
 
+.table
+{
+    margin:5% 30% 5% 0;
+    background-color: white;
+    font-size: 1.5vw;
+    color: white;
+    text-shadow: 2px 0 0 black;
+}
+
+.tablechild
+{
+    width: 100%;
+}
