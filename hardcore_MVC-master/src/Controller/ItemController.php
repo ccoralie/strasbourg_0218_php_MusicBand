@@ -104,7 +104,7 @@ class ItemController extends AbstractController
 
     public function Goodies()
     {
-        return $this->twig->render('Item/goodies.html.twig');
+        return $this->twig->render('Pages/goodies.html.twig');
     }
 
     /**
@@ -113,7 +113,7 @@ class ItemController extends AbstractController
 
     public function Worldtour()
     {
-        return $this->twig->render('Item/worldtour.html.twig');
+        return $this->twig->render('Pages/worldtour.html.twig');
     }
 
     /**
@@ -122,7 +122,7 @@ class ItemController extends AbstractController
 
     public function Gallerie()
     {
-        return $this->twig->render('Item/galerie.html.twig');
+        return $this->twig->render('Pages/galerie.html.twig');
     }
 
 

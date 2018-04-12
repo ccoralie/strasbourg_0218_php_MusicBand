@@ -1,0 +1,248 @@
+body p{
+    font-family: 'Lateef', cursive;
+    font-size: 1.5em;
+}
+
+
+/*CAROUSEL*/
+
+CARROUSSEL GENERAL
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    height: 100px;
+    width: 100px;
+    background-size: 100%, 100%;
+    background-image: none;
+}
+
+.carousel-control-next-icon:after
+{
+    content: '>';
+    font-size: 60px;
+    color: white;
+    font-weight: bolder;
+}
+
+.carousel-control-prev-icon:after {
+    content: '<';
+    font-size: 60px;
+    color: white;
+    font-weight: bolder;
+}
+
+@media(max-width: 820px){
+
+    .carousel-control-next-icon{
+        font-size: 30px;
+    }
+
+.history h1{
+
+    font-family: 'Bungee Inline', cursive;
+    text-align: center;
+    padding-top: 30px;
+}
+
+.history p{
+    text-align: center;
+}
+
+/* Photos membres */
+
+.fondNoir{
+    background:url(https://ua-1.cdn-fullscreendirect.com/10523/2018_0125_10523_7930.jpeg) top repeat;
+    width: 100%;
+}
+
+.membres {
+    box-sizing: border-box;
+    padding-top: 30px;
+    text-align: center;
+}
+
+.photoMb {
+    float: left;
+    width: 25%;
+}
+
+figcaption{
+    color: white;
+
+}
+img.hoverShadow {
+    transition: 0.3s
+}
+
+.hoverShadow:hover {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(192,192,192,0.3)
+}
+
+/*  ACTU */
+.newActu h2{
+    text-align: center;
+    font-family: 'Mina', sans-serif;
+    font-weight: bold;
+    padding-top: 30px;
+}
+.textActu p{
+    font-family: 'Lateef', cursive;
+    text-align: justify;
+
+}
+.newActu .actu{
+
+    margin-top: 30px;
+    margin-left: 5%;
+    margin-right: 2%;
+
+}
+
+.newActu{
+    margin-bottom: 100px;
+}
+
+/*DERNIERES PHOTOS */
+.lastPhotos {
+    box-sizing: border-box;
+    padding-top: 40px;
+    margin-bottom: 50px;
+}
+.lastPhotos h2{
+    color: white;
+    font-family: 'Mina', sans-serif;
+    text-align: center;
+    font-weight: bold;
+}
+.row .newPhotos{
+    margin-bottom: 50px;
+}
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.column {
+    float: left;
+    width: 25%;
+}
+
+/* The Modal (background) */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 70px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: black;
+}
+
+/* Modal Content */
+.modal-content {
+    position: relative;
+
+    margin: auto;
+    padding: 0;
+    width: 100%;
+    max-width: 1200px;
+}
+
+/* The Close Button */
+.close {
+    color: white;
+    position: absolute;
+    top: 10px;
+    right: 25px;
+    font-size: 60px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #999;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.mySlides {
+    display: none;
+}
+
+.cursor {
+    cursor: pointer
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -50px;
+    color: white;
+    font-weight: bold;
+    font-size: 50px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+    color: #f2f2f2;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+}
+
+img {
+    margin-bottom: -4px;
+}
+
+.caption-container {
+    text-align: center;
+    background-color: black;
+    padding: 2px 16px;
+    color: white;
+}
+
+.demo {
+    opacity: 0.6;
+}
+
+.active,
+.demo:hover {
+    opacity: 1;
+}
+
+img.hover-shadow {
+    transition: 0.3s
+}
+
+.hover-shadow:hover {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
+}
+
+
+}
