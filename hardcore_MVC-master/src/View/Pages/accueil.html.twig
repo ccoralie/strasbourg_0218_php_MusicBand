@@ -1,6 +1,7 @@
 {% extends 'layout.html.twig' %}
 
       {% block stylesheet %}
+          {{ parent() }}
           <link rel="stylesheet" href="/assets/css/accueil.css">
       {% endblock %}
 
@@ -149,7 +150,7 @@
     {# Dernières photos #}
 
 
-    <div class="fondNoir">
+    <div class="fondNoir photoLast">
         <div class="container lastPhotos">
             <h2> DERNIERES PHOTOS </h2>
 

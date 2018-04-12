@@ -11,9 +11,9 @@
 
 /*titre Franck & the wilders*/
 .main-brand a{
-  text-decoration: none;
+    font-family: 'Bungee Inline', cursive;
+    text-decoration: none;
   color: white;
-  font-family: 'Bungee Inline', cursive;
   font-size: 30px;
   text-align: center;
 }
