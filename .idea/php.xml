@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="PhpIncludePathManager">
+    <include_path>
+      <path value="$PROJECT_DIR$/hardcore_MVC-master/vendor/squizlabs/php_codesniffer" />
+      <path value="$PROJECT_DIR$/hardcore_MVC-master/vendor/symfony/polyfill-mbstring" />
+      <path value="$PROJECT_DIR$/hardcore_MVC-master/vendor/twig/twig" />
+      <path value="$PROJECT_DIR$/hardcore_MVC-master/vendor/nikic/fast-route" />
+      <path value="$PROJECT_DIR$/hardcore_MVC-master/vendor/composer" />
+    </include_path>
+  </component>
+</project>
