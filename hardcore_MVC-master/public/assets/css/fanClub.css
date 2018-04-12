@@ -264,7 +264,6 @@ button.close:hover{
 
 
 
-
 body {
     background: url(https://i.ytimg.com/vi/3bF4IRrMwcg/maxresdefault.jpg)
     no-repeat center center fixed;
@@ -272,42 +271,108 @@ body {
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
+    padding-top: 70px;
 }
 
-form {
-    border: 4px solid transparent;
+
+
+
+
+@import url('https://fonts.googleapis.com/css?family=Lato');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style-type: none;
+    line-height: 1.5;
+    font-family:'Roboto', sans-serif;
+}
+form{
+    border: 4px solid navajowhite;
+    border-radius: 25px;
+    color: #fff;
+    background:linear-gradient(to bottom,rgba(0,0,0,.9), rgba(0,0,0,.3)), url('public/assets/images/FATW.png');
+    background-position:center;
     position: absolute;
-    right: 35%;
+    top: 60%;
+    transform: translateY(-50%);
+    left: 25%;
+    margin-right: 40px;
 }
 
-/* Add some padding and a grey background color to containers */
-.container {
-    padding: 20px;
-    background-color: transparent;
+.container{
+    padding: 1.5rem;
 }
 
-/* Style the input elements and the submit button */
-input[type=text], input[type=submit] {
+.fa{
+    color:#f1c40f;
+}
+
+
+
+input[type=text], button[type=submit]{
     width: 100%;
     padding: 12px;
     margin: 8px 0;
     display: inline-block;
-    border: transparent;
-    box-sizing: border-box;
+    outline: none;
+    border-radius: 6px;
+}
+input[type=text]{ border:3px solid #cecece; }
+input[type=text]:focus{
+    border: 3px solid #f1c40f;
 }
 
-/* Add margins to the checkbox */
-input[type=checkbox] {
-    margin-top: 16px;
+button[type=submit]{
+    background-color: #f1c40f;
+    color: #ffffff;
+    font-weight: 900;
+    font-size:0.9rem;
+    text-transform: uppercase;
+    transition: all ease-in 200ms;
+    border: 3px solid transparent;
+}
+button[type=submit] > i {
+    color: #fff;
+}
+button:hover{
+    background-color:transparent;
+    color:#f1c40f;
+    border: 3px solid #f1c40f;
+    cursor: pointer;
+}
+button:hover > i{
+    color: #f1c40f;
 }
 
-/* Style the submit button */
-input[type=submit] {
-    background-color: #4CAF50;
-    color: white;
-    border: none;
+@media screen and (min-width:400px){
+    form{
+        width:80%;
+        margin:0 auto;
+    }
 }
 
-input[type=submit]:hover {
-    opacity: 0.8;
+@media screen and (min-width:520px){
+    form{
+        width:60%;
+        margin:0 auto;
+    }
 }
+
+@media screen and (min-width:720px){
+    form{
+        width:50%;
+        margin:0 auto;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+

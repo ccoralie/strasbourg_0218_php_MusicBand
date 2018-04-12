@@ -1,5 +1,10 @@
 {% extends 'layout.html.twig' %}
 
+{% block stylesheet %}
+    <link rel="stylesheet" href="/assets/css/fanClub.css">
+{% endblock %}
+
+
 {% block content %}
     <header class="main-header">
 
@@ -40,38 +45,17 @@
 
     </header>
 
-<div class="container center-block">
-    <div class="row">
-        <div class="col-xs-12 col-md-6 ">
-    <form action="action_page.php">
+    <form action="">
         <div class="container">
-        <div class="row">
-            <div class="col-xs-12 col-md-6 ">
+            <h2>Subscribe to our newsletter</h2>
+            <p><i class="fa fa-fire"></i> Get the latest news from your favorite band!</p>
+        </div>
         <div class="container">
-            <div class="row">
-                <div class="col-xs-12">
-            <h2>Subscribe to our Newsletter</h2>
-            <p>Get the latest news from your favorite band!</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="container" style="background-color:transparent">
-
-            <input type="text" placeholder="Email address" name="mail" required>
-            <label>
-                <input type="checkbox" checked="checked" name="subscribe"> Daily Newsletter
-            </label>
-        </div>
-
-        <div class="container">
-            <input type="submit" value="Subscribe">
-        </div>
-        </div>
-        </div>
+            <input type="text" placeholder="Name" required>
+            <input type="text" placeholder="Email" required>
+            <button type="submit"><i class="fa fa-newspaper-o"></i> Subscribe</button>
         </div>
     </form>
-
 
 
 
