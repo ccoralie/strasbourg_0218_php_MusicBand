@@ -1,8 +1,297 @@
 {% extends 'layout.html.twig' %}
 
-{% block content %}
-    <h1>Items</h1>
+{% block stylesheet %}
+ {{ parent() }}
+<link rel="stylesheet" href="/assets/css/goodies.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+{% endblock %}
 
-<p>Bonjour est ce que ca marche enfin ? </p>
+{% block content %}
+<!-- Encart visuel Prochains Concerts -->
+<section class="worldTitle">
+    <h1>Goodies</h1>
+</section>
+
+<!-- Galerie -->
+
+<section>
+    <div class="container">
+
+        <div class="container gallery-container">
+
+            <h1 class="text-center">Franck & The Wilders</h1>
+
+            <p class="page-description text-center">Vétement</p>
+
+            <div class="tz-gallery">
+
+                <!-- GALERIE IMAGE 1 -->
+
+                <div class="row md-3">
+                    <div class="col-md-4">
+                        <div class="card">
+                            <a class="lightbox" href="assets/images/goodies/vetement/t-shirts-1.jpg">
+                                <img src="assets/images/goodies/vetement/t-shirts-1.jpg" alt="Park" class="card-img-top">
+                            </a>
+                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".good1"><span
+                                        class="glyphicon glyphicon-plus" aria-hidden="true"></span> Plus d'informations
+                            </button>
+                        </div>
+
+                        <!-- MODAL IMAGE 1 -->
+
+                        <div class="modal fade good1" tabindex="-1" role="dialog" aria-labelledby="good1">
+                            <div class="modal-dialog modal-lg" role="document">
+                                <div class="modal-content">
+                                    <div class="thumbnail text-center">
+                                        <h2>
+                                            T-Shirt Franck & The Wilders
+                                        </h2>
+                                        <div class="row justify-content-center">
+                                            <div class="col-md-4">
+                                                <div class="thumbnail">
+                                                    <a href="assets/images/goodies/vetement/t-shirts-1.jpg">
+                                                        <img src="assets/images/goodies/vetement/t-shirts-1.jpg" alt="Lights" style="width:100%">
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="caption">
+                                            <p class="alert alert-info">Articles disponibles dans les boutiques lors de nos concerts<br>
+                                            XS - S - M - L - XL - XXL</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- GALERIE IMAGE 2 -->
+
+                    <div class="col-md-4">
+                        <div class="card">
+                            <a class="lightbox" href="assets/images/goodies/vetement/sweat.jpg">
+                                <img src="assets/images/goodies/vetement/sweat.jpg" alt="Park" class="card-img-top">
+                            </a>
+                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".good2"><span
+                                        class="glyphicon glyphicon-plus" aria-hidden="true"></span> Plus d'informations
+                            </button>
+                        </div>
+
+
+                    <!-- MODAL IMAGE 2 -->
+
+                    <div class="modal fade good1" tabindex="-1" role="dialog" aria-labelledby="good2">
+                        <div class="modal-dialog modal-lg" role="document">
+                            <div class="modal-content">
+                                <div class="thumbnail text-center">
+                                    <h2>
+                                        T-Shirt Franck & The Wilders
+                                    </h2>
+                                    <div class="row justify-content-center">
+                                        <div class="col-md-4">
+                                            <div class="thumbnail">
+                                                <a href="assets/images/goodies/vetement/sweat.jpg">
+                                                    <img src="assets/images/goodies/vetement/sweat.jpg" alt="Lights" style="width:100%">
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="caption">
+                                        <p class="alert alert-info">Articles disponibles dans les boutiques lors de nos concerts<br>
+                                            XS - S - M - L - XL - XXL</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+
+
+                    <!-- GALERIE IMAGE 3 -->
+
+                    <div class="col-md-4">
+                        <div class="card">
+                            <a class="lightbox" href="assets/images/goodies/vetement/debardeur_femme.jpg">
+                                <img src="assets/images/goodies/vetement/debardeur_femme.jpg" alt="Park" class="card-img-top">
+                            </a>
+                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".good3"><span
+                                        class="glyphicon glyphicon-plus" aria-hidden="true"></span> Plus d'informations
+                            </button>
+                        </div>
+
+                    <!-- MODAL IMAGE 3 -->
+
+                    <div class="modal fade good1" tabindex="-1" role="dialog" aria-labelledby="good3">
+                        <div class="modal-dialog modal-lg" role="document">
+                            <div class="modal-content">
+                                <div class="thumbnail text-center">
+                                    <h2>
+                                        T-Shirt Franck & The Wilders
+                                    </h2>
+                                    <div class="row justify-content-center">
+                                        <div class="col-md-4">
+                                            <div class="thumbnail">
+                                                <a href="assets/images/goodies/vetement/debardeur_femme.jpg">
+                                                    <img src="assets/images/goodies/vetement/debardeur_femme.jpg" alt="Lights" style="width:100%">
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="caption">
+                                        <p class="alert alert-info">Articles disponibles dans les boutiques lors de nos concerts<br>
+                                            XS - S - M - L - XL - XXL</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+                <!-- GALERIE IMAGE 4 -->
+
+            <div class="row md-3">
+                <div class="col-md-4">
+                    <div class="card">
+                        <a class="lightbox" href="assets/images/goodies/vetement/besace.jpg">
+                            <img src="assets/images/goodies/vetement/besace.jpg" alt="Park" class="card-img-top">
+                        </a>
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".good4"><span
+                                    class="glyphicon glyphicon-plus" aria-hidden="true"></span> Plus d'informations
+                        </button>
+                    </div>
+
+                    <!-- MODAL IMAGE 4 -->
+
+                    <div class="modal fade good1" tabindex="-1" role="dialog" aria-labelledby="good4">
+                        <div class="modal-dialog modal-lg" role="document">
+                            <div class="modal-content">
+                                <div class="thumbnail text-center">
+                                    <h2>
+                                        T-Shirt Franck & The Wilders
+                                    </h2>
+                                    <div class="row justify-content-center">
+                                        <div class="col-md-4">
+                                            <div class="thumbnail">
+                                                <a href="assets/images/goodies/vetement/besace.jpg">
+                                                    <img src="assets/images/goodies/vetement/besace.jpg" alt="Lights" style="width:100%">
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="caption">
+                                        <p class="alert alert-info">Articles disponibles dans les boutiques lors de nos concerts<br>
+                                            XS - S - M - L - XL - XXL</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                    <!-- GALERIE IMAGE 5 -->
+
+                <div class="col-md-4">
+                    <div class="card">
+                        <a class="lightbox" href="assets/images/goodies/vetement/sac.jpg">
+                            <img src="assets/images/goodies/vetement/sac.jpg" alt="Park" class="card-img-top">
+                        </a>
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".good5"><span
+                                    class="glyphicon glyphicon-plus" aria-hidden="true"></span> Plus d'informations
+                        </button>
+                    </div>
+
+                    <!-- MODAL IMAGE 5 -->
+
+                    <div class="modal fade good1" tabindex="-1" role="dialog" aria-labelledby="good5">
+                        <div class="modal-dialog modal-lg" role="document">
+                            <div class="modal-content">
+                                <div class="thumbnail text-center">
+                                    <h2>
+                                        T-Shirt Franck & The Wilders
+                                    </h2>
+                                    <div class="row justify-content-center">
+                                        <div class="col-md-4">
+                                            <div class="thumbnail">
+                                                <a href="assets/images/goodies/vetement/sac.jpg">
+                                                    <img src="assets/images/goodies/vetement/sac.jpg" alt="Lights" style="width:100%">
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="caption">
+                                        <p class="alert alert-info">Articles disponibles dans les boutiques lors de nos concerts<br>
+                                            XS - S - M - L - XL - XXL</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                    <!-- GALERIE IMAGE 6 -->
+
+                <div class="col-md-4">
+                    <div class="card">
+                        <a class="lightbox" href="assets/images/goodies/vetement/short.jpg">
+                            <img src="assets/images/goodies/vetement/short.jpg" alt="Park" class="card-img-top">
+                        </a>
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".good6"><span
+                                    class="glyphicon glyphicon-plus" aria-hidden="true"></span> Plus d'informations
+                        </button>
+                    </div>
+
+                    <!-- MODAL IMAGE 6 -->
+
+                    <div class="modal fade good1" tabindex="-1" role="dialog" aria-labelledby="good6">
+                        <div class="modal-dialog modal-lg" role="document">
+                            <div class="modal-content">
+                                <div class="thumbnail text-center">
+                                    <h2>
+                                        T-Shirt Franck & The Wilders
+                                    </h2>
+                                    <div class="row justify-content-center">
+                                        <div class="col-md-4">
+                                            <div class="thumbnail">
+                                                <a href="assets/images/goodies/vetement/short.jpg">
+                                                    <img src="assets/images/goodies/vetement/short.jpg" alt="Lights" style="width:100%">
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="caption">
+                                        <p class="alert alert-info">Articles disponibles dans les boutiques lors de nos concerts<br>
+                                            XS - S - M - L - XL - XXL</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                </div>
+
+            </div>
+        </div>
+
+        </div>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.js"></script>
+        <script>
+            baguetteBox.run('.tz-gallery');
+        </script>
+    </div>
+
+</section>
+
+{% endblock %}
+
+{% block javascript %}
 
 {% endblock %}
