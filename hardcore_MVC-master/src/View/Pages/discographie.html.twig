@@ -4,27 +4,60 @@
 {% block stylesheet %}
     {{ parent() }}
     <link rel="stylesheet" href="/assets/css/discographie.css">
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 {% endblock %}
 
 
 {% block content %}
 
-    <div class="contentAlbum">
 <section>
+    <div class="contentAlbum">
     <ul class="slides">
+
+        <!-- ALBUM 1 -->
+
         <input type="radio" name="radio-btn" id="img-1" checked />
         <li class="slide-container">
             <div class="slide">
                 <img src="https://cps-static.rovicorp.com/3/JPG_500/MI0000/617/MI0000617057.jpg?partner=allrovi.com" id="st" />
+                <button type="button" class="btn" data-toggle="modal" data-target=".good1"><span
+                            class="glyphicon glyphicon-plus" aria-hidden="true"></span> Plus d'informations
+                </button>
             </div>
             <div class="nav">
                 <label for="img-6" class="prev">&laquo;</label>
                 <label for="img-2" class="next">&raquo;</label>
             </div>
+
         </li>
 
-        <input type="radio" name="radio-btn" id="img-2" />
+        <!-- MODAL 1 -->
+
+                <div class="modal fade good1" tabindex="-1" role="dialog" aria-labelledby="good1">
+                    <div class="modal-dialog modal-lg" role="document">
+                        <div class="modal-content">
+                            <div class="thumbnail text-center">
+                                <h2>Titre Album</h2>
+                                <div class="row justify-content-center">
+                                    <div class="col-md-4">
+                                        <div class="thumbnail">
+                                            <a href="assets/images/goodies/vetement/t-shirts-1.jpg">
+                                                <img src="assets/images/goodies/vetement/t-shirts-1.jpg" alt="Lights" style="width:100%">
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="caption">
+                                    <p class="alert alert-info"></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <input type="radio" name="radio-btn" id="img-2" />
         <li class="slide-container">
             <div class="slide">
                 <img src="https://i.ytimg.com/vi/kMZSJCgn_K8/maxresdefault.jpg"  id="ver"/>
@@ -89,66 +122,14 @@
         </li>
     </ul>
 
-    <div class="stBlurb" id="stBlurb">
-        <h2>Garbage</h2>
-        <span>Released in 1995</span>
-        <br>
-        <h5>Singles released:</h5> <span>Vow, Subhuman (UK only), Only Happy When It Rains, Queer, Stupid Girl, Milk</span>
-        <br>
-        <h5>About the recording:</h5> <span>The self-titled first album began as a studio project. It was recoded in their own studio, Smart Studios, Madison, WI, USA. </span>
-    </div>
-    <div class="verBlurb" id="verBlurb">
-        <h2>Version 2.0</h2>
-        <span>Released in 1998</span>
-        <br>
-        <h5>Singles released:</h5> <span>Push It, I Think I'm Paranoid, Special, When I Grow Up, The Trick Is To Keep Breathing, You Look So Fine</span>
-        <br>
-        <h5>About the recording:</h5> <span>The critically-acclaimed sophomore album was their most popular state-side, and was nominated for two Grammys in 1999: Album of the Year and Best Rock Album. In 2000, the third single, "Special", was nominated for a further two Grammys: Best Rock Song and for Best Rock Performance by a Duo or Group. </span>
-    </div>
-
-    <div class="bgBlurb" id="bgBlurb">
-        <h2>beautifulgarbage</h2>
-        <span>Released in 2001</span>
-        <br>
-        <h5>Singles released:</h5> <span>Cherry Lips, Androgyny, Breaking Up the Girl, Shut Your Mouth</span>
-        <br>
-        <h5>About the recording:</h5> <span>Perhaps the most under-rated of the band's albums. Garbage reached into new territory using more electronic- and pop-heavy sound, and emotionally-laden lyrics. The album did not sell well at the time but boasts many hidden gems including "Cup of Coffee" and "Drive You Home". Also perhaps the most LGBT-rights and struggles themed of the albums, which was unusual for the time.</span>
-    </div>
-    <div class="blmBlurb" id="blmBlurb">
-        <h2>Bleed Like Me</h2>
-        <span>Released in 2005</span>
-        <br>
-        <h5>Singles released:</h5><span> Bleed Like Me, Why Do You Love Me?, Sex Is Not The Enemy, Run Baby Run</span>
-        <br>
-        <h5>About the recording:</h5> <span>Following the strong electronica presence on the previous album, the follow-up "Bleed Like Me" has a much stronger rock vibe, with every song featuring guitar heavily. The band is still not shying away from social issues, as the themes of LGBT and mental health struggles thread through the album as they did the last.</span>
-    </div>
-    <div class="nykopBlurb" id="nykopBlurb">
-        <h2>Not Your Kind of People</h2>
-        <span>Released in 2012</span>
-        <br>
-        <h5>Singles released:</h5> <span>Battle In Me, Not Your Kind of People, Blood for Poppies, Automatic Systematic Habit</span>
-        <br>
-        <h5>About the recording:</h5> <span>Fans of the band were happy to see the the band return to their dark, rock-centric roots. </span>
-    </div>
-    <div class="slbBlurb" id="slbBlurb">
-        <h2>Strange Little Birds</h2>
-        <span>Released in 2016</span>
-        <br>
-        <h5>Singles released:</h5> <span>Even Though Our Love Is Doomed, Empty</span>
-        <br>
-        <h5>About the recording:</h5> <span>The band's latest recording. A deep-dive into early Garbage 90s-era rock-electronica fusion, not as polished as a few of the later albums became. Sure to be a favourite of long-time listeners and rock fans alike.</span>
     </div>
 </section>
-    </div>
-
-
-
-
-
-
 
 {% endblock %}
 
 {% block javascript %}
 <script type="text/javascript" src="/assets/js/discographie.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.js"></script>
 {% endblock %}
