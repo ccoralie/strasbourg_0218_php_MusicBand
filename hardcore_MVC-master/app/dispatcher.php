@@ -19,7 +19,7 @@ $dispatcher = FastRoute\simpleDispatcher(function(FastRoute\RouteCollector $r) {
     $r->addRoute('GET', '/Goodies', 'Item/Goodies');
     $r->addRoute('GET', '/Discographie', 'Item/Discographie');
     $r->addRoute('GET', '/Worldtour', 'Item/Worldtour');
-
+    $r->addRoute('GET', '/Galerie', 'Item/Galerie');
 });
 
 // Fetch method and URI from somewhere
