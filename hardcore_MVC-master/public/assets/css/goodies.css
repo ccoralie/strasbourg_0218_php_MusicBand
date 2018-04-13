@@ -17,7 +17,17 @@ body{
     bottom: 0;
 }
 
+.lightbox
+{
+    max-height: 350px;
+}
 
+
+
+section
+{
+    margin-bottom: 10%;
+}
 
 
 /* Partie Title */
