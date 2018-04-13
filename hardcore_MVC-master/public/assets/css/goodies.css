@@ -20,6 +20,7 @@ body{
 .lightbox
 {
     max-height: 350px;
+    max-width: 350px;
 }
 
 
@@ -43,6 +44,7 @@ section
     color: white;
     font-size: 4vw;
     margin-bottom: 0px;
-    padding:2% 0 2% 0;
-    padding-top: 100px;
+    padding:0 0 2% 0;
+    padding-top: 140px;
+    margin-top: 0;
 }
