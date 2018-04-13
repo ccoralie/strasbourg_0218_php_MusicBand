@@ -73,6 +73,7 @@ img.hoverShadow {
 /*DERNIERES PHOTOS */
 .photoLast{
     padding-bottom: 10px;
+    margin-bottom: -20px;
 }
 .lastPhotos {
     box-sizing: border-box;
@@ -99,10 +100,12 @@ img.hoverShadow {
 }
 
 /* The Modal (background) */
+
+
 .modal {
     display: none;
     position: fixed;
-    z-index: 1;
+    z-index: 9;
     padding-top: 70px;
     left: 0;
     top: 0;
@@ -113,6 +116,13 @@ img.hoverShadow {
 }
 
 /* Modal Content */
+.mySlides.mx-auto img{
+
+    width: 80%;
+}
+.mySlides.mx-auto{
+    text-align: center;
+}
 .modal-content {
     position: relative;
 
@@ -130,6 +140,7 @@ img.hoverShadow {
     right: 25px;
     font-size: 60px;
     font-weight: bold;
+    z-index: 12;
 }
 
 .close:hover,
@@ -179,7 +190,7 @@ img.hoverShadow {
 
 /* Number text (1/3 etc) */
 .numbertext {
-    color: #f2f2f2;
+    color: black;
     font-size: 12px;
     padding: 8px 12px;
     position: absolute;

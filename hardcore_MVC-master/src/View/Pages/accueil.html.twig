@@ -7,7 +7,7 @@
 
     {% block content %}
 
-        {#carousel#}
+                {#carousel#}
 
     <div id="carouselIndicators" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
@@ -92,7 +92,7 @@
     </div>
 
     {# actualité #}
-    <div class="newActu">
+    <div class="container newActu">
         <h2> ACTUALITE </h2>
         <div class="row ">
 
@@ -150,74 +150,74 @@
     {# Dernières photos #}
 
 
-    <div class="fondNoir photoLast">
-        <div class="container lastPhotos">
-            <h2> DERNIERES PHOTOS </h2>
+            <div class="fondNoir photoLast">
+                <div class="container lastPhotos">
+                    <h2> DERNIERES PHOTOS </h2>
 
-            <div class="row newPhotos ">
-                <div class="column">
-                    <img src="/assets/images/concert _resize.jpg" onclick="openModal();currentSlide(1)" class="hover-shadow cursor">
-                </div>
-                <div class="column">
-                    <img src="/assets/images/concert2_resize.jpg" onclick="openModal();currentSlide(2)" class="hover-shadow cursor">
-                </div>
-                <div class="column">
-                    <img src="/assets/images/foule_resize.jpg" onclick="openModal();currentSlide(3)" class="hover-shadow cursor">
-                </div>
-                <div class="column">
-                    <img src="/assets/images/elvis_resize.jpg" onclick="openModal();currentSlide(4)" class="hover-shadow cursor">
+                    <div class="row newPhotos ">
+                        <div class="column col-lg-3 col-md-6 col-sm-10">
+                            <img src="/assets/images/concert _resize.jpg" onclick="openModal();currentSlide(1)" class="hover-shadow cursor">
+                        </div>
+                        <div class="column col-lg-3 col-md-6 col-sm-10">
+                            <img src="/assets/images/concert2_resize.jpg" onclick="openModal();currentSlide(2)" class="hover-shadow cursor">
+                        </div>
+                        <div class="column col-lg-3 col-md-6 col-sm-10">
+                            <img src="/assets/images/foule_resize.jpg" onclick="openModal();currentSlide(3)" class="hover-shadow cursor">
+                        </div>
+                        <div class="column col-lg-3 col-md-6 col-sm-10">
+                            <img src="/assets/images/elvis_resize.jpg" onclick="openModal();currentSlide(4)" class="hover-shadow cursor">
+                        </div>
+                    </div>
+
+                    <div id="myModal" class="modal my-auto">
+                        <span class="close cursor" onclick="closeModal()">&times;</span>
+                        <div class="modal-content">
+
+                            <div class="mySlides mx-auto">
+                                <div class="numbertext">1 / 4</div>
+                                <img src="/assets/images/concert.jpg" />
+                            </div>
+
+                            <div class="mySlides mx-auto">
+                                <div class="numbertext">2 / 4</div>
+                                <img src="/assets/images/concert2.jpg" />
+                            </div>
+
+                            <div class="mySlides mx-auto">
+                                <div class="numbertext">3 / 4</div>
+                                <img src="/assets/images/foule.jpg" />
+                            </div>
+
+                            <div class="mySlides mx-auto">
+                                <div class="numbertext">4 / 4</div>
+                                <img src="/assets/images/elvis.jpg" />
+                            </div>
+
+                            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+                            <div class="caption-container">
+                                <p id="caption"></p>
+                            </div>
+
+
+                            <!--    <div class="column">
+                                  <img class="demo cursor" src="http://via.placeholder.com/200x200"  onclick="currentSlide(1)" >
+                                </div>
+                                <div class="column">
+                                  <img class="demo cursor" src="http://via.placeholder.com/200x200"  onclick="currentSlide(2)" >
+                                </div>
+                                <div class="column">
+                                  <img class="demo cursor" src="http://via.placeholder.com/200x200"  onclick="currentSlide(3)" >
+                                </div>
+                                <div class="column">
+                                  <img class="demo cursor" src="http://via.placeholder.com/200x200"  onclick="currentSlide(4)" >
+                                </div>
+                              </div>-->
+                        </div>
+                    </div>
                 </div>
             </div>
-
-            <div id="myModal" class="modal my-auto">
-                <span class="close cursor" onclick="closeModal()">&times;</span>
-                <div class="modal-content">
-
-                    <div class="mySlides mx-auto">
-                        <div class="numbertext">1 / 4</div>
-                        <img src="/assets/images/concert.jpg" />
-                    </div>
-
-                    <div class="mySlides mx-auto">
-                        <div class="numbertext">2 / 4</div>
-                        <img src="/assets/images/concert2.jpg" />
-                    </div>
-
-                    <div class="mySlides mx-auto">
-                        <div class="numbertext">3 / 4</div>
-                        <img src="/assets/images/foule.jpg" />
-                    </div>
-
-                    <div class="mySlides mx-auto">
-                        <div class="numbertext">4 / 4</div>
-                        <img src="/assets/images/elvis.jpg" />
-                    </div>
-
-                    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-                    <a class="next" onclick="plusSlides(1)">&#10095;</a>
-
-                    <div class="caption-container">
-                        <p id="caption"></p>
-                    </div>
-
-
-                    <!--    <div class="column">
-                          <img class="demo cursor" src="http://via.placeholder.com/200x200"  onclick="currentSlide(1)" >
-                        </div>
-                        <div class="column">
-                          <img class="demo cursor" src="http://via.placeholder.com/200x200"  onclick="currentSlide(2)" >
-                        </div>
-                        <div class="column">
-                          <img class="demo cursor" src="http://via.placeholder.com/200x200"  onclick="currentSlide(3)" >
-                        </div>
-                        <div class="column">
-                          <img class="demo cursor" src="http://via.placeholder.com/200x200"  onclick="currentSlide(4)" >
-                        </div>
-                      </div>-->
-                </div>
-            </div>
-        </div>
-    </div>
 
 
 {% endblock %}
