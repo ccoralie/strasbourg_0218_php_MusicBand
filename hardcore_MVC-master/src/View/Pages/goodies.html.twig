@@ -1,8 +1,96 @@
 {% extends 'layout.html.twig' %}
 
-{% block content %}
-    <h1>Items</h1>
+{% block stylesheet %}
+ {{ parent() }}
+<link rel="stylesheet" href="/assets/css/goodies.css">
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js">
+{% endblock %}
 
-<p>Bonjour est ce que ca marche enfin ? </p>
+{% block content %}
+<!-- Encart visuel Prochains Concerts -->
+<section class="worldTitle">
+    <h1>Goodies</h1>
+</section>
+
+<!-- Galerie -->
+
+<section>
+    <div class="container">
+
+        <div class="container gallery-container">
+
+            <h1 class="text-center">Franck & The Wilders</h1>
+
+            <p class="page-description text-center">Vétement</p>
+
+            <div class="tz-gallery">
+
+                <div class="row mb-3">
+                    <div class="col-md-4">
+                        <div class="card">
+                            <a class="lightbox" href="assets/images/goodies/vetement/t-shirts-1.jpg">
+                                <img src="assets/images/goodies/vetement/t-shirts-1.jpg" alt="Park" class="card-img-top">
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="card">
+                            <a class="lightbox" href="assets/images/goodies/vetement/sweat.jpg">
+                                <img src="assets/images/goodies/vetement/sweat.jpg" alt="Park" class="card-img-top">
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="card">
+                            <a class="lightbox" href="assets/images/goodies/vetement/debardeur_femme.jpg">
+                                <img src="assets/images/goodies/vetement/debardeur_femme.jpg" alt="Park" class="card-img-top">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="card">
+                            <a class="lightbox" href="assets/images/goodies/vetement/besace.jpg">
+                                <img src="assets/images/goodies/vetement/besace.jpg" alt="Park" class="card-img-top">
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="card">
+                            <a class="lightbox" href="assets/images/goodies/vetement/sac.jpg">
+                                <img src="assets/images/goodies/vetement/sac.jpg" alt="Park" class="card-img-top">
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="card">
+                            <a class="lightbox" href="assets/images/goodies/vetement/short.jpg">
+                                <img src="assets/images/goodies/vetement/short.jpg" alt="Park" class="card-img-top">
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.js"></script>
+        <script>
+            baguetteBox.run('.tz-gallery');
+        </script>
+    </div>
+
+</section>
+
+{% endblock %}
+
+{% block javascript %}
 
 {% endblock %}
