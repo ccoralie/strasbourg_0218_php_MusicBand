@@ -7,12 +7,196 @@ body{
     margin: 0;
     padding: 0;
     position: relative;
+    background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/499416/demo-bg.jpg");
 }
 
 .page-footer{
     position: absolute;
     bottom: 0;
 }
+
+
+
+.slides {
+    padding:0;
+    width: 450px;
+    height: 450px;
+    display: block;
+    margin: 0 auto;
+    position: relative;
+    box-shadow: 5px 4px 8px #638141;
+}
+
+.slides * {
+    user-select: none;
+    -ms-user-select: none;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -webkit-touch-callout: none;
+}
+
+.slides input { display: none; }
+
+.slide-container { display: block; }
+
+.slide {
+    top: 0;
+    opacity: 0;
+    width: 450px;
+    height: 450px;
+    display: block;
+    position: absolute;
+
+    transform: scale(0);
+
+    transition: all .7s ease-in-out;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+}
+
+.nav label {
+    width: 100px;
+    height: 30%;
+    display: none;
+    position: absolute;
+    bottom: 40%;
+    opacity: 0;
+    z-index: 9;
+    cursor: pointer;
+    transition: opacity .4s;
+    color: #fff;
+    font-size: 96pt;
+    text-align: center;
+    line-height: 108px;
+    font-family: "Open Sans Condensed", sans-serif;
+    background-color: rgba(255, 255, 255, .3);
+    text-shadow: 0px 0px 15px rgb(91, 91, 91);
+}
+
+.slide:hover + .nav label { opacity: 0.4; }
+
+.nav label:hover { opacity: 1; }
+
+.nav .next { right: 0; }
+
+input:checked + .slide-container  .slide {
+    opacity: 1;
+
+    transform: scale(1);
+
+    transition: opacity 1s ease-in-out;
+}
+
+input:checked + .slide-container .nav label { display: block; }
+
+.nav-dots {
+    width: 100%;
+    bottom: 9px;
+    height: 11px;
+    display: block;
+    position: absolute;
+    text-align: center;
+}
+
+.nav-dots .nav-dot {
+    top: -5px;
+    width: 11px;
+    height: 11px;
+    margin: 0 4px;
+    position: relative;
+    border-radius: 100%;
+    display: inline-block;
+    background-color: rgba(255,255,255, 0.5);
+}
+
+.nav-dots .nav-dot:hover {
+    cursor: pointer;
+    background-color: rgba(255,255,255, 0.9);
+}
+
+input#img-1:checked ~ .nav-dots label#img-dot-1,
+input#img-2:checked ~ .nav-dots label#img-dot-2,
+input#img-3:checked ~ .nav-dots label#img-dot-3,
+input#img-4:checked ~ .nav-dots label#img-dot-4,
+input#img-5:checked ~ .nav-dots label#img-dot-5,
+input#img-6:checked ~ .nav-dots label#img-dot-6 {
+    background-color: rgba(255,255,255, 0.9);
+}
+
+.stBlurb,
+.verBlurb,
+.bgBlurb,
+.blmBlurb,
+.nykopBlurb,
+.slbBlurb{
+    background: #eee;
+    display: none;
+    margin: auto;
+    padding: 0.75rem;
+    position: fixed;
+    top: 20%;
+    left:30%;
+    width: 35%;
+    z-index: 100;
+}
+
+.stBlurb h2,
+.verBlurb h2,
+.bgBlurb h2,
+.blmBlurb h2,
+.nykopBlurb h2,
+.slbBlurb h2 {
+    font-family: 'Bitter', serif;
+    font-size: 1.3rem;
+    margin: .2rem;
+}
+
+.stBlurb h5,
+.verBlurb h5,
+.bgBlurb h5,
+.blmBlurb h5,
+.nykopBlurb h5,
+.slbBlurb h5 {
+    display: inline;
+    font-family: 'Bitter', serif;
+    font-size: 1rem;
+    font-weight: bold;
+    margin: .25rem .1rem;
+}
+
+.stBlurb span,
+.verBlurb span,
+.bgBlurb span,
+.blmBlurb span,
+.nykopBlurb span,
+.slbBlurb span {
+    display: inline;
+    font-family: 'Open Sans Condensed', serif;
+    font-size: 1.1rem;
+    margin: .25rem .1rem;
+}
+
+
+
+.contentAlbum{
+    margin-bottom: 200px;
+    margin-top: 200px;
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+}
+
+
+
+
+
+
+
+
 
 
 
