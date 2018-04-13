@@ -73,6 +73,7 @@ img.hoverShadow {
 /*DERNIERES PHOTOS */
 .photoLast{
     padding-bottom: 10px;
+    margin-bottom: -20px;
 }
 .lastPhotos {
     box-sizing: border-box;
