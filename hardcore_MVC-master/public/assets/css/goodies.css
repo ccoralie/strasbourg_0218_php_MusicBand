@@ -10,7 +10,6 @@ body{
     background: url("https://i.pinimg.com/originals/fe/73/33/fe73334efbb454afc7fdcba79002c2f6.jpg") no-repeat center fixed  ;
     -webkit-background-size: cover;
     background-size: cover;
-    padding-top: 80px;
 }
 
 .page-footer{
@@ -35,4 +34,5 @@ body{
     font-size: 4vw;
     margin-bottom: 0px;
     padding:2% 0 2% 0;
+    padding-top: 100px;
 }
