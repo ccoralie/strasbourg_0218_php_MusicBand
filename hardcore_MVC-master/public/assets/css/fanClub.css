@@ -24,7 +24,7 @@ form{
     border: 4px solid navajowhite;
     border-radius: 25px;
     color: #fff;
-    background:linear-gradient(to bottom,rgba(0,0,0,.9), rgba(0,0,0,.3)), url('public/assets/images/FATW.png');
+    background:linear-gradient(to bottom,rgba(0,0,0,.9), rgba(0,0,0,.3));
     background-position:center;
     position: absolute;
     top: 60%;
