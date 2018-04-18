@@ -38,20 +38,7 @@ class Stock extends Goodies
         $this->stock = $stock;
     }
 
-    public function addStock()
-    {
-        //ajout stock
-    }
 
-    public function updateStock()
-    {
-        //MAJ stock
-    }
-
-    public function deleteStock()
-    {
-        //supprimer stock
-    }
 
 
 }

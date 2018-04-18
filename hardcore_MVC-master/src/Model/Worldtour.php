@@ -42,20 +42,7 @@ class Worldtour
         $this->dateconcert = $dateconcert;
     }
 
-    public function addDateconcert()
-    {
-        //ajout date
-    }
 
-    public function updateDateconcert()
-    {
-        //MAJ date
-    }
-
-    public function deleteDateconcert()
-    {
-        //supprimer date
-    }
 
     /**
      * @return mixed
@@ -73,20 +60,6 @@ class Worldtour
         $this->ville = $ville;
     }
 
-    public function addVille()
-    {
-        //ajout ville
-    }
-
-    public function updateVille()
-    {
-        //MAJ Ville
-    }
-
-    public function deleteVille()
-    {
-        //supprimer Ville
-    }
 
     /**
      * @return mixed
@@ -104,20 +77,7 @@ class Worldtour
         $this->salle = $salle;
     }
 
-    public function addSalle()
-    {
-        //ajout Salle
-    }
 
-    public function updateSalle()
-    {
-        //MAJ Salle
-    }
-
-    public function deleteSalle()
-    {
-        //supprimer Salle
-    }
 
 
 

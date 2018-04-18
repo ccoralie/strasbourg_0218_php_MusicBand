@@ -41,20 +41,6 @@ class Goodies
         $this->goodies = $goodies;
     }
 
-    public function addGoodies()
-    {
-        // ajout goodies
-    }
-
-    public function updateGoodies()
-    {
-        //MAJ goodies
-    }
-
-    public function deleteGoodies()
-    {
-        //Supprimer goodies
-    }
 
     /**
      * @return mixed
@@ -72,20 +58,6 @@ class Goodies
         $this->prix = $prix;
     }
 
-    public function addPrix()
-    {
-        //ajout prix
-    }
-
-    public function updatePrix()
-    {
-        //MAJ prix
-    }
-
-    public function deletePrix()
-    {
-        //supprimer prix
-    }
 
     /**
      * @return mixed
@@ -103,18 +75,5 @@ class Goodies
         $this->reference = $reference;
     }
 
-    public function addReference()
-    {
-        //ajout reference
-    }
 
-    public function updateReference()
-    {
-        //MAJ reference
-    }
-
-    public function deleteReference()
-    {
-        //supprimer reference
-    }
 }

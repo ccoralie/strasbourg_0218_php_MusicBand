@@ -31,20 +31,7 @@ class Categorie extends Goodies
         $this->type = $type;
     }
 
-    public function addType()
-    {
-        //ajout type
-    }
 
-    public function updateType()
-    {
-        //MAJ type
-    }
-
-    public function deleteType()
-    {
-        //supprimer type
-    }
 
 
 }

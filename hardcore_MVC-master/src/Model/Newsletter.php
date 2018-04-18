@@ -17,6 +17,14 @@ class Newsletter
     }
 
     /**
+     * @param mixed $id
+     */
+    public function setId($id)
+    {
+        $this->id = $id;
+    }
+
+    /**
      * @return mixed
      */
     public function getNom()
@@ -25,10 +33,26 @@ class Newsletter
     }
 
     /**
+     * @param mixed $nom
+     */
+    public function setNom($nom)
+    {
+        $this->nom = $nom;
+    }
+
+    /**
      * @return mixed
      */
     public function getMail()
     {
         return $this->mail;
+    }
+
+    /**
+     * @param mixed $mail
+     */
+    public function setMail($mail)
+    {
+        $this->mail = $mail;
     }
 }

@@ -35,20 +35,6 @@ class Chanson extends Album
         $this->chanson = $chanson;
     }
 
-    public function addChanson()
-    {
-        //ajout chanson
-    }
-
-    public function deleteChanson()
-    {
-        //supprimer chansons
-    }
-
-    public function updateChanson()
-    {
-        //MAJ chanson
-    }
 
 
 }

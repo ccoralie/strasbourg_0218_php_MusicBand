@@ -42,20 +42,7 @@ class Album
         $this->album = $album;
     }
 
-    public function addAlbum()
-    {
-        //ajout album
-    }
 
-    public function updateAlbum()
-    {
-        //MAJ album
-    }
-
-    public function deleteAlbum()
-    {
-
-    }
 
     /**
      * @return mixed
@@ -73,20 +60,7 @@ class Album
         $this->pochetteAlbum = $pochetteAlbum;
     }
 
-    public function addPochetteAlbum()
-    {
-        //ajout pochette
-    }
 
-    public function updatePochetteAlbum()
-    {
-        //MAJ pochette
-    }
-
-    public  function deletePochetteAlbum()
-    {
-        //supprimer pochette
-    }
 
     /**
      * @return mixed
@@ -104,15 +78,7 @@ class Album
         $this->extraitMusique = $extraitMusique;
     }
 
-    public function addExtraitMusique()
-    {
-        //ajout musique
-    }
 
-    public function deleteExtraitMusique()
-    {
-        //supprimer musique
-    }
 
     public function lectureExtraitMusique()
     {

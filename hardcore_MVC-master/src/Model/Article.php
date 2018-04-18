@@ -41,21 +41,6 @@ class Article
     }
 
 
-    public function addArticle()
-    {
-        //ajouter des articles
-
-    }
-
-    public function updateArticle()
-    {
-        //mettre à jour des articles
-    }
-
-    /*public function deleteArticle()
-    {
-        //supprimer un article
-    }*/
 
     /**
      * @return mixed
@@ -73,20 +58,6 @@ class Article
         $this->titre = $titre;
     }
 
-    public function addTitre()
-    {
-        //ajouter un titre
-    }
 
-
-    public function updateTitre()
-    {
-        //MAJ titre
-    }
-
-    public function deleteTitre()
-    {
-        //supprimer un titre
-    }
 
 }

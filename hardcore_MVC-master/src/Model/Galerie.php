@@ -39,13 +39,5 @@ class Galerie{
         $this->photo = $photo;
     }
 
-    public function addPhoto()
-    {
-        //ajout de photos
-    }
 
-    public function deletePhoto()
-    {
-        //suppression de photos
-    }
 }
