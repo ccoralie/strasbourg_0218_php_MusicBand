@@ -1,0 +1,121 @@
+<?php
+
+namespace Model;
+
+class Album
+{
+    private $id;
+    private $album;
+    private $pochetteAlbum;
+    private $extraitMusique;
+
+
+    /**
+     * @return mixed
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * @param mixed $id
+     */
+    public function setId($id)
+    {
+        $this->id = $id;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getAlbum()
+    {
+        return $this->album;
+    }
+
+    /**
+     * @param mixed $album
+     */
+    public function setAlbum($album)
+    {
+        $this->album = $album;
+    }
+
+    public function addAlbum()
+    {
+        //ajout album
+    }
+
+    public function updateAlbum()
+    {
+        //MAJ album
+    }
+
+    public function deleteAlbum()
+    {
+
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getPochetteAlbum()
+    {
+        return $this->pochetteAlbum;
+    }
+
+    /**
+     * @param mixed $pochetteAlbum
+     */
+    public function setPochetteAlbum($pochetteAlbum)
+    {
+        $this->pochetteAlbum = $pochetteAlbum;
+    }
+
+    public function addPochetteAlbum()
+    {
+        //ajout pochette
+    }
+
+    public function updatePochetteAlbum()
+    {
+        //MAJ pochette
+    }
+
+    public  function deletePochetteAlbum()
+    {
+        //supprimer pochette
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getExtraitMusique()
+    {
+        return $this->extraitMusique;
+    }
+
+    /**
+     * @param mixed $extraitMusique
+     */
+    public function setExtraitMusique($extraitMusique)
+    {
+        $this->extraitMusique = $extraitMusique;
+    }
+
+    public function addExtraitMusique()
+    {
+        //ajout musique
+    }
+
+    public function deleteExtraitMusique()
+    {
+        //supprimer musique
+    }
+
+    public function lectureExtraitMusique()
+    {
+        //lecture de la musique
+    }
+}
