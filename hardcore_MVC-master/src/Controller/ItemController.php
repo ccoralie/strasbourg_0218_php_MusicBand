@@ -23,8 +23,7 @@ class ItemController extends AbstractController
      */
     public function index()
     {
-        $itemManager = new ItemManager();
-        $items = $itemManager->findAll();
+
 
         return $this->twig->render('Item/index.html.twig', ['items' => $items]);
     }

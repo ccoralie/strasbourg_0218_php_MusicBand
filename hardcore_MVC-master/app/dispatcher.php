@@ -13,13 +13,19 @@ $dispatcher = FastRoute\simpleDispatcher(function(FastRoute\RouteCollector $r) {
     $r->addRoute('GET', '/item/{id:\d+}', 'Item/show');
     $r->addRoute('GET', '/item/add', 'Item/add');
     $r->addRoute('GET', '/item/edit/{id:\d+}', 'Item/edit');
-    $r->addRoute('GET', '/admin', 'Admin/index');
     $r->addRoute('GET', '/fanClub', 'Item/fanClub');
     $r->addRoute('GET', '/accueil', 'Item/Accueil');
     $r->addRoute('GET', '/Goodies', 'Item/Goodies');
     $r->addRoute('GET', '/Discographie', 'Item/Discographie');
     $r->addRoute('GET', '/Worldtour', 'Item/Worldtour');
     $r->addRoute('GET', '/Galerie', 'Item/Galerie');
+
+    $r->addRoute('GET', '/index', 'Admin/index');
+    $r->addRoute('GET', '/loginAdmin', 'Admin/loginAdmin');
+    $r->addRoute('POST', '/loginAdmin', 'Admin/loginAdmin');
+    $r->addRoute('GET', '/admin', 'Admin/admin');
+    $r->addRoute('POST', '/admin', 'Admin/admin');
+
 });
 
 // Fetch method and URI from somewhere
