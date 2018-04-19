@@ -1,0 +1,14 @@
+body {
+    margin-top: 160px;
+    background-image: url(http://rallytv.org/wp-content/uploads/2018/03/html-website-background-color-web-page-colors-copy-op-and-best-of-for.jpg);
+}
+
+h1{
+    color: white;
+    font-family: 'Mina', sans-serif;
+    text-align: center;
+}
+
+.container{
+    margin-top: 30px;
+}

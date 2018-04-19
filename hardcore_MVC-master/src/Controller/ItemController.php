@@ -120,7 +120,7 @@ class ItemController extends AbstractController
      * @return string
      */
 
-    public function Gallerie()
+    public function Galerie()
     {
         return $this->twig->render('Pages/galerie.html.twig');
     }
