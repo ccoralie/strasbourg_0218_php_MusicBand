@@ -33,7 +33,8 @@ class AdminController extends AbstractController
                 return $this->twig->render('Admin/adminPage.html.twig');
             } else
                 $Error = "Veuillez entrer un couple nom d'utilisateur et mot de passe valide";
-                return $this->twig->render('Admin/index.html.twig');
+            return $this->twig->render('Admin/index.html.twig', ['Error'=>$Error]);
+            return $this->twig->render('Admin/index.html.twig');
         }
     }
 
