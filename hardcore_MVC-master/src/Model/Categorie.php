@@ -32,6 +32,4 @@ class Categorie extends Goodies
     }
 
 
-
-
 }

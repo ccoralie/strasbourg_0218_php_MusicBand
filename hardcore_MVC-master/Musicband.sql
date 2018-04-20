@@ -1,226 +1,265 @@
--- MySQL dump 10.13  Distrib 5.6.38, for osx10.9 (x86_64)
+-- phpMyAdmin SQL Dump
+-- version 4.5.4.1deb2ubuntu2
+-- http://www.phpmyadmin.net
 --
--- Host: localhost    Database: Musicband
--- ------------------------------------------------------
--- Server version	5.6.38
+-- Client :  localhost
+-- Généré le :  Mer 18 Avril 2018 à 17:39
+-- Version du serveur :  5.7.21-0ubuntu0.16.04.1
+-- Version de PHP :  7.0.28-0ubuntu0.16.04.1
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8 */;
-/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
-/*!40103 SET TIME_ZONE='+00:00' */;
-/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
-/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
-/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
-/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+/*!40101 SET NAMES utf8mb4 */;
 
 --
--- Table structure for table `Album`
+-- Base de données :  `Musicband`
 --
 
-DROP TABLE IF EXISTS `Album`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `Album`
+--
+
 CREATE TABLE `Album` (
-  `id` int(20) NOT NULL AUTO_INCREMENT,
-  `album` varchar(45) DEFAULT NULL,
-  PRIMARY KEY (`id`)
+  `id` int(20) NOT NULL,
+  `album` varchar(45) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+
+-- --------------------------------------------------------
 
 --
--- Dumping data for table `Album`
+-- Structure de la table `Article`
 --
 
-LOCK TABLES `Album` WRITE;
-/*!40000 ALTER TABLE `Album` DISABLE KEYS */;
-/*!40000 ALTER TABLE `Album` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `Article`
---
-
-DROP TABLE IF EXISTS `Article`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `Article` (
-  `id` int(20) NOT NULL AUTO_INCREMENT,
+  `id` int(20) NOT NULL,
   `article` text,
-  `titre` varchar(45) DEFAULT NULL,
-  PRIMARY KEY (`id`)
+  `titre` varchar(45) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+
+-- --------------------------------------------------------
 
 --
--- Dumping data for table `Article`
+-- Structure de la table `Categorie`
 --
 
-LOCK TABLES `Article` WRITE;
-/*!40000 ALTER TABLE `Article` DISABLE KEYS */;
-/*!40000 ALTER TABLE `Article` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `Categorie`
---
-
-DROP TABLE IF EXISTS `Categorie`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `Categorie` (
-  `id` int(20) NOT NULL AUTO_INCREMENT,
-  `type` varchar(45) DEFAULT NULL,
-  PRIMARY KEY (`id`)
+  `id` int(20) NOT NULL,
+  `type` varchar(45) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+
+-- --------------------------------------------------------
 
 --
--- Dumping data for table `Categorie`
+-- Structure de la table `Chanson`
 --
 
-LOCK TABLES `Categorie` WRITE;
-/*!40000 ALTER TABLE `Categorie` DISABLE KEYS */;
-/*!40000 ALTER TABLE `Categorie` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `Chanson`
---
-
-DROP TABLE IF EXISTS `Chanson`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `Chanson` (
-  `id` int(20) NOT NULL AUTO_INCREMENT,
+  `id` int(20) NOT NULL,
   `chanson` varchar(45) DEFAULT NULL,
-  `album_id` int(20) DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  KEY `album_id` (`album_id`),
-  CONSTRAINT `chanson_ibfk_1` FOREIGN KEY (`album_id`) REFERENCES `Album` (`id`)
+  `album_id` int(20) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+
+-- --------------------------------------------------------
 
 --
--- Dumping data for table `Chanson`
+-- Structure de la table `Galerie`
 --
 
-LOCK TABLES `Chanson` WRITE;
-/*!40000 ALTER TABLE `Chanson` DISABLE KEYS */;
-/*!40000 ALTER TABLE `Chanson` ENABLE KEYS */;
-UNLOCK TABLES;
+CREATE TABLE `Galerie` (
+  `id` int(11) NOT NULL,
+  `photo` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
 
 --
--- Table structure for table `Goodies`
+-- Structure de la table `Goodies`
 --
 
-DROP TABLE IF EXISTS `Goodies`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `Goodies` (
-  `id` int(20) NOT NULL AUTO_INCREMENT,
+  `id` int(20) NOT NULL,
   `goodies` varchar(45) DEFAULT NULL,
   `prix` decimal(8,2) NOT NULL,
   `reference` varchar(45) DEFAULT NULL,
-  `categorie_id` int(11) DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  KEY `categorie_id` (`categorie_id`),
-  CONSTRAINT `goodies_ibfk_1` FOREIGN KEY (`categorie_id`) REFERENCES `Categorie` (`id`)
+  `categorie_id` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+
+-- --------------------------------------------------------
 
 --
--- Dumping data for table `Goodies`
+-- Structure de la table `Newsletter`
 --
 
-LOCK TABLES `Goodies` WRITE;
-/*!40000 ALTER TABLE `Goodies` DISABLE KEYS */;
-/*!40000 ALTER TABLE `Goodies` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `Newsletter`
---
-
-DROP TABLE IF EXISTS `Newsletter`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `Newsletter` (
-  `id` int(20) NOT NULL AUTO_INCREMENT,
+  `id` int(20) NOT NULL,
   `nom` varchar(45) DEFAULT NULL,
-  `mail` varchar(320) DEFAULT NULL,
-  PRIMARY KEY (`id`)
+  `mail` varchar(320) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+
+-- --------------------------------------------------------
 
 --
--- Dumping data for table `Newsletter`
+-- Structure de la table `Stock`
 --
 
-LOCK TABLES `Newsletter` WRITE;
-/*!40000 ALTER TABLE `Newsletter` DISABLE KEYS */;
-/*!40000 ALTER TABLE `Newsletter` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `Stock`
---
-
-DROP TABLE IF EXISTS `Stock`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `Stock` (
-  `id` int(20) NOT NULL AUTO_INCREMENT,
+  `id` int(20) NOT NULL,
   `stock` int(20) DEFAULT NULL,
-  `reference_id` int(20) DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  KEY `reference_id` (`reference_id`),
-  CONSTRAINT `stock_ibfk_1` FOREIGN KEY (`reference_id`) REFERENCES `Goodies` (`id`)
+  `reference_id` int(20) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+
+-- --------------------------------------------------------
 
 --
--- Dumping data for table `Stock`
+-- Structure de la table `Worldtour`
 --
 
-LOCK TABLES `Stock` WRITE;
-/*!40000 ALTER TABLE `Stock` DISABLE KEYS */;
-/*!40000 ALTER TABLE `Stock` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `Worldtour`
---
-
-DROP TABLE IF EXISTS `Worldtour`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `Worldtour` (
-  `id` int(20) NOT NULL AUTO_INCREMENT,
+  `id` int(20) NOT NULL,
   `dateconcert` date DEFAULT NULL,
   `ville` varchar(45) DEFAULT NULL,
-  `salle` varchar(45) DEFAULT NULL,
-  PRIMARY KEY (`id`)
+  `salle` varchar(45) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `Worldtour`
+-- Index pour les tables exportées
 --
 
-LOCK TABLES `Worldtour` WRITE;
-/*!40000 ALTER TABLE `Worldtour` DISABLE KEYS */;
-/*!40000 ALTER TABLE `Worldtour` ENABLE KEYS */;
-UNLOCK TABLES;
-/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+--
+-- Index pour la table `Album`
+--
+ALTER TABLE `Album`
+  ADD PRIMARY KEY (`id`);
 
-/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
-/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
-/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+--
+-- Index pour la table `Article`
+--
+ALTER TABLE `Article`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Index pour la table `Categorie`
+--
+ALTER TABLE `Categorie`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Index pour la table `Chanson`
+--
+ALTER TABLE `Chanson`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `album_id` (`album_id`);
+
+--
+-- Index pour la table `Galerie`
+--
+ALTER TABLE `Galerie`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Index pour la table `Goodies`
+--
+ALTER TABLE `Goodies`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `categorie_id` (`categorie_id`);
+
+--
+-- Index pour la table `Newsletter`
+--
+ALTER TABLE `Newsletter`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Index pour la table `Stock`
+--
+ALTER TABLE `Stock`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `reference_id` (`reference_id`);
+
+--
+-- Index pour la table `Worldtour`
+--
+ALTER TABLE `Worldtour`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT pour les tables exportées
+--
+
+--
+-- AUTO_INCREMENT pour la table `Album`
+--
+ALTER TABLE `Album`
+  MODIFY `id` int(20) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT pour la table `Article`
+--
+ALTER TABLE `Article`
+  MODIFY `id` int(20) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT pour la table `Categorie`
+--
+ALTER TABLE `Categorie`
+  MODIFY `id` int(20) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT pour la table `Chanson`
+--
+ALTER TABLE `Chanson`
+  MODIFY `id` int(20) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT pour la table `Galerie`
+--
+ALTER TABLE `Galerie`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT pour la table `Goodies`
+--
+ALTER TABLE `Goodies`
+  MODIFY `id` int(20) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT pour la table `Newsletter`
+--
+ALTER TABLE `Newsletter`
+  MODIFY `id` int(20) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT pour la table `Stock`
+--
+ALTER TABLE `Stock`
+  MODIFY `id` int(20) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT pour la table `Worldtour`
+--
+ALTER TABLE `Worldtour`
+  MODIFY `id` int(20) NOT NULL AUTO_INCREMENT;
+--
+-- Contraintes pour les tables exportées
+--
+
+--
+-- Contraintes pour la table `Chanson`
+--
+ALTER TABLE `Chanson`
+  ADD CONSTRAINT `chanson_ibfk_1` FOREIGN KEY (`album_id`) REFERENCES `Album` (`id`);
+
+--
+-- Contraintes pour la table `Goodies`
+--
+ALTER TABLE `Goodies`
+  ADD CONSTRAINT `goodies_ibfk_1` FOREIGN KEY (`categorie_id`) REFERENCES `Categorie` (`id`);
+
+--
+-- Contraintes pour la table `Stock`
+--
+ALTER TABLE `Stock`
+  ADD CONSTRAINT `stock_ibfk_1` FOREIGN KEY (`reference_id`) REFERENCES `Goodies` (`id`);
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
-/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
-
--- Dump completed on 2018-04-11 16:20:02

@@ -12,5 +12,11 @@ namespace Model;
 class WorldtourManager extends EntityManager
 {
 
+    const TABLE = 'Worldtour';
 
+
+    public function __construct()
+    {
+        parent::__construct(self::TABLE);
+    }
 }
