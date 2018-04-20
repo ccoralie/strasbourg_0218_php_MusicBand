@@ -12,5 +12,11 @@ namespace Model;
 class GalerieManager extends EntityManager
 {
 
+    const TABLE = 'Galerie';
 
+
+    public function __construct()
+    {
+        parent::__construct(self::TABLE);
+    }
 }

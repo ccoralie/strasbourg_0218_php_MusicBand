@@ -11,6 +11,12 @@ namespace Model;
 
 class CategorieManager extends EntityManager
 {
+    const TABLE = 'Categorie';
 
+
+    public function __construct()
+    {
+        parent::__construct(self::TABLE);
+    }
 
 }

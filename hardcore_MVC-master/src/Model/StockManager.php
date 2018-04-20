@@ -11,6 +11,12 @@ namespace Model;
 
 class StockManager extends EntityManager
 {
+    const TABLE = 'Stock';
 
+
+    public function __construct()
+    {
+        parent::__construct(self::TABLE);
+    }
 
 }

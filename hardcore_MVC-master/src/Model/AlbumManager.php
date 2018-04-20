@@ -11,6 +11,12 @@ namespace Model;
 
 class AlbumManager extends EntityManager
 {
+    const TABLE = 'Album';
 
+
+    public function __construct()
+    {
+        parent::__construct(self::TABLE);
+    }
 
 }

@@ -12,5 +12,11 @@ namespace Model;
 class GoodiesManager extends EntityManager
 {
 
+    const TABLE = 'Goodies';
 
+
+    public function __construct()
+    {
+        parent::__construct(self::TABLE);
+    }
 }
