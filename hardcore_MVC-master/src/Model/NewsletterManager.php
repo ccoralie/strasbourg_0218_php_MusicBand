@@ -12,5 +12,11 @@ namespace Model;
 class NewsletterManager extends EntityManager
 {
 
+    const TABLE = 'Newsletter';
 
+
+    public function __construct()
+    {
+        parent::__construct(self::TABLE);
+    }
 }

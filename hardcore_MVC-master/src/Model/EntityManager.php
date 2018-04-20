@@ -50,6 +50,13 @@ abstract class EntityManager
     public function delete($id)
     {
         //TODO : Implements SQL DELETE request
+
+        // prepared request
+        $statement = $this->conn->prepare("DELETE * FROM $this->table WHERE id=:id");
+        $statement->bindValue('id', $id, \PDO::PARAM_INT);
+        $statement->execute();
+
+        return $statement->fetch(\PDO::FETCH_ASSOC);
     }
 
     /**
@@ -58,6 +65,16 @@ abstract class EntityManager
     public function insert($data)
     {
         //TODO : Implements SQL INSERT request
+        // prepared request
+
+
+        $statement = $this->conn->prepare("INSERT INTO $this->table (name, data) VALUES (:name, :data)");
+        $statement->bindParam(':name', $name);
+        $statement->bindParam(':data', $data);
+        $statement->execute();
+
+        return $statement->fetch(\PDO::FETCH_ASSOC);
+
     }
 
 
@@ -67,6 +84,13 @@ abstract class EntityManager
     public function update($id, $data)
     {
         //TODO : Implements SQL UPDATE request
+
+        $statement = $this->conn->prepare("UPDATE $this->table SET data = :data WHERE id= :id ");
+        $statement->bindParam(':data', $data);
+        $statement->bindParam(':id', $id);
+        $statement->execute();
+
+        return $statement->fetch(\PDO::FETCH_ASSOC);
     }
 
 

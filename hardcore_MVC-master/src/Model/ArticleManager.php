@@ -11,6 +11,12 @@ namespace Model;
 
 class ArticleManager extends EntityManager
 {
+    const TABLE = 'Article';
 
+
+    public function __construct()
+    {
+        parent::__construct(self::TABLE);
+    }
 
 }
