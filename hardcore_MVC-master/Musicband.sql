@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  localhost
--- Généré le :  Mer 18 Avril 2018 à 17:39
+-- Généré le :  Ven 20 Avril 2018 à 14:27
 -- Version du serveur :  5.7.21-0ubuntu0.16.04.1
 -- Version de PHP :  7.0.28-0ubuntu0.16.04.1
 
@@ -65,6 +65,18 @@ CREATE TABLE `Chanson` (
   `chanson` varchar(45) DEFAULT NULL,
   `album_id` int(20) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `Connexion`
+--
+
+CREATE TABLE `Connexion` (
+  `id` int(11) NOT NULL,
+  `user` varchar(55) NOT NULL,
+  `pwd` varchar(55) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -156,6 +168,12 @@ ALTER TABLE `Categorie`
 ALTER TABLE `Chanson`
   ADD PRIMARY KEY (`id`),
   ADD KEY `album_id` (`album_id`);
+
+--
+-- Index pour la table `Connexion`
+--
+ALTER TABLE `Connexion`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Index pour la table `Galerie`
