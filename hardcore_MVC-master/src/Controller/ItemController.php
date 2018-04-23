@@ -8,6 +8,7 @@
 
 namespace Controller;
 
+use Model\GalerieManager;
 use Model\ArticleManager;
 use Model\CarouselManager;
 use Model\Item;
@@ -139,7 +140,11 @@ class ItemController extends AbstractController
 
     public function Galerie()
     {
-        return $this->twig->render('Pages/galerie.html.twig');
+        $galerieManager = new GalerieManager();
+        $galerie = $galerieManager->findAll();
+
+
+        return $this->twig->render('Pages/galerie.html.twig', ['galerie' => $galerie]);
     }
 
 
