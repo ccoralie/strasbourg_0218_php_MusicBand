@@ -19,4 +19,6 @@ class ArticleManager extends EntityManager
         parent::__construct(self::TABLE);
     }
 
+
+
 }

@@ -1,5 +1,7 @@
 <?php
 
+
+
 namespace Controller;
 
 /**
@@ -37,6 +39,16 @@ class AdminController extends AbstractController
             return $this->twig->render('Admin/index.html.twig');
         }
     }
+
+    /**
+     * @return string
+     * @throws \Twig_Error_Loader
+     * @throws \Twig_Error_Runtime
+     * @throws \Twig_Error_Syntax
+     */
+
+
+    
 
 
 

@@ -8,6 +8,7 @@
 
 namespace Controller;
 
+use Model\WorldtourManager;
 use Model\GalerieManager;
 use Model\ArticleManager;
 use Model\CarouselManager;
@@ -61,6 +62,8 @@ class ItemController extends AbstractController
     public function add()
     {
         // TODO : add a new item
+
+
         return $this->twig->render('Item/add.html.twig');
     }
 
@@ -131,7 +134,10 @@ class ItemController extends AbstractController
 
     public function Worldtour()
     {
-        return $this->twig->render('Pages/worldtour.html.twig');
+
+        $worldtourManager = new WorldtourManager();
+        $worldtour= $worldtourManager->findAll();
+        return $this->twig->render('Pages/worldtour.html.twig', ['worldtour' => $worldtour]);
     }
 
     /**

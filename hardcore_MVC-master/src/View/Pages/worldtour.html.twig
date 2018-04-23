@@ -20,76 +20,17 @@
                         <div class="tablechild">
 
                             <tbody>
+                            {% for entity in worldtour %}
+
 
                                 <tr>
-                                    <td>04.12.18</td>
-                                    <td>Ruffach</td>
-                                    <td>Salle Polyvalente</td>
+                                    <td>{{ entity.dateconcert }}</td>
+                                    <td>{{ entity.ville }}</td>
+                                    <td>{{ entity.salle }}</td>
                                 </tr>
+                            {% endfor %}
 
-                                <tr>
-                                    <td>06.12.18</td>
-                                    <td>Vendeheim</td>
-                                    <td>Paroisse Communale</td>
-                                </tr>
 
-                                <tr>
-                                    <td>10.12.18</td>
-                                    <td>Brumath</td>
-                                    <td>Salle des Fêtes</td>
-                                </tr>
-
-                                <tr>
-                                    <td>13.12.18</td>
-                                    <td>Haguenau</td>
-                                    <td>Marché de Noël</td>
-                                </tr>
-
-                                <tr>
-                                    <td>20.12.18</td>
-                                    <td>Strasbourg</td>
-                                    <td>Cathédrale</td>
-                                </tr>
-
-                                <tr>
-                                    <td>04.01.19</td>
-                                    <td>Bentdorf</td>
-                                    <td>Place de l'église</td>
-                                </tr>
-
-                                <tr>
-                                    <td>10.01.19</td>
-                                    <td>Kehl</td>
-                                    <td>Chez Kyle</td>
-                                </tr>
-
-                                <tr>
-                                    <td>11.01.19</td>
-                                    <td>Karlsruhe</td>
-                                    <td>fête de la Bière (avec Kyle)</td>
-                                </tr>
-
-                                <tr>
-                                    <td>17.01.19</td>
-                                    <td>Metz</td>
-                                    <td>Ecole primaire les rosiers</td>
-                                </tr>
-
-                                <tr>
-                                    <td>28.01.19</td>
-                                    <td>Amiens</td>
-                                    <td>Franck Arena</td>
-                                </tr>
-                                <tr>
-                                    <td>06.02.19</td>
-                                    <td>Paris</td>
-                                    <td>Aux Trois Maillets</td>
-                                </tr>
-                                <tr>
-                                    <td>13.02.19</td>
-                                    <td>Paris</td>
-                                    <td>Le café Oscar</td>
-                                </tr>
                             </tbody>
                         </div>
                     </table>

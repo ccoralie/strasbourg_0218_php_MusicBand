@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  localhost
--- Généré le :  Lun 23 Avril 2018 à 13:15
+-- Généré le :  Lun 23 Avril 2018 à 16:37
 -- Version du serveur :  5.7.21-0ubuntu0.16.04.1
 -- Version de PHP :  7.0.28-0ubuntu0.16.04.1
 
@@ -157,6 +157,23 @@ CREATE TABLE `Worldtour` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
+-- Contenu de la table `Worldtour`
+--
+
+INSERT INTO `Worldtour` (`id`, `dateconcert`, `ville`, `salle`) VALUES
+(1, '2018-12-04', 'Ruffach', 'Salle Polyvalente'),
+(2, '2018-12-06', 'Vendeheim', 'Paroisse Communale'),
+(3, '2018-12-10', 'Brumath', 'Salle des Fêtes'),
+(4, '2018-12-13', 'Haguenau', 'Marché de Noël'),
+(5, '2018-12-20', 'Strasbourg', 'Cathédrale'),
+(6, '2019-01-04', 'Bentdorf', 'Place de l\'église'),
+(7, '2019-01-10', 'Kehl', 'Chez Kyle'),
+(8, '2019-01-11', 'Karlsruhe', 'fête de la Bière (avec Kyle)'),
+(9, '2019-01-17', 'Metz', 'Ecole primaire les rosiers'),
+(10, '2019-01-28', 'Amiens', 'Franck Arena'),
+(11, '2019-02-06', 'Paris', 'Aux Trois Maillets');
+
+--
 -- Index pour les tables exportées
 --
 
@@ -265,7 +282,7 @@ ALTER TABLE `Stock`
 -- AUTO_INCREMENT pour la table `Worldtour`
 --
 ALTER TABLE `Worldtour`
-  MODIFY `id` int(20) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 --
 -- Contraintes pour les tables exportées
 --
