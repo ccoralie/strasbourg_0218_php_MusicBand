@@ -8,6 +8,8 @@
 
 namespace Controller;
 
+use Model\ArticleManager;
+use Model\CarouselManager;
 use Model\Item;
 use Model\ItemManager;
 
@@ -86,7 +88,22 @@ class ItemController extends AbstractController
 
     public function Accueil()
     {
-        return $this->twig->render('Pages/accueil.html.twig');
+        $carouselManager = new CarouselManager();
+        $carousel = $carouselManager->findAll();
+
+        $articleManager = new ArticleManager();
+        $article = $articleManager->findAll();
+
+
+        return $this->twig->render('Pages/accueil.html.twig', ['carousel' => $carousel , 'article' => $article]);
+    }
+
+    public function accueilShow(int $id)
+    {
+        $articleManager = new ArticleManager();
+        $article = $articleManager->findOneById($id);
+
+        return $this->twig->render('Page/accueil.html.twig', ['article' => $article]);
     }
 
     /**

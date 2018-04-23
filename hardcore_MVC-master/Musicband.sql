@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  localhost
--- Généré le :  Ven 20 Avril 2018 à 14:27
+-- Généré le :  Lun 23 Avril 2018 à 13:15
 -- Version du serveur :  5.7.21-0ubuntu0.16.04.1
 -- Version de PHP :  7.0.28-0ubuntu0.16.04.1
 
@@ -43,6 +43,16 @@ CREATE TABLE `Article` (
   `titre` varchar(45) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Contenu de la table `Article`
+--
+
+INSERT INTO `Article` (`id`, `article`, `titre`) VALUES
+(1, 'Découvrez en exclusivité notre prochain album "Rock\'n\'Wild" le 10 septembre 2018 !', 'Nouvel album'),
+(2, 'De retour sur scène à partir du 4 décembre 2018 à la salle polyvalente de Ruffach !', 'Prochaine tournée'),
+(3, 'Rendez-vous chez Kyle le 10 janvier 2019 pour une soirée wild ', 'Evénement '),
+(4, 'Devenez membre de notre fan club, et recevez en exclusivité toute l\'actu de Franck and the Wilders', 'Fan club ');
+
 -- --------------------------------------------------------
 
 --
@@ -69,18 +79,6 @@ CREATE TABLE `Chanson` (
 -- --------------------------------------------------------
 
 --
--- Structure de la table `Connexion`
---
-
-CREATE TABLE `Connexion` (
-  `id` int(11) NOT NULL,
-  `user` varchar(55) NOT NULL,
-  `pwd` varchar(55) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
---
 -- Structure de la table `Galerie`
 --
 
@@ -88,6 +86,24 @@ CREATE TABLE `Galerie` (
   `id` int(11) NOT NULL,
   `photo` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Contenu de la table `Galerie`
+--
+
+INSERT INTO `Galerie` (`id`, `photo`) VALUES
+(1, '/assets/images/Galerie/concert2.jpg'),
+(2, '/assets/images/Galerie/concert.jpg'),
+(3, '/assets/images/Galerie/elvis.jpg'),
+(4, '/assets/images/Galerie/foule.jpg'),
+(5, '/assets/images/Galerie/guitar-3131893_960_720.jpg'),
+(6, '/assets/images/Galerie/guitar-3131895_960_720.jpg'),
+(7, '/assets/images/Galerie/guitar-3264304_960_720.jpg'),
+(8, '/assets/images/Galerie/guitar-905999_960_720.jpg'),
+(9, '/assets/images/Galerie/hand-2825166_960_720.jpg'),
+(10, '/assets/images/Galerie/performance-3158570_960_720.jpg'),
+(11, '/assets/images/Galerie/photo.jpg'),
+(12, '/assets/images/Galerie/rock-1560871__340.jpg');
 
 -- --------------------------------------------------------
 
@@ -170,12 +186,6 @@ ALTER TABLE `Chanson`
   ADD KEY `album_id` (`album_id`);
 
 --
--- Index pour la table `Connexion`
---
-ALTER TABLE `Connexion`
-  ADD PRIMARY KEY (`id`);
-
---
 -- Index pour la table `Galerie`
 --
 ALTER TABLE `Galerie`
@@ -220,7 +230,7 @@ ALTER TABLE `Album`
 -- AUTO_INCREMENT pour la table `Article`
 --
 ALTER TABLE `Article`
-  MODIFY `id` int(20) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT pour la table `Categorie`
 --
@@ -235,7 +245,7 @@ ALTER TABLE `Chanson`
 -- AUTO_INCREMENT pour la table `Galerie`
 --
 ALTER TABLE `Galerie`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 --
 -- AUTO_INCREMENT pour la table `Goodies`
 --

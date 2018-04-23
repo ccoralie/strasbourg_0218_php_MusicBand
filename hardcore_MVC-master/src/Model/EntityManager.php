@@ -57,6 +57,7 @@ abstract class EntityManager
         $statement->execute();
 
         return $statement->fetch(\PDO::FETCH_ASSOC);
+
     }
 
     /**

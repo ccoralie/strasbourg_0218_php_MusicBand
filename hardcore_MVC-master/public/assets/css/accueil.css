@@ -3,10 +3,12 @@ body p{
     font-size: 1.5em;
 }
 
+
+
 /*CAROUSEL*/
 
 /*CARROUSSEL GENERAL*/
-.carousel-control-prev-icon,
+/*.carousel-control-prev-icon,
 .carousel-control-next-icon {
     height: 100px;
     width: 100px;
@@ -22,7 +24,7 @@ body p{
     font-weight: bolder;
 }
 
-/*.carousel-control-prev-icon:after {
+.carousel-control-prev-icon:after {
     content: '<';
     font-size: 60px;
     color: white;
