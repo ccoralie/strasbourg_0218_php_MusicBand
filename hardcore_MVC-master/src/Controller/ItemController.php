@@ -8,6 +8,8 @@
 
 namespace Controller;
 
+use Model\CategorieManager;
+use Model\GoodiesManager;
 use Model\WorldtourManager;
 use Model\GalerieManager;
 use Model\ArticleManager;
@@ -150,6 +152,23 @@ class ItemController extends AbstractController
     public function Goodies()
     {
         return $this->twig->render('Pages/goodies.html.twig');
+    }
+
+    public function menuGoodies()
+    {
+        $CategorieManager = new CategorieManager();
+        $menuGoodies = $CategorieManager->getTypeCategorie();
+        return $this->twig->render('Pages/goodies.html.twig', ['menuGoodies' => $menuGoodies]);
+    }
+
+    public function affichageParGoodiesCategorie($GetId)
+    {
+        $GoodiesManager = new GoodiesManager();
+        $affichageParGoodiesCategorie = $GoodiesManager->GoodiesParCategorie($GetId);
+
+        $CategorieManager = new CategorieManager();
+        $menuGoodies = $CategorieManager->getTypeCategorie();
+        return $this->twig->render('Pages/goodies.html.twig', ['affichageParGoodiesCategorie' => $affichageParGoodiesCategorie, 'menuGoodies' => $menuGoodies]);
     }
 
     /**
