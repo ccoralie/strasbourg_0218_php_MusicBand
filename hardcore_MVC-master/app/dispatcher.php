@@ -13,8 +13,9 @@ $dispatcher = FastRoute\simpleDispatcher(function(FastRoute\RouteCollector $r) {
     $r->addRoute('GET', '/item/{id:\d+}', 'Item/show');
     $r->addRoute('GET', '/item/add', 'Item/add');
     $r->addRoute('GET', '/item/edit/{id:\d+}', 'Item/edit');
-    $r->addRoute('GET', '/fanClub', 'Item/fanClub');
-    $r->addRoute('GET', '/accueil', 'Item/accueil');
+    $r->addRoute('GET', '/Newsletter', 'Item/Newsletter');
+    $r->addRoute('POST', '/addMail', 'Item/addSubscriber');
+    $r->addRoute('GET', '/accueil', 'Item/Accueil');
     $r->addRoute('GET', '/Goodies', 'Item/Goodies');
     $r->addRoute('GET', '/Discographie', 'Item/Discographie');
     $r->addRoute('GET', '/Worldtour', 'Item/Worldtour');
@@ -43,11 +44,11 @@ $uri = rawurldecode($uri);
 $routeInfo = $dispatcher->dispatch($httpMethod, $uri);
 switch ($routeInfo[0]) {
     case FastRoute\Dispatcher::NOT_FOUND:
-        // ... 404 Not Found
+        echo "404 NOT FOUND";
         break;
     case FastRoute\Dispatcher::METHOD_NOT_ALLOWED:
         $allowedMethods = $routeInfo[1];
-        // ... 405 Method Not Allowed
+        echo "405 METHOD NOT ALLOWED";
         break;
     case FastRoute\Dispatcher::FOUND:
         $handler = $routeInfo[1];

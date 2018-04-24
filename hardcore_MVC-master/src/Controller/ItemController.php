@@ -14,6 +14,7 @@ use Model\ArticleManager;
 use Model\CarouselManager;
 use Model\Item;
 use Model\ItemManager;
+use Model\NewsletterManager;
 
 /**
  * Class ItemController
@@ -81,9 +82,24 @@ class ItemController extends AbstractController
      * @return string
      */
 
-    public function fanClub()
+    public function Newsletter()
     {
         return $this->twig->render('Pages/fanClub.html.twig');
+    }
+
+    Public function addSubscriber()
+    {
+        if (isset($_POST['nom']) && isset($_POST['mail'])){
+            $nom=$_POST['nom'];
+            $mail=$_POST['mail'];
+
+            $addSubscriber = new NewsletterManager();
+            $addSubscriber->add($nom,$mail);
+            header('location: /Newsletter');
+        }else{
+            header('location: /Newsletter');
+        }
+
     }
 
     /**
