@@ -31,9 +31,6 @@
                                 {{ uneCategorie.type }}
                         </a>
                         {% endfor %}
-
-
-
                     </div>
                 </div>
             </nav>
@@ -41,9 +38,10 @@
             <div class="tz-gallery">
 
                 <!-- GALERIE IMAGE 1 -->
-                {% for REF in affichageParGoodiesCategorie %}
 
-                <div class="row md-3">
+                <div class="row md-12">
+
+                    {% for REF in affichageParGoodiesCategorie %}
 
                     <div class="col-md-4">
                         <div class="card">
@@ -82,9 +80,8 @@
                             </div>
                         </div>
                     </div>
+                    {% endfor %}    
                 </div>
-
-                {% endfor %}
             </div>
         </div>
     </div>
