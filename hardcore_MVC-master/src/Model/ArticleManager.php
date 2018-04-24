@@ -21,4 +21,5 @@ class ArticleManager extends EntityManager
 
 
 
+
 }

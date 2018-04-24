@@ -18,10 +18,10 @@
     <div class="row">
         <nav class="col-sm-3 col-md-2 hidden-xs-down bg-faded sidebar">
             <ul class="nav nav-pills flex-column">
-                <li class="nav-item">
-                    <a class="nav-link active" href="/adminPage">Tableau de bord <span class="sr-only">(current)</span></a>
-                </li>
 
+                <li class="nav-item">
+                    <a class="nav-link" href="/adminPage">Tableau de bord </a>
+                </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/adminGoodies">Goodies</a>
                 </li>
@@ -29,12 +29,14 @@
                     <a class="nav-link" href="/adminWorldtour">Prochains concerts</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/adminArticle">Actualité</a>
+                    <a class="nav-link active" href="/adminArticle">Actualité <span class="sr-only">(current)</span></a>
                 </li>
+
 
                 <li class="nav-item">
                     <a class="nav-link" href="/adminFanclub">Newsletter</a>
                 </li>
+
                 <li class="nav-item">
                     <a class="nav-link" href="/adminGalerie">Galerie photos</a>
                 </li>
@@ -47,21 +49,46 @@
 
         </nav>
 
+        {% endblock %}
+
+        {% block content %}
+
+
+
+
         <main class="col-sm-9 offset-sm-3 col-md-10 offset-md-2 pt-3">
-            <h1>Tableau de bord</h1>
+            <h1>Actualité</h1>
+
+
+            <div class="container newActu">
+
+                <div class="row ">
+                    {% for entity in article %}
+
+
+                        <div class="col-lg-offset-1  col-lg-5 col-sm-12 actu">
+                            <div class="titreActu">
+
+                                <h3>{{ entity.titre }}</h3>
+
+                            </div>
+
+                            <div class="textActu">
+                                <hr color='black'>
+                                <p>{{ entity.article }}</p>
+                            </div>
+                            <div>
+                            <button type="button" class="btn btn-warning">Modifier</button>
+                            </div>
+                            <br>
+
+                        </div>
+
+                    {% endfor %}
+                </div>
         </main>
-
     </div>
-
 </div>
-
-{% endblock %}
-
-{% block content %}
-
-
-
-
 
 
 
