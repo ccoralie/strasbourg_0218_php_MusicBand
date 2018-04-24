@@ -19,13 +19,5 @@ class CategorieManager extends EntityManager
         parent::__construct(self::TABLE);
     }
 
-    public function categorie($type)
-    {
-        $statement = $this->conn->prepare("SELECT type FROM $this->table ORDER BY type ASC");
-        $statement->bindValue('type', $type, \PDO::PARAM_INT);
-        $statement->execute();
-
-        return $statement->fetch(\PDO::FETCH_ASSOC);
-    }
 
 }
