@@ -3,6 +3,8 @@ body p{
     font-size: 1.5em;
 }
 
+
+
 /*CAROUSEL*/
 
 /*CARROUSSEL GENERAL*/
@@ -22,18 +24,12 @@ body p{
     font-weight: bolder;
 }
 
-/*.carousel-control-prev-icon:after {
+.carousel-control-prev-icon:after {
     content: '<';
     font-size: 60px;
     color: white;
     font-weight: bolder;
 }
-
-@media(max-width: 820px){
-
-    .carousel-control-next-icon{
-        font-size: 30px;
-    }
 
 /* Histoire du groupe*/
 .history h1{

@@ -8,8 +8,13 @@
 
 namespace Controller;
 
+use Model\WorldtourManager;
+use Model\GalerieManager;
+use Model\ArticleManager;
+use Model\CarouselManager;
 use Model\Item;
 use Model\ItemManager;
+use Model\NewsletterManager;
 
 /**
  * Class ItemController
@@ -58,6 +63,8 @@ class ItemController extends AbstractController
     public function add()
     {
         // TODO : add a new item
+
+
         return $this->twig->render('Item/add.html.twig');
     }
 
@@ -75,9 +82,24 @@ class ItemController extends AbstractController
      * @return string
      */
 
-    public function fanClub()
+    public function Newsletter()
     {
         return $this->twig->render('Pages/fanClub.html.twig');
+    }
+
+    Public function addSubscriber()
+    {
+        if (isset($_POST['nom']) && isset($_POST['mail'])){
+            $nom=$_POST['nom'];
+            $mail=$_POST['mail'];
+
+            $addSubscriber = new NewsletterManager();
+            $addSubscriber->add($nom,$mail);
+            header('location: /Newsletter');
+        }else{
+            header('location: /Newsletter');
+        }
+
     }
 
     /**
@@ -86,7 +108,22 @@ class ItemController extends AbstractController
 
     public function Accueil()
     {
-        return $this->twig->render('Pages/accueil.html.twig');
+        $carouselManager = new CarouselManager();
+        $carousel = $carouselManager->findAll();
+
+        $articleManager = new ArticleManager();
+        $article = $articleManager->findAll();
+
+
+        return $this->twig->render('Pages/accueil.html.twig', ['carousel' => $carousel , 'article' => $article]);
+    }
+
+    public function accueilShow(int $id)
+    {
+        $articleManager = new ArticleManager();
+        $article = $articleManager->findOneById($id);
+
+        return $this->twig->render('Page/accueil.html.twig', ['article' => $article]);
     }
 
     /**
@@ -113,7 +150,10 @@ class ItemController extends AbstractController
 
     public function Worldtour()
     {
-        return $this->twig->render('Pages/worldtour.html.twig');
+
+        $worldtourManager = new WorldtourManager();
+        $worldtour= $worldtourManager->findAll();
+        return $this->twig->render('Pages/worldtour.html.twig', ['worldtour' => $worldtour]);
     }
 
     /**
@@ -122,8 +162,14 @@ class ItemController extends AbstractController
 
     public function Galerie()
     {
-        return $this->twig->render('Pages/galerie.html.twig');
+        $galerieManager = new GalerieManager();
+        $galerie = $galerieManager->findAll();
+
+
+        return $this->twig->render('Pages/galerie.html.twig', ['galerie' => $galerie]);
     }
+    
+    
 
 
 

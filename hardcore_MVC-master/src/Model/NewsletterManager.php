@@ -19,4 +19,17 @@ class NewsletterManager extends EntityManager
     {
         parent::__construct(self::TABLE);
     }
+
+    public function add($nom,$mail)
+    {
+
+        $statement = $this->conn->prepare("INSERT INTO $this->table (nom,mail) VALUES (:nom, :mail)");
+        $statement->bindValue(':nom', $nom);
+        $statement->bindValue(':mail', $mail);
+        $statement->execute();
+
+
+    }
+
+
 }
