@@ -14,6 +14,8 @@ use Model\ArticleManager;
 use Model\CarouselManager;
 use Model\Item;
 use Model\ItemManager;
+use Model\AlbumManager;
+use Model\ChansonManager;
 use Model\NewsletterManager;
 
 /**
@@ -132,8 +134,14 @@ class ItemController extends AbstractController
 
     public function Discographie()
     {
-        return $this->twig->render('Pages/discographie.html.twig');
+        $AlbumManager = new AlbumManager();
+        $Album = $AlbumManager->findAll();
+        $ChansonManager = new ChansonManager();
+        $Chanson = $ChansonManager->findAll();
+        return $this->twig->render('Pages/discographie.html.twig', ['Album'=>$Album, 'Chanson'=>$Chanson]);
     }
+
+
 
     /**
      * @return string

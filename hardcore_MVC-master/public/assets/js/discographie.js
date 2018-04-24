@@ -1,4 +1,4 @@
-$("#st").click(function(){
+/*$("#st").click(function(){
     $("#stBlurb").fadeToggle();
      //  $("#div2").fadeToggle("slow");
    //$("#div3").fadeToggle(3000);
@@ -32,4 +32,4 @@ $("#slb").click(function(){
     $("#slbBlurb").fadeToggle();
     //   $("#div2").fadeToggle("slow");
 //    $("#div3").fadeToggle(3000);
-});
+}); */
