@@ -151,7 +151,8 @@ class ItemController extends AbstractController
 
     public function Goodies()
     {
-        return $this->twig->render('Pages/goodies.html.twig');
+
+        return $this->twig->render('Pages/goodies.html.twig', ['goodies' => $goodies]);
     }
 
     public function menuGoodies()
