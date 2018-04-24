@@ -10,6 +10,8 @@ namespace Controller;
 
 use Model\Item;
 use Model\ItemManager;
+use Model\AlbumManager;
+use Model\ChansonManager;
 
 /**
  * Class ItemController
@@ -95,8 +97,14 @@ class ItemController extends AbstractController
 
     public function Discographie()
     {
-        return $this->twig->render('Pages/discographie.html.twig');
+        $AlbumManager = new AlbumManager();
+        $Album = $AlbumManager->findAll();
+        $ChansonManager = new ChansonManager();
+        $Chanson = $ChansonManager->findAll();
+        return $this->twig->render('Pages/discographie.html.twig', ['Album'=>$Album, 'Chanson'=>$Chanson]);
     }
+
+
 
     /**
      * @return string

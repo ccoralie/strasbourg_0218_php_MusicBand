@@ -12,7 +12,6 @@ namespace Model;
 abstract class EntityManager
 {
     protected $conn; //variable de connexion
-
     protected $table;
 
    public function __construct($table)
