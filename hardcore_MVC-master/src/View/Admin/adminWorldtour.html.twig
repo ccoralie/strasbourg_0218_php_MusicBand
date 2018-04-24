@@ -1,0 +1,116 @@
+{% extends 'layout.html.twig' %}
+
+{% block stylesheet %}
+    {{ parent() }}
+
+    <link rel="stylesheet" href="/assets/css/admin.css">
+{% endblock %}
+
+{% block header %}
+    <nav class="navbar navbar-toggleable-md navbar-inverse fixed-top bg-inverse">
+
+        <a class="navbar-brand" href="/logout">Déconnexion</a>
+        <h5>Bonjour M. Olivier</h5>
+    </nav>
+
+
+<div class="container-fluid">
+    <div class="row">
+        <nav class="col-sm-3 col-md-2 hidden-xs-down bg-faded sidebar">
+            <ul class="nav nav-pills flex-column">
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/adminPage">Tableau de bord </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/adminGoodies">Goodies</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="/adminWorldtour">Prochains concerts<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link " href="/adminArticle">Actualité </a>
+                </li>
+
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/adminFanclub">Newsletter</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/adminGalerie">Galerie photos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/adminDiscographie">Discographie</a>
+                </li>
+
+            </ul>
+
+
+        </nav>
+
+        {% endblock %}
+
+        {% block content %}
+
+
+
+
+        <main class="col-sm-9 offset-sm-3 col-md-10 offset-md-2 pt-3">
+            <h1>Prochains concerts</h1>
+
+
+            <div class="container">
+
+                <form action="\adminWorldtour" method="post">
+
+                    <div>
+                        <label for='date'>Ajouter nouvelle date</label>
+                        <input type="date">
+                    </div>
+                    <div>
+                        <label for='ville'>Ajouter nouvelle ville</label>
+                        <input type="texte">
+                    </div>
+                        <label for='salle'>Ajouter nouvelle salle</label>
+                        <input type="texte">
+                    </div>
+
+                    <p><input type="submit" name="submit" value="Insérer" class="btn btn-success"></p>
+
+                </form>
+                <div class="row">
+                    <table class="table  col-xs-8">
+                        <div class="tablechild">
+
+                            <tbody>
+                            {% for entity in worldtour %}
+
+
+                                <tr>
+                                    <td>{{ entity.dateconcert }}</td>
+                                    <td>{{ entity.ville }}</td>
+                                    <td>{{ entity.salle }}</td>
+                                    <td><button type="button" class="btn btn-warning">Modifier</button></td>
+                                    <td><button type="button" class="btn btn-danger">Supprimer</button></td>
+                                </tr>
+                            {% endfor %}
+
+
+                            </tbody>
+                        </div>
+                    </table>
+                </div>
+            </div>
+        </main>
+    </div>
+    </div>
+
+
+
+
+{% endblock %}
+
+{% block footer %}
+{% endblock %}
+

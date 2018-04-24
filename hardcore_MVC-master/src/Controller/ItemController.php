@@ -152,6 +152,8 @@ class ItemController extends AbstractController
 
         return $this->twig->render('Pages/galerie.html.twig', ['galerie' => $galerie]);
     }
+    
+    
 
 
 
