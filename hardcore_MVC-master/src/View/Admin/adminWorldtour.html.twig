@@ -62,27 +62,26 @@
 
             <div class="container">
 
-                <form action="\adminWorldtour" method="post">
+                <form action="/addWorldtour" method="post">
 
-                    <form>
+
                         <div class="form-group">
                             <label for="formGroupExampleInput">Ajouter une nouvelle date</label>
-                            <input type="date" class="form-control" id="formGroupExampleInput" >
+                            <input type="date" class="form-control" name="dateconcert" id="formGroupExampleInput" >
                         </div>
                         <div class="form-group">
                             <label for="formGroupExampleInput2">Ajouter une ville</label>
-                            <input type="text" class="form-control" id="formGroupExampleInput2" >
+                            <input type="text" class="form-control" name="ville" id="formGroupExampleInput2" >
                         </div>
                         <div class="form-group">
                             <label for="formGroupExampleInput2">Ajouter une salle</label>
-                            <input type="text" class="form-control" id="formGroupExampleInput2" >
+                            <input type="text" class="form-control" name="salle" id="formGroupExampleInput2" >
                         </div>
-
-                    </form>
 
                     <p><input type="submit" name="submit" value="Insérer" class="btn btn-success"></p>
                     <br><br>
                 </form>
+
                 <div class="row">
                     <table class="table  col-xs-8">
                         <div class="tablechild">

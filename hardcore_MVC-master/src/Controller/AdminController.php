@@ -90,6 +90,25 @@ class AdminController extends AbstractController
     }
 
     /**
+     *
+     */
+    Public function addWorldtour()
+    {
+        if (isset($_POST['dateconcert']) && isset($_POST['ville']) && isset($_POST['salle'])){
+            $dateconcert=$_POST['dateconcert'];
+            $ville=$_POST['ville'];
+            $salle=$_POST['salle'];
+
+            $addWorldtour = new WorldtourManager();
+            $addWorldtour->add($dateconcert,$ville, $salle);
+            header('location: /adminWorldtour');
+        }else{
+            header('location: /adminWorldtour');
+        }
+
+    }
+
+    /**
      * @return string
      * @throws \Twig_Error_Loader
      * @throws \Twig_Error_Runtime
