@@ -64,20 +64,24 @@
 
                 <form action="\adminWorldtour" method="post">
 
-                    <div>
-                        <label for='date'>Ajouter nouvelle date</label>
-                        <input type="date">
-                    </div>
-                    <div>
-                        <label for='ville'>Ajouter nouvelle ville</label>
-                        <input type="texte">
-                    </div>
-                        <label for='salle'>Ajouter nouvelle salle</label>
-                        <input type="texte">
-                    </div>
+                    <form>
+                        <div class="form-group">
+                            <label for="formGroupExampleInput">Ajouter une nouvelle date</label>
+                            <input type="date" class="form-control" id="formGroupExampleInput" >
+                        </div>
+                        <div class="form-group">
+                            <label for="formGroupExampleInput2">Ajouter une ville</label>
+                            <input type="text" class="form-control" id="formGroupExampleInput2" >
+                        </div>
+                        <div class="form-group">
+                            <label for="formGroupExampleInput2">Ajouter une salle</label>
+                            <input type="text" class="form-control" id="formGroupExampleInput2" >
+                        </div>
+
+                    </form>
 
                     <p><input type="submit" name="submit" value="Insérer" class="btn btn-success"></p>
-
+                    <br><br>
                 </form>
                 <div class="row">
                     <table class="table  col-xs-8">
