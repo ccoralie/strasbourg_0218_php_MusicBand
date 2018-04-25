@@ -65,23 +65,23 @@
                 <div class="row ">
                     {% for entity in article %}
 
-
+                    <form action="/adminArticle" method="post" name="bogoss67">
                         <div class="col-lg-offset-1  col-lg-5 col-sm-12 actu">
+                            <label>Titre Article</label>
                             <div class="titreActu">
-
-                                <h3>{{ entity.titre }}</h3>
+                                <textarea>{{ entity.titre }}</textarea>
 
                             </div>
 
                             <div class="textActu">
                                 <hr color='black'>
-                                <p>{{ entity.article }}</p>
+                                <textarea style="width: 200px">{{ entity.article }}</textarea>
                             </div>
                             <div>
-                            <button type="button" class="btn btn-warning">Modifier</button>
+                            <button type="button" class="btn btn-warning" name="Modifier">Modifier</button>
                             </div>
                             <br>
-
+                    </form>
                         </div>
 
                     {% endfor %}

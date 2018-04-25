@@ -36,11 +36,11 @@ class AdminController extends AbstractController
             if ((isset($_POST["user"])) && (($_POST["user"]) == $vipUser) && (isset($_POST["pwd"])) && (($_POST["pwd"]) == $vipPwd)) {
                 $_SESSION['user'] = $_POST['user'];
                 $_SESSION['pwd'] = $_POST['pwd'];
-                return $this->twig->render('Admin/adminPage.html.twig');
+                $nameReturn= $_SESSION['user'];
+                return $this->twig->render('Admin/adminPage.html.twig', ['nameReturn' => $nameReturn]);
             } else
                 $Error = "Veuillez entrer un couple nom d'utilisateur et mot de passe valide";
             return $this->twig->render('Admin/index.html.twig', ['Error' => $Error]);
-            return $this->twig->render('Admin/index.html.twig');
         }
     }
 
@@ -115,6 +115,18 @@ class AdminController extends AbstractController
     {
         return $this->twig->render('Admin/adminGoodies.html.twig');
     }
+
+
+
+    public function logoutAdmin()
+    {
+        session_start();
+        session_unset();
+        session_destroy();
+        return $this->twig->render('Admin/index.html.twig');
+    }
+
+
 }
     /**
      * @return string
