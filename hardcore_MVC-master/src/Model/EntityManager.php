@@ -81,7 +81,7 @@ abstract class EntityManager
     /**
      *
      */
-    public function update($id, $data)
+ /*  public function update($id, $data)
     {
         //TODO : Implements SQL UPDATE request
 
@@ -91,7 +91,7 @@ abstract class EntityManager
         $statement->execute();
 
         return $statement->fetch(\PDO::FETCH_ASSOC);
-    }
+    }*/
 
     public function getTypeCategorie()
     {

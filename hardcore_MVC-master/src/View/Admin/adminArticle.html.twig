@@ -65,29 +65,23 @@
                 <div class="row ">
                     {% for entity in article %}
 
-                    <form action="/adminArticle" method="post" name="bogoss67">
-                        <div class="col-lg-offset-1  col-lg-5 col-sm-12 actu">
-                            <label>Titre Article</label>
-                            <div class="titreActu">
-                                <textarea>{{ entity.titre }}</textarea>
-
-                            </div>
-
-                            <div class="textActu">
-                                <hr color='black'>
-                                <textarea style="width: 200px">{{ entity.article }}</textarea>
-                            </div>
-                            <div>
-                            <button type="button" class="btn btn-warning" name="Modifier">Modifier</button>
-                            </div>
-                            <br>
-                    </form>
+                    <form action="/updateArticle" method="post">
+                        <div class="form-group">
+                            <input type="hidden" name="id" value="{{ entity.id }}">
+                            <label for="formGroupExampleInput2">Modifier le titre</label>
+                            <textarea name="titre">{{ entity.titre }}</textarea>
                         </div>
+                        <div class="form-group">
+                            <label for="formGroupExampleInput2">Modifier l'article</label>
+                            <textarea name="article" style="width: 200px">{{ entity.article }}</textarea>
+                        </div>
+                        <input type="submit" class="btn btn-warning" name="{{ entity.id }}" value="Modifier">
+                    </form>
 
                     {% endfor %}
                 </div>
+            </div>
         </main>
-    </div>
 </div>
 
 

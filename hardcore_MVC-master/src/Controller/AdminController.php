@@ -117,6 +117,32 @@ class AdminController extends AbstractController
 
     }
 
+    Public function updateArticle()
+    {
+        $updateArticle = new ArticleManager();
+        $articles=$updateArticle->findAll();
+
+
+
+        foreach($articles as $entity){
+            if (isset($_POST[$entity['id']]))
+            {
+                $id = $_POST['id'];
+                $titre = $_POST['titre'];
+                $article = $_POST['article'];
+
+
+                $updateArticle->update($id, $titre, $article);
+                $articleManager = new ArticleManager();
+                $article = $articleManager->findAll();
+
+                return $this->twig->render('Admin/adminArticle.html.twig', ['article' => $article]);
+            } else {
+            }
+        }
+        return $this->twig->render('Admin/adminArticle.html.twig');
+
+    }
     /**
      * @param $id
      */
