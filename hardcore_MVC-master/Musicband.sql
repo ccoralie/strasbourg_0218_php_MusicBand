@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  localhost
--- Généré le :  Mar 24 Avril 2018 à 17:15
+-- Généré le :  Mer 25 Avril 2018 à 09:04
 -- Version du serveur :  5.7.21-0ubuntu0.16.04.1
 -- Version de PHP :  7.0.28-0ubuntu0.16.04.1
 
@@ -62,6 +62,26 @@ INSERT INTO `Article` (`id`, `article`, `titre`) VALUES
 (2, 'De retour sur scène à partir du 4 décembre 2018 à la salle polyvalente de Ruffach !', 'Prochaine tournée'),
 (3, 'Rendez-vous chez Kyle le 10 janvier 2019 pour une soirée wild ', 'Evénement '),
 (4, 'Devenez membre de notre fan club, et recevez en exclusivité toute l\'actu de Franck and the Wilders', 'Fan club ');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `Carousel`
+--
+
+CREATE TABLE `Carousel` (
+  `id` int(11) NOT NULL,
+  `url_image` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Contenu de la table `Carousel`
+--
+
+INSERT INTO `Carousel` (`id`, `url_image`) VALUES
+(1, '/assets/images/Galerie/concert.jpg'),
+(2, '/assets/images/Galerie/concert2.jpg'),
+(3, '/assets/images/Galerie/foule.jpg');
 
 -- --------------------------------------------------------
 
@@ -206,6 +226,13 @@ CREATE TABLE `Newsletter` (
   `mail` varchar(320) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Contenu de la table `Newsletter`
+--
+
+INSERT INTO `Newsletter` (`id`, `nom`, `mail`) VALUES
+(1, 'ccc', 'ccc@gmail.com');
+
 -- --------------------------------------------------------
 
 --
@@ -302,6 +329,12 @@ ALTER TABLE `Article`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Index pour la table `Carousel`
+--
+ALTER TABLE `Carousel`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Index pour la table `Categorie`
 --
 ALTER TABLE `Categorie`
@@ -361,6 +394,11 @@ ALTER TABLE `Album`
 ALTER TABLE `Article`
   MODIFY `id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
+-- AUTO_INCREMENT pour la table `Carousel`
+--
+ALTER TABLE `Carousel`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+--
 -- AUTO_INCREMENT pour la table `Categorie`
 --
 ALTER TABLE `Categorie`
@@ -384,7 +422,7 @@ ALTER TABLE `Goodies`
 -- AUTO_INCREMENT pour la table `Newsletter`
 --
 ALTER TABLE `Newsletter`
-  MODIFY `id` int(20) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT pour la table `Stock`
 --
