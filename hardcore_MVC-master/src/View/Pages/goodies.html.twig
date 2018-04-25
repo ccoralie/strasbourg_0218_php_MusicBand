@@ -48,39 +48,35 @@
                             <a class="lightbox" href="{{ REF.goodies }}">
                                 <img src="{{ REF.goodies }}" alt="Park" class="card-img-top">
                             </a>
-                            <button type="button" class="btn" data-toggle="modal" data-target=".good1"><span
+                            <button type="button" class="btn" data-toggle="modal" data-target=".good{{ REF.id }}"><span
                                         class="glyphicon glyphicon-plus" aria-hidden="true"></span> Plus d'informations
                             </button>
-                        </div>
-
-                        <!-- MODAL IMAGE 1 -->
-
-                        <div class="modal fade good1" tabindex="-1" role="dialog" aria-labelledby="good1">
-                            <div class="modal-dialog modal-lg" role="document">
-                                <div class="modal-content">
-                                    <div class="thumbnail text-center">
-                                        <h2>
-                                            T-Shirt Franck & The Wilders
-                                        </h2>
-                                        <div class="row justify-content-center">
-                                            <div class="col-md-4">
-                                                <div class="thumbnail">
-                                                    <a href="{{ REF.goodies }}">
-                                                        <img src="{{ REF.goodies }}" alt="Lights" style="width:100%">
-                                                    </a>
+                            <!-- MODAL IMAGE 1 -->
+                            <div class="modal fade good{{ REF.id }}" tabindex="-1" role="dialog" aria-labelledby="good{{ REF.id }}">
+                                <div class="modal-dialog modal-lg" role="document">
+                                    <div class="modal-content">
+                                        <div class="thumbnail text-center">
+                                            <div class="row justify-content-center">
+                                                <div class="col-md-4">
+                                                    <div class="thumbnail">
+                                                        <a href="{{ REF.goodies }}">
+                                                            <img src="{{ REF.goodies }}" alt="Lights" style="width:100%">
+                                                        </a>
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div class="caption">
-                                            <p class="alert alert-info">Articles disponibles dans les boutiques lors de nos concerts<br>
-                                            XS - S - M - L - XL - XXL</p>
+                                            <div class="caption">
+                                                <p class="alert alert-info">{{ REF.prix }} <br>
+                                                    Articles disponibles dans les boutiques lors de nos concerts<br>
+                                                    XS - S - M - L - XL - XXL</p>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    {% endfor %}    
+                    {% endfor %}
                 </div>
             </div>
         </div>
