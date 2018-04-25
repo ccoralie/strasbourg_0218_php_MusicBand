@@ -39,6 +39,8 @@ $dispatcher = FastRoute\simpleDispatcher(function(FastRoute\RouteCollector $r) {
     $r->addRoute('POST', '/adminFanclub', 'Admin/adminFanclub');
     $r->addRoute('GET', '/adminGoodies', 'Admin/adminGoodies');
     $r->addRoute('POST', '/adminGoodies', 'Admin/adminGoodies');
+    $r->addRoute('GET', '/logoutAdmin', 'Admin/logoutAdmin');
+
 
 
 
