@@ -56,18 +56,31 @@ class AdminController extends AbstractController
      */
     public function adminGalerie()
     {
-
         /** @var TYPE_NAME $galerieManager */
-
         $galerieManager = new GalerieManager();
         $galerie = $galerieManager->findAll();
-
-
-
         return $this->twig->render('Admin/adminGalerie.html.twig', ['galerie' => $galerie]);
     }
 
+    public function deleteGalerie()
+    {
+        $deleteGalerie = new GalerieManager();
+        $fullGallerie = $deleteGalerie->findAll();
 
+        foreach ($fullGallerie as $value) {
+            if (isset($_POST[$value['id']])) {
+                $id = $_POST['id'];
+
+                $deleteGalerie->delete($id);
+                $galerieManager = new GalerieManager();
+                $galerie = $galerieManager->findAll();
+
+                return $this->twig->render('Admin/adminGalerie.html.twig', ['galerie' => $galerie]);
+            } else {
+            }
+        }
+        return $this->twig->render('Admin/adminGalerie.html.twig');
+    }
 
 
     public function adminDiscographie()

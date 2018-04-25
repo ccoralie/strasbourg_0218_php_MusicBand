@@ -19,4 +19,15 @@ class GalerieManager extends EntityManager
     {
         parent::__construct(self::TABLE);
     }
+
+
+    public function delete($id)
+    {
+        //TODO : Implements SQL DELETE request
+
+        // prepared request
+        $statement = $this->conn->prepare("DELETE FROM $this->table WHERE id=:id");
+        $statement->bindValue(':id', $id);
+        $statement->execute();
+    }
 }
