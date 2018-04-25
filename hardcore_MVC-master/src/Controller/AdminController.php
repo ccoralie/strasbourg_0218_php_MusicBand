@@ -16,6 +16,8 @@ use Model\WorldtourManager;
  */
 class AdminController extends AbstractController
 {
+
+
     public function index()
     {
         session_start();
@@ -86,8 +88,52 @@ class AdminController extends AbstractController
         $worldtourManager = new WorldtourManager();
         $worldtour= $worldtourManager->findAll();
 
+
+
         return $this->twig->render('Admin/adminWorldtour.html.twig',['worldtour' => $worldtour]);
     }
+
+    /**
+     *
+     */
+    Public function addWorldtour()
+    {
+        $dateconcert = $_POST['dateconcert'];
+        $ville = $_POST['ville'];
+        $salle = $_POST['salle'];
+
+        if (isset($_POST['dateconcert']) && isset($_POST['ville']) && isset($_POST['salle']) && !empty($_POST['dateconcert']) && !empty($_POST['ville']) && !empty($_POST['salle'])) {
+
+
+            $addWorldtour = new WorldtourManager();
+            $addWorldtour->add($dateconcert, $ville, $salle);
+
+
+            header('Location: /adminWorldtour');
+        }else{
+            header('Location: /adminWorldtour');
+        }
+
+
+    }
+
+    /**
+     * @param $id
+     */
+   /* public function deleteWorldtour($id)
+{
+    if (isset($_POST['select']) && !empty($_POST['select']))
+    {
+        $deleteWorldtour = new WorldtourManager();
+        $deleteWorldtour->delete($id);
+
+        header('location: /adminWorldtour');
+    }else{
+        header('location: /adminWorldtour');
+    }
+}*/
+
+
 
     /**
      * @return string
