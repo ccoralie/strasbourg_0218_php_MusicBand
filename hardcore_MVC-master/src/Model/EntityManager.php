@@ -93,5 +93,14 @@ abstract class EntityManager
         return $statement->fetch(\PDO::FETCH_ASSOC);
     }
 
+    public function getTypeCategorie()
+    {
+        $statement = $this->conn->prepare("SELECT * FROM $this->table ORDER BY type ASC");
+        $statement->execute();
+
+        return $statement->fetchAll(\PDO::FETCH_ASSOC);
+    }
+
+
 
 }

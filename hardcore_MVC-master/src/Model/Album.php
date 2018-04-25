@@ -59,5 +59,4 @@ class Album
         $this->pochetteAlbum = $pochetteAlbum;
     }
 
-    pu
 }

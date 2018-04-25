@@ -16,34 +16,31 @@ $dispatcher = FastRoute\simpleDispatcher(function(FastRoute\RouteCollector $r) {
     $r->addRoute('GET', '/Newsletter', 'Item/Newsletter');
     $r->addRoute('POST', '/addMail', 'Item/addSubscriber');
     $r->addRoute('GET', '/accueil', 'Item/Accueil');
-    $r->addRoute('GET', '/Goodies', 'Item/Goodies');
+   // $r->addRoute('GET', '/Goodies', 'Item/Goodies');
     $r->addRoute('GET', '/Discographie', 'Item/Discographie');
     $r->addRoute('GET', '/Worldtour', 'Item/Worldtour');
     $r->addRoute('GET', '/galerie', 'Item/galerie');
+    $r->addRoute('GET', '/Goodies', 'Item/menuGoodies');
+    $r->addRoute('GET', '/Goodies/{GetId:\d+}', 'Item/affichageParGoodiesCategorie');
 
     $r->addRoute('GET', '/login', 'Admin/index');
     $r->addRoute('POST', '/login', 'Admin/index');
-
     $r->addRoute('GET', '/admin', 'Admin/adminPage');
     $r->addRoute('POST', '/admin', 'Admin/adminPage');
-
     $r->addRoute('GET', '/adminArticle', 'Admin/adminArticle');
     $r->addRoute('POST', '/adminArticle', 'Admin/adminArticle');
-
     $r->addRoute('GET', '/adminDiscographie', 'Admin/adminDiscographie');
     $r->addRoute('POST', '/adminDiscographie', 'Admin/adminDiscographie');
-
     $r->addRoute('GET', '/adminGalerie', 'Admin/adminGalerie');
     $r->addRoute('POST', '/adminGalerie', 'Admin/adminGalerie');
-
     $r->addRoute('GET', '/adminWorldtour', 'Admin/adminWorldtour');
     $r->addRoute('POST', '/adminWorldtour', 'Admin/adminWorldtour');
-
     $r->addRoute('GET', '/adminFanclub', 'Admin/adminFanclub');
     $r->addRoute('POST', '/adminFanclub', 'Admin/adminFanclub');
-
     $r->addRoute('GET', '/adminGoodies', 'Admin/adminGoodies');
     $r->addRoute('POST', '/adminGoodies', 'Admin/adminGoodies');
+
+
 
 });
 
