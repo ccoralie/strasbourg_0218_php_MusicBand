@@ -8,12 +8,16 @@
 
 namespace Controller;
 
+use Model\CategorieManager;
+use Model\GoodiesManager;
 use Model\WorldtourManager;
 use Model\GalerieManager;
 use Model\ArticleManager;
 use Model\CarouselManager;
 use Model\Item;
 use Model\ItemManager;
+use Model\AlbumManager;
+use Model\ChansonManager;
 use Model\NewsletterManager;
 
 /**
@@ -132,8 +136,14 @@ class ItemController extends AbstractController
 
     public function Discographie()
     {
-        return $this->twig->render('Pages/discographie.html.twig');
+        $AlbumManager = new AlbumManager();
+        $Album = $AlbumManager->findAll();
+        $ChansonManager = new ChansonManager();
+        $Chanson = $ChansonManager->findAll();
+        return $this->twig->render('Pages/discographie.html.twig', ['Album'=>$Album, 'Chanson'=>$Chanson]);
     }
+
+
 
     /**
      * @return string
@@ -141,7 +151,25 @@ class ItemController extends AbstractController
 
     public function Goodies()
     {
-        return $this->twig->render('Pages/goodies.html.twig');
+
+        return $this->twig->render('Pages/goodies.html.twig', ['goodies' => $goodies]);
+    }
+
+    public function menuGoodies()
+    {
+        $CategorieManager = new CategorieManager();
+        $menuGoodies = $CategorieManager->getTypeCategorie();
+        return $this->twig->render('Pages/goodies.html.twig', ['menuGoodies' => $menuGoodies]);
+    }
+
+    public function affichageParGoodiesCategorie($GetId)
+    {
+        $GoodiesManager = new GoodiesManager();
+        $affichageParGoodiesCategorie = $GoodiesManager->GoodiesParCategorie($GetId);
+
+        $CategorieManager = new CategorieManager();
+        $menuGoodies = $CategorieManager->getTypeCategorie();
+        return $this->twig->render('Pages/goodies.html.twig', ['affichageParGoodiesCategorie' => $affichageParGoodiesCategorie, 'menuGoodies' => $menuGoodies]);
     }
 
     /**

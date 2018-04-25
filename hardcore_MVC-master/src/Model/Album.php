@@ -7,7 +7,6 @@ class Album
     private $id;
     private $album;
     private $pochetteAlbum;
-    private $extraitMusique;
 
 
     /**
@@ -60,28 +59,4 @@ class Album
         $this->pochetteAlbum = $pochetteAlbum;
     }
 
-
-
-    /**
-     * @return mixed
-     */
-    public function getExtraitMusique()
-    {
-        return $this->extraitMusique;
-    }
-
-    /**
-     * @param mixed $extraitMusique
-     */
-    public function setExtraitMusique($extraitMusique)
-    {
-        $this->extraitMusique = $extraitMusique;
-    }
-
-
-
-    public function lectureExtraitMusique()
-    {
-        //lecture de la musique
-    }
 }
