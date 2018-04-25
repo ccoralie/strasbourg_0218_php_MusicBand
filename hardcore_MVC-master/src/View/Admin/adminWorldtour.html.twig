@@ -29,7 +29,7 @@
                     <a class="nav-link active" href="/adminWorldtour">Prochains concerts<span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link " href="/adminArticle">Actualité </a>
+                    <a class="nav-link" href="/adminArticle">Actualité </a>
                 </li>
 
 
@@ -78,9 +78,9 @@
                             <input type="text" class="form-control" name="salle" id="formGroupExampleInput2" >
                         </div>
 
-                    <p><input type="submit" name="submit" value="Insérer" class="btn btn-success"></p>
+                    <p><input type="submit" name="submit" value="Insérer" id= "add" class="btn btn-success"></p>
                     <br><br>
-                </form>
+
 
                 <div class="row">
                     <table class="table  col-xs-8">
@@ -94,8 +94,11 @@
                                     <td>{{ entity.dateconcert }}</td>
                                     <td>{{ entity.ville }}</td>
                                     <td>{{ entity.salle }}</td>
-                                    <td><button type="button" class="btn btn-warning">Modifier</button></td>
-                                    <td><button type="button" class="btn btn-danger">Supprimer</button></td>
+                                    <td><div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="" name="select">
+                                        </div></td>
+                                    <td><button type="button" class="btn btn-warning" name="submit" id="update">Modifier</button></td>
+                                    <td><button type="button" class="btn btn-danger" name="submit" id="delete">Supprimer</button></td>
                                 </tr>
                             {% endfor %}
 
@@ -104,6 +107,7 @@
                         </div>
                     </table>
                 </div>
+                </form>
             </div>
         </main>
     </div>

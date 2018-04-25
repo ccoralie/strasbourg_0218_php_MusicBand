@@ -40,6 +40,8 @@ $dispatcher = FastRoute\simpleDispatcher(function(FastRoute\RouteCollector $r) {
     $r->addRoute('POST', '/adminWorldtour', 'Admin/adminWorldtour');
     $r->addRoute('POST', '/addWorldtour', 'Admin/addWorldtour');
 
+    $r->addRoute('POST', '/deleteWorldtour', 'Admin/deleteWorldtour');
+
 
     $r->addRoute('GET', '/adminFanclub', 'Admin/adminFanclub');
     $r->addRoute('POST', '/adminFanclub', 'Admin/adminFanclub');
