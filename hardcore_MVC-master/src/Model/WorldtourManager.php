@@ -32,16 +32,17 @@ class WorldtourManager extends EntityManager
 
     }
 
+    /**
+     * @param $id
+     * @return mixed
+     */
     public function delete($id)
     {
         //TODO : Implements SQL DELETE request
 
         // prepared request
-        $statement = $this->conn->prepare("DELETE * FROM $this->table WHERE id=:id");
-        $statement->bindValue('id', $id, \PDO::PARAM_INT);
+        $statement = $this->conn->prepare("DELETE FROM $this->table WHERE id=:id");
+        $statement->bindValue(':id', $id);
         $statement->execute();
-
-        return $statement->fetch(\PDO::FETCH_ASSOC);
-
     }
 }
