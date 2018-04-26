@@ -38,11 +38,11 @@ class AdminController extends AbstractController
             if ((isset($_POST["user"])) && (($_POST["user"]) == $vipUser) && (isset($_POST["pwd"])) && (($_POST["pwd"]) == $vipPwd)) {
                 $_SESSION['user'] = $_POST['user'];
                 $_SESSION['pwd'] = $_POST['pwd'];
-                return $this->twig->render('Admin/adminPage.html.twig');
+                $nameReturn= $_SESSION['user'];
+                return $this->twig->render('Admin/adminPage.html.twig', ['nameReturn' => $nameReturn]);
             } else
                 $Error = "Veuillez entrer un couple nom d'utilisateur et mot de passe valide";
             return $this->twig->render('Admin/index.html.twig', ['Error' => $Error]);
-            return $this->twig->render('Admin/index.html.twig');
         }
     }
 
@@ -56,18 +56,31 @@ class AdminController extends AbstractController
      */
     public function adminGalerie()
     {
-
         /** @var TYPE_NAME $galerieManager */
-
         $galerieManager = new GalerieManager();
         $galerie = $galerieManager->findAll();
-
-
-
         return $this->twig->render('Admin/adminGalerie.html.twig', ['galerie' => $galerie]);
     }
 
+    public function deleteGalerie()
+    {
+        $deleteGalerie = new GalerieManager();
+        $fullGallerie = $deleteGalerie->findAll();
 
+        foreach ($fullGallerie as $value) {
+            if (isset($_POST[$value['id']])) {
+                $id = $_POST['id'];
+
+                $deleteGalerie->delete($id);
+                $galerieManager = new GalerieManager();
+                $galerie = $galerieManager->findAll();
+
+                return $this->twig->render('Admin/adminGalerie.html.twig', ['galerie' => $galerie]);
+            } else {
+            }
+        }
+        return $this->twig->render('Admin/adminGalerie.html.twig');
+    }
 
 
     public function adminDiscographie()
@@ -117,6 +130,32 @@ class AdminController extends AbstractController
 
     }
 
+    Public function updateArticle()
+    {
+        $updateArticle = new ArticleManager();
+        $articles=$updateArticle->findAll();
+
+
+
+        foreach($articles as $entity){
+            if (isset($_POST[$entity['id']]))
+            {
+                $id = $_POST['id'];
+                $titre = $_POST['titre'];
+                $article = $_POST['article'];
+
+
+                $updateArticle->update($id, $titre, $article);
+                $articleManager = new ArticleManager();
+                $article = $articleManager->findAll();
+
+                return $this->twig->render('Admin/adminArticle.html.twig', ['article' => $article]);
+            } else {
+            }
+        }
+        return $this->twig->render('Admin/adminArticle.html.twig');
+
+    }
     /**
      * @param $id
      */
@@ -163,6 +202,18 @@ class AdminController extends AbstractController
     {
         return $this->twig->render('Admin/adminGoodies.html.twig');
     }
+
+
+
+    public function logoutAdmin()
+    {
+        session_start();
+        session_unset();
+        session_destroy();
+        return $this->twig->render('Admin/index.html.twig');
+    }
+
+
 }
     /**
      * @return string

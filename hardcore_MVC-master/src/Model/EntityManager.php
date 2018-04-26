@@ -46,18 +46,15 @@ abstract class EntityManager
     /**
      *
      */
-    public function delete($id)
+    /*public function delete()
     {
         //TODO : Implements SQL DELETE request
 
         // prepared request
         $statement = $this->conn->prepare("DELETE * FROM $this->table WHERE id=:id");
         $statement->bindValue('id', $id, \PDO::PARAM_INT);
-        $statement->execute();
-
-        return $statement->fetch(\PDO::FETCH_ASSOC);
-
-    }
+        return $statement->execute();
+    }*/
 
     /**
      *
@@ -81,7 +78,7 @@ abstract class EntityManager
     /**
      *
      */
-    public function update($id, $data)
+ /*  public function update($id, $data)
     {
         //TODO : Implements SQL UPDATE request
 
@@ -91,7 +88,16 @@ abstract class EntityManager
         $statement->execute();
 
         return $statement->fetch(\PDO::FETCH_ASSOC);
+    }*/
+
+    public function getTypeCategorie()
+    {
+        $statement = $this->conn->prepare("SELECT * FROM $this->table ORDER BY id ASC");
+        $statement->execute();
+
+        return $statement->fetchAll(\PDO::FETCH_ASSOC);
     }
+
 
 
 }

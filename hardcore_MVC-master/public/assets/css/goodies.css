@@ -137,5 +137,9 @@ button:hover > i{
     }
 }
 
+.tz-gallery{
+    display: flex;
+
+}
 
 

@@ -19,4 +19,5 @@ class CategorieManager extends EntityManager
         parent::__construct(self::TABLE);
     }
 
+
 }
