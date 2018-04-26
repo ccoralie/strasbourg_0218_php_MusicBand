@@ -70,7 +70,7 @@ class AdminController extends AbstractController
         foreach ($fullGallerie as $value) {
             if (isset($_POST[$value['id']])) {
                 $id = $_POST['id'];
-                var_dump($_POST[$value['id']]);
+
                 $deleteGalerie->delete($id);
 
                 $galerieManager = new GalerieManager();
