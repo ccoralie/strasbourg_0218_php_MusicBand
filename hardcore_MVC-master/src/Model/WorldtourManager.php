@@ -28,8 +28,6 @@ class WorldtourManager extends EntityManager
         $statement->bindValue(':ville', $ville);
         $statement->bindValue(':salle', $salle);
         $statement->execute();
-
-
     }
 
     /**

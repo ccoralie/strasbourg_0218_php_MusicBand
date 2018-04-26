@@ -30,4 +30,14 @@ class GalerieManager extends EntityManager
         $statement->bindValue(':id', $id);
         $statement->execute();
     }
+
+    public function add($photo)
+    {
+
+        $statement = $this->conn->prepare("INSERT INTO $this->table (photo) VALUES (:photo)");
+        $statement->bindValue(':photo', $photo);
+        $statement->execute();
+
+
+    }
 }

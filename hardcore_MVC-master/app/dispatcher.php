@@ -39,7 +39,7 @@ $dispatcher = FastRoute\simpleDispatcher(function(FastRoute\RouteCollector $r) {
     $r->addRoute('GET', '/adminGalerie', 'Admin/adminGalerie');
     $r->addRoute('POST', '/adminGalerie', 'Admin/adminGalerie');
     $r->addRoute('POST', '/deleteGalerie', 'Admin/deleteGalerie');
-
+    $r->addRoute('POST', '/uploadGalerie', 'Admin/uploadGalerie');
 
 
     $r->addRoute('GET', '/adminWorldtour', 'Admin/adminWorldtour');
