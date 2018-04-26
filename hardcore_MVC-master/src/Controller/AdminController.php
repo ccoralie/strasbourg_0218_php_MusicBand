@@ -120,18 +120,20 @@ class AdminController extends AbstractController
     /**
      * @param $id
      */
-   /* public function deleteWorldtour($id)
+    public function deleteWorldtour($id)
 {
     if (isset($_POST['select']) && !empty($_POST['select']))
     {
         $deleteWorldtour = new WorldtourManager();
         $deleteWorldtour->delete($id);
 
+
+
         header('location: /adminWorldtour');
     }else{
         header('location: /adminWorldtour');
     }
-}*/
+}
 
 
 
