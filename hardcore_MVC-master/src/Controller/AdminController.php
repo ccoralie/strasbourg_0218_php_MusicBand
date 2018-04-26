@@ -82,6 +82,49 @@ class AdminController extends AbstractController
         return $this->twig->render('Admin/adminGalerie.html.twig');
     }
 
+    public function uploadGalerie()
+    {
+        $allowed_files = array(
+            "image/gif",
+            "image/pjpeg",
+            "image/jpeg",
+            "image/png");
+
+        if (isset($_POST['submit_envoyer'])){
+            $i=0;
+            foreach ($_FILES['fichier']['size'] as $value){
+                if (!in_array($_FILES['fichier']['type'][$i], $allowed_files))
+                    die ('type mime incorrect');
+                if ($value<=2000000) {
+                    // chemin vers un dossier sur le serveur qui va recevoir les fichiers uploadés
+                    $uploadDir = 'assets/images/Galerie/';
+                    // on récupère l'extension, par exemple "pdf"
+                    $extension = pathinfo($_FILES['fichier']['name'][$i], PATHINFO_EXTENSION);
+                    // on concatène le nom de fichier unique avec l'extension récupérée
+                    $photo =uniqid($uploadDir.'img_') . '.' .$extension;
+                    // on déplace le fichier temporaire vers le nouvel emplacement sur le serveur. Ca y est, le fichier est uploadé
+                    move_uploaded_file($_FILES['fichier']['tmp_name'][$i], $photo);
+
+                    $uploadGalerie = new GalerieManager();
+                    $uploadGalerie->add($photo);
+                    $galerieManager = new GalerieManager();
+                    $galerie = $galerieManager->findAll();
+
+                    return $this->twig->render('Admin/adminGalerie.html.twig',['galerie' => $galerie]);
+
+                }
+                else {
+                      }
+                $i++;
+            }
+            $Error = "le fichier excède 2Mo";
+            return $this->twig->render('Admin/adminGalerie.html.twig', ['Error' => $Error]);
+        }
+    }
+
+
+
+
 
     public function adminDiscographie()
     {

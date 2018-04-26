@@ -58,17 +58,10 @@
             <h1>Galerie</h1>
 
 
-            <form action="index.php" enctype="multipart/form-data" method="post">
-
-                <div>
-                    <label for='upload'>Ajouter des images:</label>
-                    <input id='upload' name="upload[]" type="file" multiple="multiple" />
-
-                <p><input type="submit" name="submit" value="Ajouter" class="btn btn-success"></p>
-                    <br><br>
-                </div>
-
-
+            <form action="/uploadGalerie" method="post" enctype="multipart/form-data">
+                <input type="hidden" name="MAX_FILE_SIZE" value="2000000" />
+                <input type="file" name="fichier[]" multiple="multiple" />
+                <input type="submit" value="Envoyer" name="submit_envoyer" />
             </form>
 
 
