@@ -86,25 +86,20 @@
                     {% for entity in worldtour %}
                     <form action="/deleteWorldtour" method="post">
                     <table class="table  col-xs-8">
-                        <div class="tablechild">
-
                             <tbody>
-
                                 <tr>
                                     <td>{{ entity.dateconcert }}</td>
                                     <td>{{ entity.ville }}</td>
                                     <td>{{ entity.salle }}</td>
                                     <td><input type="hidden" class="btn btn-danger" name="id" value="{{ entity.id }}"></td>
-                                    <td><button type="submit" class="btn btn-warning" name="submit" id="update">Modifier</button></td>
-                                    <td><button type="submit" class="btn btn-danger" name="{{ entity.id }}" value="Supprimer">Supprimer</button></td>
-                                </tr>
-                            {% endfor %}
 
+                                    <td><input type="submit" class="btn btn-danger" name="{{ entity.id }}" value="Supprimer"></td>
+                                </tr>
 
                             </tbody>
-                        </div>
                     </table>
                     </form>
+                    {% endfor %}
                 </div>
 
             </div>

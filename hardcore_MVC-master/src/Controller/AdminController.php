@@ -145,8 +145,6 @@ class AdminController extends AbstractController
         $worldtourManager = new WorldtourManager();
         $worldtour= $worldtourManager->findAll();
 
-
-
         return $this->twig->render('Admin/adminWorldtour.html.twig',['worldtour' => $worldtour]);
     }
 
@@ -178,16 +176,15 @@ class AdminController extends AbstractController
     {
         $deleteWorldtour = new WorldtourManager();
         $fullWorldtour = $deleteWorldtour->findAll();
-//var_dump($fullWorldtour);
         foreach ($fullWorldtour as $value) {
             if (isset($_POST[$value['id']])) {
                 $id = $_POST['id'];
-var_dump($_POST[$value['id']]);
+var_dump($id);
                 $deleteWorldtour->delete($id);
-                //var_dump($deleteWorldtour);
+
                 $worldtourManager = new WorldtourManager();
                 $worldtour = $worldtourManager->findAll();
-                //var_dump($worldtour);
+
                 return $this->twig->render('Admin/adminWorldtour.html.twig', ['worldtour' => $worldtour]);
             } else {
             }
