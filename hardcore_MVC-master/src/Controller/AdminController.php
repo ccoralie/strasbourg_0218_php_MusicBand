@@ -70,8 +70,9 @@ class AdminController extends AbstractController
         foreach ($fullGallerie as $value) {
             if (isset($_POST[$value['id']])) {
                 $id = $_POST['id'];
-
+                var_dump($_POST[$value['id']]);
                 $deleteGalerie->delete($id);
+
                 $galerieManager = new GalerieManager();
                 $galerie = $galerieManager->findAll();
 
@@ -173,6 +174,27 @@ class AdminController extends AbstractController
 
     }
 
+    public function deleteWorldtour()
+    {
+        $deleteWorldtour = new WorldtourManager();
+        $fullWorldtour = $deleteWorldtour->findAll();
+//var_dump($fullWorldtour);
+        foreach ($fullWorldtour as $value) {
+            if (isset($_POST[$value['id']])) {
+                $id = $_POST['id'];
+var_dump($_POST[$value['id']]);
+                $deleteWorldtour->delete($id);
+                //var_dump($deleteWorldtour);
+                $worldtourManager = new WorldtourManager();
+                $worldtour = $worldtourManager->findAll();
+                //var_dump($worldtour);
+                return $this->twig->render('Admin/adminWorldtour.html.twig', ['worldtour' => $worldtour]);
+            } else {
+            }
+        }
+        return $this->twig->render('Admin/adminWorldtour.html.twig');
+    }
+
     Public function updateArticle()
     {
         $updateArticle = new ArticleManager();
@@ -199,21 +221,8 @@ class AdminController extends AbstractController
         return $this->twig->render('Admin/adminArticle.html.twig');
 
     }
-    /**
-     * @param $id
-     */
-   /* public function deleteWorldtour($id)
-{
-    if (isset($_POST['select']) && !empty($_POST['select']))
-    {
-        $deleteWorldtour = new WorldtourManager();
-        $deleteWorldtour->delete($id);
 
-        header('location: /adminWorldtour');
-    }else{
-        header('location: /adminWorldtour');
-    }
-}*/
+
 
 
 
