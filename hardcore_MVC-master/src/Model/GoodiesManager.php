@@ -38,4 +38,13 @@ class GoodiesManager extends EntityManager
         $statement->execute();
     }
 
+    public function getChemin($id)
+    {
+        $statement = $this->conn->prepare("SELECT Categorie.type FROM Categorie WHERE id =:id");
+        $statement->bindValue(':id', $id);
+        $statement->execute();
+        return $statement->fetch(\PDO::FETCH_ASSOC);
+
+    }
+
 }
