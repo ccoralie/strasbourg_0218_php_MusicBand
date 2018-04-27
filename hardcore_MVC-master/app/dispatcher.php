@@ -15,6 +15,7 @@ $dispatcher = FastRoute\simpleDispatcher(function(FastRoute\RouteCollector $r) {
     $r->addRoute('GET', '/item/edit/{id:\d+}', 'Item/edit');
     $r->addRoute('GET', '/Newsletter', 'Item/Newsletter');
     $r->addRoute('POST', '/addMail', 'Item/addSubscriber');
+    $r->addRoute('POST', '/sendMails', 'newsletter/envoiMail');
     $r->addRoute('GET', '/accueil', 'Item/Accueil');
    // $r->addRoute('GET', '/Goodies', 'Item/Goodies');
     $r->addRoute('GET', '/Discographie', 'Item/Discographie');
