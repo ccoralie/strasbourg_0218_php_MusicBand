@@ -18,4 +18,5 @@ class AdminManager extends EntityManager
     {
         parent::__construct(self::TABLE);
     }
+
 }
