@@ -5,8 +5,10 @@
 
 namespace Controller;
 use Model\ArticleManager;
+use Model\CategorieManager;
 use Model\GalerieManager;
 use Model\WorldtourManager;
+use Model\GoodiesManager;
 
 /**
  * Created by PhpStorm.
@@ -16,6 +18,8 @@ use Model\WorldtourManager;
  */
 class AdminController extends AbstractController
 {
+
+
     public function index()
     {
         session_start();
@@ -36,11 +40,11 @@ class AdminController extends AbstractController
             if ((isset($_POST["user"])) && (($_POST["user"]) == $vipUser) && (isset($_POST["pwd"])) && (($_POST["pwd"]) == $vipPwd)) {
                 $_SESSION['user'] = $_POST['user'];
                 $_SESSION['pwd'] = $_POST['pwd'];
-                return $this->twig->render('Admin/adminPage.html.twig');
+                $nameReturn= $_SESSION['user'];
+                return $this->twig->render('Admin/adminPage.html.twig', ['nameReturn' => $nameReturn]);
             } else
                 $Error = "Veuillez entrer un couple nom d'utilisateur et mot de passe valide";
             return $this->twig->render('Admin/index.html.twig', ['Error' => $Error]);
-            return $this->twig->render('Admin/index.html.twig');
         }
     }
 
@@ -54,16 +58,73 @@ class AdminController extends AbstractController
      */
     public function adminGalerie()
     {
-
         /** @var TYPE_NAME $galerieManager */
-
         $galerieManager = new GalerieManager();
         $galerie = $galerieManager->findAll();
-
-
-
         return $this->twig->render('Admin/adminGalerie.html.twig', ['galerie' => $galerie]);
     }
+
+    public function deleteGalerie()
+    {
+        $deleteGalerie = new GalerieManager();
+        $fullGallerie = $deleteGalerie->findAll();
+
+        foreach ($fullGallerie as $value) {
+            if (isset($_POST[$value['id']])) {
+                $id = $_POST['id'];
+
+                $deleteGalerie->delete($id);
+
+                $galerieManager = new GalerieManager();
+                $galerie = $galerieManager->findAll();
+
+                return $this->twig->render('Admin/adminGalerie.html.twig', ['galerie' => $galerie]);
+            } else {
+            }
+        }
+        return $this->twig->render('Admin/adminGalerie.html.twig');
+    }
+
+    public function uploadGalerie()
+    {
+        $allowed_files = array(
+            "image/gif",
+            "image/pjpeg",
+            "image/jpeg",
+            "image/png");
+
+        if (isset($_POST['submit_envoyer'])){
+            $i=0;
+            foreach ($_FILES['fichier']['size'] as $value){
+                if (!in_array($_FILES['fichier']['type'][$i], $allowed_files))
+                    die ('type mime incorrect');
+                if ($value<=2000000) {
+                    // chemin vers un dossier sur le serveur qui va recevoir les fichiers uploadés
+                    $uploadDir = 'assets/images/Galerie/';
+                    // on récupère l'extension, par exemple "pdf"
+                    $extension = pathinfo($_FILES['fichier']['name'][$i], PATHINFO_EXTENSION);
+                    // on concatène le nom de fichier unique avec l'extension récupérée
+                    $photo =uniqid($uploadDir.'img_') . '.' .$extension;
+                    // on déplace le fichier temporaire vers le nouvel emplacement sur le serveur. Ca y est, le fichier est uploadé
+                    move_uploaded_file($_FILES['fichier']['tmp_name'][$i], $photo);
+
+                    $uploadGalerie = new GalerieManager();
+                    $uploadGalerie->add($photo);
+                    $galerieManager = new GalerieManager();
+                    $galerie = $galerieManager->findAll();
+
+                    return $this->twig->render('Admin/adminGalerie.html.twig',['galerie' => $galerie]);
+
+                }
+                else {
+                      }
+                $i++;
+            }
+            $Error = "le fichier excède 2Mo";
+            return $this->twig->render('Admin/adminGalerie.html.twig', ['Error' => $Error]);
+        }
+    }
+
 
 
 
@@ -90,6 +151,80 @@ class AdminController extends AbstractController
     }
 
     /**
+     *
+     */
+    Public function addWorldtour()
+    {
+        $dateconcert = $_POST['dateconcert'];
+        $ville = $_POST['ville'];
+        $salle = $_POST['salle'];
+
+        if (isset($_POST['dateconcert']) && isset($_POST['ville']) && isset($_POST['salle']) && !empty($_POST['dateconcert']) && !empty($_POST['ville']) && !empty($_POST['salle'])) {
+
+
+            $addWorldtour = new WorldtourManager();
+            $addWorldtour->add($dateconcert, $ville, $salle);
+
+
+            header('Location: /adminWorldtour');
+        }else{
+            header('Location: /adminWorldtour');
+        }
+
+
+    }
+
+    public function deleteWorldtour()
+    {
+        $deleteWorldtour = new WorldtourManager();
+        $fullWorldtour = $deleteWorldtour->findAll();
+        foreach ($fullWorldtour as $value) {
+            if (isset($_POST[$value['id']])) {
+                $id = $_POST['id'];
+                $deleteWorldtour->delete($id);
+
+                $worldtourManager = new WorldtourManager();
+                $worldtour = $worldtourManager->findAll();
+
+                return $this->twig->render('Admin/adminWorldtour.html.twig', ['worldtour' => $worldtour]);
+            } else {
+            }
+        }
+        return $this->twig->render('Admin/adminWorldtour.html.twig');
+    }
+
+    Public function updateArticle()
+    {
+        $updateArticle = new ArticleManager();
+        $articles=$updateArticle->findAll();
+
+
+
+        foreach($articles as $entity){
+            if (isset($_POST[$entity['id']]))
+            {
+                $id = $_POST['id'];
+                $titre = $_POST['titre'];
+                $article = $_POST['article'];
+
+
+                $updateArticle->update($id, $titre, $article);
+                $articleManager = new ArticleManager();
+                $article = $articleManager->findAll();
+
+                return $this->twig->render('Admin/adminArticle.html.twig', ['article' => $article]);
+            } else {
+            }
+        }
+        return $this->twig->render('Admin/adminArticle.html.twig');
+
+    }
+
+
+
+
+
+    /**
      * @return string
      * @throws \Twig_Error_Loader
      * @throws \Twig_Error_Runtime
@@ -113,8 +248,49 @@ class AdminController extends AbstractController
 
     public function adminGoodies()
     {
-        return $this->twig->render('Admin/adminGoodies.html.twig');
+        $GoodiesManager = new GoodiesManager();
+        $GoodiesManager->findAll();
+        $categorieManager= new CategorieManager();
+        $categorie=$categorieManager->findAll();
+        return $this->twig->render('Admin/adminGoodies.html.twig', ['categorie' => $categorie]);
     }
+
+    public function addGoodies()
+    {
+
+            if (isset($_POST['categorie_id'])) {
+                $categorie_id = $_POST['categorie_id'];
+
+                $goodies = $_POST['goodies'];
+                $reference = $_POST['reference'];
+                $prix = $_POST['prix'];
+                $stock = $_POST['stock'];
+
+
+                $addGoodies = new GoodiesManager();
+                $addGoodies->addGoodies($categorie_id, $goodies, $reference, $prix, $stock);
+
+                $categorieManager= new CategorieManager();
+                $categorie=$categorieManager->findAll();
+                return $this->twig->render('Admin/adminGoodies.html.twig', ['categorie' => $categorie]);
+
+            }
+        $categorieManager= new CategorieManager();
+        $categorie=$categorieManager->findAll();
+        return $this->twig->render('Admin/adminGoodies.html.twig', ['categorie' => $categorie]);
+    }
+
+
+
+    public function logoutAdmin()
+    {
+        session_start();
+        session_unset();
+        session_destroy();
+        return $this->twig->render('Admin/index.html.twig');
+    }
+
+
 }
     /**
      * @return string

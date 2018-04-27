@@ -1,4 +1,4 @@
-{% extends 'layout.html.twig' %}
+    {% extends 'layout.html.twig' %}
 
 {% block stylesheet %}
     {{ parent() }}
@@ -59,40 +59,40 @@
         <main class="col-sm-9 offset-sm-3 col-md-10 offset-md-2 pt-3">
             <h1>Goodies</h1>
 
-
             <div class="container">
-                <form action="\adminWorldtour" method="post">
+                <form action="/addGoodies" method="post">
+                        <div class="form-group">
+                            <label for="exampleFormControlSelect1">Catégorie</label>
+                            <select class="form-control" name="categorie_id">
+                                {% for entity in categorie %}
+                                <option value="{{ entity.id }}">{{ entity.type }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
 
-
-                    <form>
                         <div class="form-group">
                             <label for="formGroupExampleInput">Nom du goodies</label>
-                            <input type="text" class="form-control" id="formGroupExampleInput" >
+                            <input type="text" class="form-control" name="goodies" id="formGroupExampleInput" >
                         </div>
-                        <div class="form-group">
-                            <label for="formGroupExampleInput2">Catégorie</label>
-                            <input type="text" class="form-control" id="formGroupExampleInput2" >
-                        </div>
+
                         <div class="form-group">
                             <label for="formGroupExampleInput2">Référence</label>
-                            <input type="text" class="form-control" id="formGroupExampleInput2" >
+                            <input type="text" class="form-control" name="reference" id="formGroupExampleInput2" >
                         </div>
                         <div class="form-group">
                             <label for="formGroupExampleInput2">Prix</label>
-                            <input type="text" class="form-control" id="formGroupExampleInput2" >
+                            <input type="text" class="form-control" name="prix" id="formGroupExampleInput2" >
                         </div>
                         <div class="form-group">
-                            <label for="formGroupExampleInput2">Stock</label>
-                            <input type="text" class="form-control" id="formGroupExampleInput2" >
+                            <select class="form-control" name="stock">
+                                    <option value="dispo">disponible</option>
+                                    <option value="rupture">rupture de stock</option>
+                            </select>
                         </div>
-                    </form>
-
-
-            </div>
-
-            <p><input type="submit" name="submit" value="Insérer" class="btn btn-success"></p>
-
+            <input type="submit" name="submit" value="Insérer" class="btn btn-success">
             </form>
+        </div>
+
 
 
     </div>

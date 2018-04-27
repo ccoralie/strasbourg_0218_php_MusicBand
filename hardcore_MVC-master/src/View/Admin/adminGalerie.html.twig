@@ -58,33 +58,29 @@
             <h1>Galerie</h1>
 
 
-            <form action="index.php" enctype="multipart/form-data" method="post">
-
-                <div>
-                    <label for='upload'>Ajouter des images:</label>
-                    <input id='upload' name="upload[]" type="file" multiple="multiple" />
-
-                <p><input type="submit" name="submit" value="Ajouter" class="btn btn-success"></p>
-                    <br><br>
-                </div>
-
-
+            <form action="/uploadGalerie" method="post" enctype="multipart/form-data">
+                <input type="hidden" name="MAX_FILE_SIZE" value="2000000" />
+                <input type="file" name="fichier[]" multiple="multiple" />
+                <input type="submit" value="Envoyer" name="submit_envoyer" />
             </form>
 
-            <div class="row text-center text-lg-left">
+
+        <div class="container">
+            <div class="row" >
                 {% for entity in galerie %}
-                    <div class="col-lg-3 col-md-4 col-xs-6">
-                        <p><button type="button" class="btn btn-danger">Supprimer</button></p>
-                        <a href="#" class="d-block mb-4 h-100">
-                            <img class="img-fluid img-thumbnail" src="{{ entity. photo}}" alt="">
+            <form action="/deleteGalerie" method="post">
+                <div class="col-lg-3 col-md-4 col-xs-6">
+                        <a href="{{ entity. photo}}" class="d-block mb-4 h-100">
+                            <img class="img-fluid img-thumbnail" name="photo" src="{{ entity. photo}}" alt="">
+                            <input type="hidden" class="btn btn-danger" name="id" value="{{ entity.id }}">
                         </a>
-
                     </div>
-
-
+                    <input type="submit" class="btn btn-danger" name="{{ entity.id }}" value="Supprimer">
+            </form>
                 {% endfor %}
-
             </div>
+        </div>
+
         </main>
     </div>
 </div>

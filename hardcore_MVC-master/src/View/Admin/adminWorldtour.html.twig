@@ -29,7 +29,7 @@
                     <a class="nav-link active" href="/adminWorldtour">Prochains concerts<span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link " href="/adminArticle">Actualité </a>
+                    <a class="nav-link" href="/adminArticle">Actualité </a>
                 </li>
 
 
@@ -62,49 +62,46 @@
 
             <div class="container">
 
-                <form action="\adminWorldtour" method="post">
+                <form action="/addWorldtour" method="post">
 
-                    <form>
+
                         <div class="form-group">
                             <label for="formGroupExampleInput">Ajouter une nouvelle date</label>
-                            <input type="date" class="form-control" id="formGroupExampleInput" >
+                            <input type="date" class="form-control" name="dateconcert" id="formGroupExampleInput" >
                         </div>
                         <div class="form-group">
                             <label for="formGroupExampleInput2">Ajouter une ville</label>
-                            <input type="text" class="form-control" id="formGroupExampleInput2" >
+                            <input type="text" class="form-control" name="ville" id="formGroupExampleInput2" >
                         </div>
                         <div class="form-group">
                             <label for="formGroupExampleInput2">Ajouter une salle</label>
-                            <input type="text" class="form-control" id="formGroupExampleInput2" >
+                            <input type="text" class="form-control" name="salle" id="formGroupExampleInput2" >
                         </div>
 
-                    </form>
-
-                    <p><input type="submit" name="submit" value="Insérer" class="btn btn-success"></p>
+                    <p><input type="submit" name="submit" value="Insérer" id= "add" class="btn btn-success"></p>
                     <br><br>
                 </form>
+
                 <div class="row">
+                    {% for entity in worldtour %}
+                    <form action="/deleteWorldtour" method="post">
                     <table class="table  col-xs-8">
-                        <div class="tablechild">
-
                             <tbody>
-                            {% for entity in worldtour %}
-
-
                                 <tr>
                                     <td>{{ entity.dateconcert }}</td>
                                     <td>{{ entity.ville }}</td>
                                     <td>{{ entity.salle }}</td>
-                                    <td><button type="button" class="btn btn-warning">Modifier</button></td>
-                                    <td><button type="button" class="btn btn-danger">Supprimer</button></td>
-                                </tr>
-                            {% endfor %}
+                                    <td><input type="hidden" class="btn btn-danger" name="id" value="{{ entity.id }}"></td>
 
+                                    <td><input type="submit" class="btn btn-danger" name="{{ entity.id }}" value="Supprimer"></td>
+                                </tr>
 
                             </tbody>
-                        </div>
                     </table>
+                    </form>
+                    {% endfor %}
                 </div>
+
             </div>
         </main>
     </div>
