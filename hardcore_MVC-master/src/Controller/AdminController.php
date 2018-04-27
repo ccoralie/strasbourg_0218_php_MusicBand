@@ -261,23 +261,51 @@ class AdminController extends AbstractController
             if (isset($_POST['categorie_id'])) {
                 $categorie_id = $_POST['categorie_id'];
 
-                $goodies = $_POST['goodies'];
                 $reference = $_POST['reference'];
                 $prix = $_POST['prix'];
                 $stock = $_POST['stock'];
 
+                $allowed_files = array(
+                    "image/gif",
+                    "image/pjpeg",
+                    "image/jpeg",
+                    "image/png");
 
-                $addGoodies = new GoodiesManager();
-                $addGoodies->addGoodies($categorie_id, $goodies, $reference, $prix, $stock);
+                if (isset($_POST['submit_envoyer'])) {
+                    $i = 0;
+                    foreach ($_FILES['fichier']['size'] as $value) {
+                        if (!in_array($_FILES['fichier']['type'][$i], $allowed_files))
+                            die ('type mime incorrect');
+                        if ($value <= 2000000) {
+                            $goodiesManager = new GoodiesManager();
+                            $id=$categorie_id;
+                            $cheminTableau = $goodiesManager->getChemin($id);
+                            $chemin=implode($cheminTableau);
+                            // chemin vers un dossier sur le serveur qui va recevoir les fichiers uploadés
+                            $uploadDir = "assets/images/goodies/".$chemin."/";
+                            // on récupère l'extension, par exemple "pdf"
+                            $extension = pathinfo($_FILES['fichier']['name'][$i], PATHINFO_EXTENSION);
+                            // on concatène le nom de fichier unique avec l'extension récupérée
+                            $pgoodies = uniqid($uploadDir . 'img_') . '.' . $extension;
+                            // on déplace le fichier temporaire vers le nouvel emplacement sur le serveur. Ca y est, le fichier est uploadé
+                            move_uploaded_file($_FILES['fichier']['tmp_name'][$i], $pgoodies);
+                            $goodies='/'.$pgoodies;
 
-                $categorieManager= new CategorieManager();
-                $categorie=$categorieManager->findAll();
-                return $this->twig->render('Admin/adminGoodies.html.twig', ['categorie' => $categorie]);
 
+                            $addGoodies = new GoodiesManager();
+                            $addGoodies->addGoodies($categorie_id, $goodies, $reference, $prix, $stock);
+
+                            $categorieManager = new CategorieManager();
+                            $categorie = $categorieManager->findAll();
+                            return $this->twig->render('Admin/adminGoodies.html.twig', ['categorie' => $categorie]);
+                        }
+                        $i++;
+                    }
+                    $categorieManager = new CategorieManager();
+                    $categorie = $categorieManager->findAll();
+                    return $this->twig->render('Admin/adminGoodies.html.twig', ['categorie' => $categorie]);
+                }
             }
-        $categorieManager= new CategorieManager();
-        $categorie=$categorieManager->findAll();
-        return $this->twig->render('Admin/adminGoodies.html.twig', ['categorie' => $categorie]);
     }
 
 

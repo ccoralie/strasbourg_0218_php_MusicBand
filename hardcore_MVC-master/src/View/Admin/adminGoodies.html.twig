@@ -60,45 +60,39 @@
             <h1>Goodies</h1>
 
             <div class="container">
-                <form action="/addGoodies" method="post">
-                        <div class="form-group">
-                            <label for="exampleFormControlSelect1">Catégorie</label>
+                <form action="/addGoodies" method="post" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <label for="exampleFormControlSelect1">Catégorie</label>
                             <select class="form-control" name="categorie_id">
-                                {% for entity in categorie %}
+                            {% for entity in categorie %}
                                 <option value="{{ entity.id }}">{{ entity.type }}</option>
-                                {% endfor %}
-                            </select>
-                        </div>
+                            {% endfor %}
+                           </select>
+                    </div>
 
-                        <div class="form-group">
-                            <label for="formGroupExampleInput">Nom du goodies</label>
-                            <input type="text" class="form-control" name="goodies" id="formGroupExampleInput" >
-                        </div>
-
-                        <div class="form-group">
+                    <div class="form-group">
+                        <input type="hidden" name="MAX_FILE_SIZE" value="2000000" />
+                        <input type="file" name="fichier[]" multiple="multiple" />
+                    </div>
+                    <div class="form-group">
                             <label for="formGroupExampleInput2">Référence</label>
                             <input type="text" class="form-control" name="reference" id="formGroupExampleInput2" >
-                        </div>
-                        <div class="form-group">
+                    </div>
+                    <div class="form-group">
                             <label for="formGroupExampleInput2">Prix</label>
                             <input type="text" class="form-control" name="prix" id="formGroupExampleInput2" >
-                        </div>
-                        <div class="form-group">
-                            <select class="form-control" name="stock">
-                                    <option value="dispo">disponible</option>
-                                    <option value="rupture">rupture de stock</option>
-                            </select>
-                        </div>
-            <input type="submit" name="submit" value="Insérer" class="btn btn-success">
+                    </div>
+                    <div class="form-group">
+                        <select class="form-control" name="stock">
+                            <option value="dispo">disponible</option>
+                            <option value="rupture">rupture de stock</option>
+                        </select>
+                    </div>
+                <input type="submit" name="submit_envoyer" value="Submit" class="btn btn-success">
             </form>
         </div>
 
-
-
-    </div>
-    </main>
-</div>
-    </div>
+        </main>
 
 
 
