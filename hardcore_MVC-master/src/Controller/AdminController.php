@@ -5,8 +5,10 @@
 
 namespace Controller;
 use Model\ArticleManager;
+use Model\CategorieManager;
 use Model\GalerieManager;
 use Model\WorldtourManager;
+use Model\GoodiesManager;
 
 /**
  * Created by PhpStorm.
@@ -179,7 +181,6 @@ class AdminController extends AbstractController
         foreach ($fullWorldtour as $value) {
             if (isset($_POST[$value['id']])) {
                 $id = $_POST['id'];
-var_dump($id);
                 $deleteWorldtour->delete($id);
 
                 $worldtourManager = new WorldtourManager();
@@ -247,7 +248,36 @@ var_dump($id);
 
     public function adminGoodies()
     {
-        return $this->twig->render('Admin/adminGoodies.html.twig');
+        $GoodiesManager = new GoodiesManager();
+        $GoodiesManager->findAll();
+        $categorieManager= new CategorieManager();
+        $categorie=$categorieManager->findAll();
+        return $this->twig->render('Admin/adminGoodies.html.twig', ['categorie' => $categorie]);
+    }
+
+    public function addGoodies()
+    {
+
+            if (isset($_POST['categorie_id'])) {
+                $categorie_id = $_POST['categorie_id'];
+
+                $goodies = $_POST['goodies'];
+                $reference = $_POST['reference'];
+                $prix = $_POST['prix'];
+                $stock = $_POST['stock'];
+
+
+                $addGoodies = new GoodiesManager();
+                $addGoodies->addGoodies($categorie_id, $goodies, $reference, $prix, $stock);
+
+                $categorieManager= new CategorieManager();
+                $categorie=$categorieManager->findAll();
+                return $this->twig->render('Admin/adminGoodies.html.twig', ['categorie' => $categorie]);
+
+            }
+        $categorieManager= new CategorieManager();
+        $categorie=$categorieManager->findAll();
+        return $this->twig->render('Admin/adminGoodies.html.twig', ['categorie' => $categorie]);
     }
 
 
