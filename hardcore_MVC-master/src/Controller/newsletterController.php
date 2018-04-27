@@ -42,10 +42,10 @@ class newsletterController extends AbstractController
         echo '<pre>';**/
 
 
-
         // Passing `true` enables exceptions
         if (isset($_POST['submit']) && !empty($_POST['TEXT']))  {
             try {
+
 
                 //Server settings
                 $mail->SMTPDebug = 2;                                 // Enable verbose debug output
@@ -77,8 +77,11 @@ class newsletterController extends AbstractController
 
                 $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 
-                $mail->send(header('location: /adminFanclub'));
-                echo 'message envoyé';
+                $mail->send(header('location:/adminFanclub'));
+
+                echo 'Message envoyé';
+
+
 
             } catch
             (Exception $e) {
