@@ -4,6 +4,7 @@
 
 
 namespace Controller;
+use Model\AlbumManager;
 use Model\ArticleManager;
 use Model\CategorieManager;
 use Model\GalerieManager;
@@ -131,7 +132,53 @@ class AdminController extends AbstractController
 
     public function adminDiscographie()
     {
-        return $this->twig->render('Admin/adminDiscographie.html.twig');
+        $albumManager = new AlbumManager();
+        $album = $albumManager->findAll();
+
+        return $this->twig->render('Admin/adminDiscographie.html.twig',['album' => $album]);
+
+    }
+
+
+    public function uploadDiscographie()
+    {
+        $allowed_files = array(
+            "image/gif",
+            "image/pjpeg",
+            "image/jpeg",
+            "image/png");
+
+        if (isset($_POST['submit'])) {
+
+            $i=0;
+            foreach ($_FILES['fichier']['size'] as $value){
+                if (!in_array($_FILES['fichier']['type'][$i], $allowed_files))
+                    die ('type mime incorrect');
+                if ($value<=2000000) {
+                    // chemin vers un dossier sur le serveur qui va recevoir les fichiers uploadés
+                    $uploadDir = 'assets/images/Discographie/';
+                    // on récupère l'extension, par exemple "pdf"
+                    $extension = pathinfo($_FILES['fichier']['name'][$i], PATHINFO_EXTENSION);
+                    // on concatène le nom de fichier unique avec l'extension récupérée
+                    $pochetteAlbum =uniqid($uploadDir.'img_') . '.' .$extension;
+                    // on déplace le fichier temporaire vers le nouvel emplacement sur le serveur. Ca y est, le fichier est uploadé
+                    move_uploaded_file($_FILES['fichier']['tmp_name'][$i], $pochetteAlbum);
+
+                    $uploadDiscographie = new AlbumManager();
+                    $uploadDiscographie->add($pochetteAlbum);
+                    $albumManager = new AlbumManager();
+                    $album = $albumManager->findAll();
+
+                    return $this->twig->render('Admin/adminDiscographie.html.twig',['album' => $album]);
+
+                }
+                else {
+                }
+                $i++;
+            }
+            $Error = "le fichier excède 2Mo";
+            return $this->twig->render('Admin/adminDiscographie.html.twig', ['Error' => $Error]);
+        }
     }
 
     /**

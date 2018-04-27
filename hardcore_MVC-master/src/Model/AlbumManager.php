@@ -20,5 +20,13 @@ class AlbumManager extends EntityManager
     }
 
 
+    public function add($pochetteAlbum)
+    {
+
+        $statement = $this->conn->prepare("INSERT INTO $this->table (pochetteAlbum) VALUES (:pochetteAlbum)");
+        $statement->bindValue(':pochetteAlbum', $pochetteAlbum);
+        $statement->execute();
+
+    }
 }
 
