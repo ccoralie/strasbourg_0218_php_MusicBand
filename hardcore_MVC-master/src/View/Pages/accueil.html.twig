@@ -11,30 +11,29 @@
     {% block content %}
 
                 {#carousel#}
-<section>
-
-        <!--Carrousel-->
 
         <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-            <!-- Carousel indicators -->
+            <!-- Indicators -->
             <ol class="carousel-indicators">
-                {% for i,entity in carousel %}
-                    <li data-target="#carouselExampleIndicators" data-slide-to="{{ i }}" {% if i==0 %}class="active"{% endif %}></li>
+                {% for entity in carousel %}
+                    {% if loop.first %}{% set active = 'active' %}{% else %}{% set active = '' %}{% endif %}
+                    <li data-target="#carouselExampleIndicators" data-slide-to="{{ loop.index0 }}" class="{{ active }}"></li>
                 {% endfor %}
 
             </ol>
 
-            <!-- Wrapper for carousel items -->
+            <!-- Wrapper for slides -->
             <div class="carousel-inner">
                 {% for entity in carousel %}
-                    <div class="carousel-item {% if loop.index == 1 %} active {% endif %}">
+                    {% if loop.first %}{% set active = 'active' %}{% else %}{% set active = '' %}{% endif %}
+                    <div class="carousel-item {{ active }}">
                         <img class="d-block w-100" src="{{ entity.url_image }}" alt="Other Slide">
                     </div>
                 {% endfor %}
             </div>
-            <!-- Wrapper for slides -->
 
-                <!-- Carousel controls -->
+
+            <!-- Carousel controls -->
                 <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                     <span class="sr-only">Previous</span>
@@ -169,28 +168,14 @@
                                 <p id="caption"></p>
                             </div>
 
-
-                            <!--    <div class="column">
-                                  <img class="demo cursor" src="http://via.placeholder.com/200x200"  onclick="currentSlide(1)" >
-                                </div>
-                                <div class="column">
-                                  <img class="demo cursor" src="http://via.placeholder.com/200x200"  onclick="currentSlide(2)" >
-                                </div>
-                                <div class="column">
-                                  <img class="demo cursor" src="http://via.placeholder.com/200x200"  onclick="currentSlide(3)" >
-                                </div>
-                                <div class="column">
-                                  <img class="demo cursor" src="http://via.placeholder.com/200x200"  onclick="currentSlide(4)" >
-                                </div>
-                              </div>-->
                         </div>
                     </div>
                 </div>
             </div>
 
-   
 
-</section>
+
+
 {% endblock %}
 
 
