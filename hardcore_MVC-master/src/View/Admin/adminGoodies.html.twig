@@ -9,8 +9,8 @@
 {% block header %}
     <nav class="navbar navbar-toggleable-md navbar-inverse fixed-top bg-inverse">
 
-        <a class="navbar-brand" href="/logout">Déconnexion</a>
-        <h5>Bonjour M. Olivier</h5>
+        <a class="navbar-brand" href="/logoutAdmin">Déconnexion</a>
+        <h5>Bonjour {{ nameReturn }} !!!</h5>
     </nav>
 
 
@@ -23,7 +23,7 @@
                     <a class="nav-link" href="/adminPage">Tableau de bord </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" href="/adminGoodies">Goodies<span class="sr-only">(current)</span></a>
+                    <a class="nav-link active" href="/adminGoodies/1">Goodies<span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link " href="/adminWorldtour">Prochains concerts</a>
@@ -64,7 +64,7 @@
                     <div class="form-group">
                         <label for="exampleFormControlSelect1">Catégorie</label>
                             <select class="form-control" name="categorie_id">
-                            {% for entity in categorie %}
+                            {% for entity in menuAdminGoodies %}
                                 <option value="{{ entity.id }}">{{ entity.type }}</option>
                             {% endfor %}
                            </select>
@@ -92,6 +92,35 @@
             </form>
         </div>
 
+            <div class="container">
+                <div class="row">
+                        <form action="/deleteGoodies" method="post">
+                            <div class="form-group" style="display: flex">
+
+                                {% for uneCategorie in menuAdminGoodies %}
+                                    <a class="nav-item nav-link" href="/adminGoodies/{{ uneCategorie.id }}">
+                                        {{ uneCategorie.type }}
+                                    </a>
+                                {% endfor %}
+                            </div>
+
+                        <div class="form-group">
+                            {% for REF in affichageParGoodiesCategorie %}
+                            <div class="col-md-4">
+                                <div class="card">
+                                    <a class="lightbox" href="{{ REF.goodies }}">
+                                        <img src="{{ REF.goodies }}" alt="Park" class="card-img-top">
+                                        <input type="hidden" class="btn btn-danger" name="id" value="{{ REF.id }}">
+                                    </a>
+                                </div>
+                                <input type="submit" name="submit_delete" class="btn btn-danger" value="Supprimer">
+                                </input>
+                            </div>
+                            {% endfor %}
+                        </div>
+                        </form>
+            </div>
+            </div>
         </main>
 
 
@@ -101,4 +130,3 @@
 
 {% block footer %}
 {% endblock %}
-
