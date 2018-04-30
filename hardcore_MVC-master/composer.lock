@@ -4,7 +4,6 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "b098cb57f623edebd19bc9c28406ef33",
     "content-hash": "63aa7adf0757e0f5acc95e8dfb5431a5",
     "packages": [
         {
@@ -48,7 +47,7 @@
                 "router",
                 "routing"
             ],
-            "time": "2017-01-19 11:35:12"
+            "time": "2017-01-19T11:35:12+00:00"
         },
         {
             "name": "phpmailer/phpmailer",
@@ -114,7 +113,7 @@
                 }
             ],
             "description": "PHPMailer is a full-featured email creation and transfer class for PHP",
-            "time": "2018-03-27 13:49:45"
+            "time": "2018-03-27T13:49:45+00:00"
         },
         {
             "name": "squizlabs/php_codesniffer",
@@ -165,7 +164,7 @@
                 "phpcs",
                 "standards"
             ],
-            "time": "2017-10-16 22:40:25"
+            "time": "2017-10-16T22:40:25+00:00"
         },
         {
             "name": "symfony/polyfill-mbstring",
@@ -224,7 +223,7 @@
                 "portable",
                 "shim"
             ],
-            "time": "2017-06-14 15:44:48"
+            "time": "2017-06-14T15:44:48+00:00"
         },
         {
             "name": "twig/twig",
@@ -290,7 +289,7 @@
             "keywords": [
                 "templating"
             ],
-            "time": "2018-03-20 04:31:17"
+            "time": "2018-03-20T04:31:17+00:00"
         }
     ],
     "packages-dev": [],

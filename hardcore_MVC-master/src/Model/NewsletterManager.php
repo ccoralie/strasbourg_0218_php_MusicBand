@@ -27,7 +27,14 @@ class NewsletterManager extends EntityManager
         $statement->bindValue(':nom', $nom);
         $statement->bindValue(':mail', $mail);
         $statement->execute();
+    }
 
+    public function getMailsToSend()
+    {
+
+        $statement = $this->conn->prepare("SELECT mail FROM $this->table");
+        $statement->execute();
+        return $statement->fetchAll();
 
     }
 
