@@ -47,4 +47,11 @@ class GoodiesManager extends EntityManager
 
     }
 
+    public function deleteById($id){
+        $statement = $this->conn->prepare("DELETE FROM $this->table WHERE id=:id");
+        $statement->bindValue(':id', $id);
+        $statement->execute();
+    }
+
+
 }

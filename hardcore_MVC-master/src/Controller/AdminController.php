@@ -7,6 +7,7 @@ namespace Controller;
 use Model\ArticleManager;
 use Model\CategorieManager;
 use Model\GalerieManager;
+use Model\Goodies;
 use Model\WorldtourManager;
 use Model\GoodiesManager;
 
@@ -249,10 +250,10 @@ class AdminController extends AbstractController
     public function adminGoodies()
     {
         $GoodiesManager = new GoodiesManager();
-        $GoodiesManager->findAll();
+        $goodies=$GoodiesManager->findAll();
         $categorieManager= new CategorieManager();
         $categorie=$categorieManager->findAll();
-        return $this->twig->render('Admin/adminGoodies.html.twig', ['categorie' => $categorie]);
+        return $this->twig->render('Admin/adminGoodies.html.twig', ['categorie' => $categorie, 'goodies' => $goodies]);
     }
 
     public function addGoodies()
@@ -307,6 +308,49 @@ class AdminController extends AbstractController
                 }
             }
     }
+
+      public function menuAdminGoodies()
+      {
+          $CategorieManager = new CategorieManager();
+          $menuAdminGoodies = $CategorieManager->getTypeCategorie();
+          return $this->twig->render('Admin/adminGoodies.html.twig', ['menuAdminGoodies' => $menuAdminGoodies]);
+      }
+
+
+      public function affichageParGoodiesCategorie($GetId)
+      {
+          $GoodiesManager = new GoodiesManager();
+          $affichageParGoodiesCategorie = $GoodiesManager->GoodiesParCategorie($GetId);
+
+          $CategorieManager = new CategorieManager();
+          $menuAdminGoodies = $CategorieManager->getTypeCategorie();
+          return $this->twig->render('Admin/adminGoodies.html.twig', ['affichageParGoodiesCategorie' => $affichageParGoodiesCategorie, 'menuAdminGoodies' => $menuAdminGoodies]);
+
+      }
+
+      public function deleteGoodies(){
+
+          $deleteGoodies = new GoodiesManager();
+          $deleteGoodies->findAll();
+
+
+              if (isset($_POST['id'])) {
+                  $id = $_POST['id'];
+
+                  $deleteGoodies->deleteById($id);
+
+                  $goodiesManager = new GoodiesManager();
+                  $goodies = $goodiesManager->findAll();
+
+                  $CategorieManager = new CategorieManager();
+                  $menuAdminGoodies = $CategorieManager->getTypeCategorie();
+
+
+                  return $this->twig->render('Admin/adminGoodies.html.twig', ['goodies' => $goodies,'menuAdminGoodies' => $menuAdminGoodies]);
+              }
+
+          return $this->twig->render('Admin/adminGoodies.html.twig');
+      }
 
 
 
