@@ -88,7 +88,7 @@
                 <input type="submit" name="submit_envoyer" value="Submit" class="btn btn-success">
             </form>
         </div>
-
+        <br>
             <div class="container">
                 <div class="row">
                         <form action="/deleteGoodies" method="post">
@@ -102,20 +102,23 @@
                             </div>
 
                         <div class="form-group">
+                            <div class="row" style="display: flex;">
                             {% for REF in affichageParGoodiesCategorie %}
-                            <div class="col-md-4">
-                                <div class="card">
-                                    <a class="lightbox" href="{{ REF.goodies }}">
-                                        <img src="{{ REF.goodies }}" alt="Park" class="card-img-top">
+                            <div class="col-md-4" >
+                                <div class="card" style="margin: 1.5em 0 0 0" >
+                                    <a class="lightbox" href="{{ REF.goodies }}" style="height: 350px">
+                                        <img src="{{ REF.goodies }}" alt="Park" class="card-img-top" style="max-height: 350px">
                                         <input type="hidden" class="btn btn-danger" name="id" value="{{ REF.id }}">
                                     </a>
                                 </div>
-                                <input type="submit" name="submit_delete" class="btn btn-danger" value="Supprimer">
+                                <input type="submit" name="submit_delete" class="btn btn-danger" value="Supprimer" style="width: 100%">
                                 </input>
                             </div>
                             {% endfor %}
+                            </div>
                         </div>
                         </form>
+
             </div>
             </div>
         </main>
