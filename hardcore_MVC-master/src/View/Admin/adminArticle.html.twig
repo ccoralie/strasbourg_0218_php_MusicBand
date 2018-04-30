@@ -10,7 +10,7 @@
     <nav class="navbar navbar-toggleable-md navbar-inverse fixed-top bg-inverse">
 
         <a class="navbar-brand" href="/logoutAdmin">Déconnexion</a>
-        <h5>Bonjour {{ nameReturn }} !!!</h5>
+        <h5>Bonjour Franck-O !!!</h5>
     </nav>
 
 
@@ -23,26 +23,27 @@
                     <h4>Tableau de bord </h4>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/adminGoodies/1">Goodies</a>
+                    <a class="nav-link active" href="/adminArticle">Actualité <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/adminWorldtour">Prochains concerts</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" href="/adminArticle">Actualité <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="/adminDiscographie">Discographie</a>
                 </li>
-
+                <li class="nav-item">
+                    <a class="nav-link" href="/adminGalerie">Galerie photos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/adminGoodies/1">Goodies</a>
+                </li>
 
                 <li class="nav-item">
                     <a class="nav-link" href="/adminFanclub">Newsletter</a>
                 </li>
 
-                <li class="nav-item">
-                    <a class="nav-link" href="/adminGalerie">Galerie photos</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/adminDiscographie">Discographie</a>
-                </li>
+
+
 
             </ul>
 
@@ -62,18 +63,20 @@
 
             <div class="container newActu">
 
-                <div class="row ">
+                <div class="row" style="display: flex; flex-direction: column">
                     {% for entity in article %}
 
-                    <form action="/updateArticle" method="post">
+                        <form action="/updateArticle" method="post">
+                        <br>
+                        <h1>Article {{ entity.id }}</h1>
                         <div class="form-group">
                             <input type="hidden" name="id" value="{{ entity.id }}">
                             <label for="formGroupExampleInput2">Modifier le titre</label>
-                            <textarea name="titre">{{ entity.titre }}</textarea>
+                            <textarea name="titre" style="width: 100%">{{ entity.titre }}</textarea>
                         </div>
                         <div class="form-group">
                             <label for="formGroupExampleInput2">Modifier l'article</label>
-                            <textarea name="article" style="width: 200px">{{ entity.article }}</textarea>
+                            <textarea name="article" style="width: 100%; height: 300px">{{ entity.article }}</textarea>
                         </div>
                         <input type="submit" class="btn btn-warning" name="{{ entity.id }}" value="Modifier">
                     </form>
