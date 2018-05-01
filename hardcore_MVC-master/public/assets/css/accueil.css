@@ -94,10 +94,16 @@ img.hoverShadow {
     margin-bottom: 50px;
 }
 .lastPhotos h2{
-    color: white;
+    color: black;
     font-family: 'Mina', sans-serif;
     text-align: center;
     font-weight: bold;
+}
+
+img.img-fluid.img-thumbnail{
+    width:400px;
+    height:200px;
+
 }
 
 .row:after {
