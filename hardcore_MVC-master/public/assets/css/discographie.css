@@ -4,7 +4,7 @@ body{
 }
 
 section{
-    position: fixed;
+    position: absolute;
     left:26%;
 }
 
@@ -12,10 +12,7 @@ ul{
     z-index: 2;
 }
 
-.page-footer{
-    position: absolute;
-    bottom: 0;
-}
+
 
 .slides {
     padding:0;
