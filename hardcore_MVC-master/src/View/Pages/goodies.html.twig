@@ -24,13 +24,14 @@
 
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
 
-                <div class="collapse navbar-collapse" id="navbarGoodies">
+                <div class="navbar" id="navbarGoodies">
                     <div class="navbar-nav">
                         {% for uneCategorie in menuGoodies %}
                         <a class="nav-item nav-link" href="/Goodies/{{ uneCategorie.id }}">
                                 {{ uneCategorie.type }}
                         </a>
                         {% endfor %}
+
                     </div>
                 </div>
             </nav>
