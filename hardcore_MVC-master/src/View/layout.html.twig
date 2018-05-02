@@ -5,16 +5,40 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>{% block title %}{% endblock %}</title>
+    <title>{% block title %}Franck and the wilders{% endblock %}</title>
 
-    <link rel="stylesheet" href="/assets/css/styles.css">
-    {% block stylesheet %}{% endblock %}
+
+
+
+    {% block stylesheet %}
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/css?family=Bungee+Inline|Lateef|Libre+Barcode+39+Extended+Text|Mina" rel="stylesheet">
+        <link rel="stylesheet" href="/assets/css/styles.css">
+    {% endblock %}
+
+
     <link rel="icon" href="/assets/images/favicon.png">
+
 </head>
 
 <body>
-    {% block content %}{% endblock %}
+    {% block header %}
+    {% include '/Pages/header.html.twig' %}
+    {% endblock %}
+
+    {% block content %}
+    {% endblock %}
+
+    {% block footer %}
+    {% include '/Pages/footer.html.twig' %}
+    {% endblock %}
+
 </body>
 
-{% block javascript %}{% endblock %}
+{% block javascript %}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+{% endblock %}
 </html>

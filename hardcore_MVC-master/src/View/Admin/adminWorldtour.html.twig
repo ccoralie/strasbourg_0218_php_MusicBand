@@ -1,0 +1,116 @@
+{% extends 'layout.html.twig' %}
+
+{% block stylesheet %}
+    {{ parent() }}
+
+    <link rel="stylesheet" href="/assets/css/admin.css">
+{% endblock %}
+
+{% block header %}
+    <nav class="navbar navbar-toggleable-md navbar-inverse fixed-top bg-inverse">
+
+        <a class="navbar-brand" href="/logoutAdmin">Déconnexion</a>
+        <h5>Bonjour Franck-O !!!</h5>
+    </nav>
+
+
+<div class="container-fluid">
+    <div class="row">
+        <nav class="col-sm-3 col-md-2 hidden-xs-down bg-faded sidebar">
+            <ul class="nav nav-pills flex-column">
+
+                <li class="nav-item">
+                    <h4>Tableau de bord </h4>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/adminArticle">Actualité</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="/adminWorldtour">Prochains concerts <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/adminDiscographie">Discographie </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/adminGalerie">Galerie photos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/adminGoodies/1">Goodies</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/adminFanclub">Newsletter</a>
+                </li>
+
+            </ul>
+
+
+        </nav>
+
+        {% endblock %}
+
+        {% block content %}
+
+
+
+
+        <main class="col-sm-9 offset-sm-3 col-md-10 offset-md-2 pt-3">
+            <h1>Prochains concerts</h1>
+
+
+            <div class="container">
+
+                <form action="/addWorldtour" method="post">
+
+
+                        <div class="form-group">
+                            <label for="formGroupExampleInput">Ajouter une nouvelle date</label>
+                            <input type="date" class="form-control" name="dateconcert" id="formGroupExampleInput" >
+                        </div>
+                        <div class="form-group">
+                            <label for="formGroupExampleInput2">Ajouter une ville</label>
+                            <input type="text" class="form-control" name="ville" id="formGroupExampleInput2" >
+                        </div>
+                        <div class="form-group">
+                            <label for="formGroupExampleInput2">Ajouter une salle</label>
+                            <input type="text" class="form-control" name="salle" id="formGroupExampleInput2" >
+                        </div>
+
+                    <p><input type="submit" name="submit" value="Insérer" id= "add" class="btn btn-success"></p>
+                    <br><br>
+                </form>
+
+                <div class="row" style="display: flex; flex-direction: column;">
+                    {% for entity in worldtour %}
+                    <form action="/deleteWorldtour" method="post">
+                    <table class="table">
+                        <div class="tablechild">
+                            <tbody>
+                                <tr>
+                                    <td>{{ entity.dateconcert }}</td>
+                                    <td>{{ entity.ville }}</td>
+                                    <td>{{ entity.salle }}</td>
+                                    <td><input type="hidden" class="btn btn-danger" name="id" value="{{ entity.id }}"></td>
+                                    <td><input type="submit" class="btn btn-danger" name="{{ entity.id }}" value="Supprimer"></td>
+                                </tr>
+
+                            </tbody>
+                        </div>
+                    </table>
+                    </form>
+                    {% endfor %}
+                </div>
+
+            </div>
+        </main>
+    </div>
+    </div>
+
+
+
+
+{% endblock %}
+
+{% block footer %}
+{% endblock %}
+

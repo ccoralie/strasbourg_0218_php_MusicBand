@@ -12,17 +12,16 @@ namespace Model;
 abstract class EntityManager
 {
     protected $conn; //variable de connexion
-
     protected $table;
 
-    public function __construct($table)
+   public function __construct($table)
     {
         $db = new Connection();
         $this->conn = $db->getPdo();
         $this->table = $table;
     }
 
-    /**
+     /**
      * @return array
      */
     public function findAll()
@@ -47,10 +46,15 @@ abstract class EntityManager
     /**
      *
      */
-    public function delete($id)
+    /*public function delete()
     {
         //TODO : Implements SQL DELETE request
-    }
+
+        // prepared request
+        $statement = $this->conn->prepare("DELETE * FROM $this->table WHERE id=:id");
+        $statement->bindValue('id', $id, \PDO::PARAM_INT);
+        return $statement->execute();
+    }*/
 
     /**
      *
@@ -58,16 +62,42 @@ abstract class EntityManager
     public function insert($data)
     {
         //TODO : Implements SQL INSERT request
+        // prepared request
+
+
+        $statement = $this->conn->prepare("INSERT INTO $this->table (name, data) VALUES (:name, :data)");
+        $statement->bindParam(':name', $name);
+        $statement->bindParam(':data', $data);
+        $statement->execute();
+
+        return $statement->fetch(\PDO::FETCH_ASSOC);
+
     }
 
 
     /**
      *
      */
-    public function update($id, $data)
+ /*  public function update($id, $data)
     {
         //TODO : Implements SQL UPDATE request
+
+        $statement = $this->conn->prepare("UPDATE $this->table SET data = :data WHERE id= :id ");
+        $statement->bindParam(':data', $data);
+        $statement->bindParam(':id', $id);
+        $statement->execute();
+
+        return $statement->fetch(\PDO::FETCH_ASSOC);
+    }*/
+
+    public function getTypeCategorie()
+    {
+        $statement = $this->conn->prepare("SELECT * FROM $this->table ORDER BY id ASC");
+        $statement->execute();
+
+        return $statement->fetchAll(\PDO::FETCH_ASSOC);
     }
+
 
 
 }

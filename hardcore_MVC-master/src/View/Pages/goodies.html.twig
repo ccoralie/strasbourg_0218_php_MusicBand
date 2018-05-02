@@ -1,1 +1,94 @@
 {% extends 'layout.html.twig' %}
+
+{% block stylesheet %}
+ {{ parent() }}
+<link rel="stylesheet" href="/assets/css/goodies.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+{% endblock %}
+
+{% block content %}
+<!-- Encart visuel Prochains Concerts -->
+<section class="worldTitle">
+    <h1>Goodies</h1>
+</section>
+
+<!-- Galerie -->
+
+<section>
+    <div class="container">
+
+        <div class="container gallery-container">
+
+            <h1 class="text-center">Franck & The Wilders</h1>
+
+
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+
+                <div class="navbar" id="navbarGoodies">
+                    <div class="navbar-nav">
+                        {% for uneCategorie in menuGoodies %}
+                        <a class="nav-item nav-link" href="/Goodies/{{ uneCategorie.id }}">
+                                {{ uneCategorie.type }}
+                        </a>
+                        {% endfor %}
+
+                    </div>
+                </div>
+            </nav>
+
+            <div class="tz-gallery">
+
+                <!-- GALERIE IMAGE 1 -->
+
+                <div class="row md-12">
+
+                    {% for REF in affichageParGoodiesCategorie %}
+
+                    <div class="col-md-4">
+                        <div class="card">
+                            <a class="lightbox" href="{{ REF.goodies }}">
+                                <img src="{{ REF.goodies }}" alt="Park" class="card-img-top">
+                            </a>
+                            <button type="button" class="btn" data-toggle="modal" data-target=".good{{ REF.id }}"><span
+                                        class="glyphicon glyphicon-plus" aria-hidden="true"></span> Plus d'informations
+                            </button>
+                            <!-- MODAL IMAGE 1 -->
+                            <div class="modal fade good{{ REF.id }}" tabindex="-1" role="dialog" aria-labelledby="good{{ REF.id }}">
+                                <div class="modal-dialog modal-lg" role="document">
+                                    <div class="modal-content">
+                                        <div class="thumbnail text-center">
+                                            <div class="row justify-content-center">
+                                                <div class="col-md-4">
+                                                    <div class="thumbnail">
+                                                        <a href="{{ REF.goodies }}">
+                                                            <img src="{{ REF.goodies }}" alt="Lights" style="width:100%">
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="caption">
+                                                <p class="alert alert-info">{{ REF.prix }} € <br>
+                                                    Articles disponibles dans les boutiques lors de nos concerts<br>
+                                                    XS - S - M - L - XL - XXL</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
+
+{% endblock %}
+
+{% block javascript %}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.js"></script>
+{% endblock %}

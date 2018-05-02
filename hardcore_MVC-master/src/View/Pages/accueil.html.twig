@@ -1,1 +1,174 @@
 {% extends 'layout.html.twig' %}
+
+      {% block stylesheet %}
+          {{ parent() }}
+
+
+          <link rel="stylesheet" href="/assets/css/accueil.css">
+      {% endblock %}
+
+
+    {% block content %}
+
+
+
+                {#carousel#}
+
+        <div class="carousel-container">
+            <div class="carousel">
+                {% for entity in carousel %}
+                    <div id="item{{ entity.id }}" class="carousel-item">
+                        <img src="{{ entity.url_image }}" style="width:100%;">
+                    </div>
+                {% endfor %}
+            </div>
+
+        </div>
+
+    {# histoire du groupe #}
+    <div class="container-fluid col-lg-offset-1 col-lg-10 col-sm-12">
+
+        <div class="history">
+            <h1>Franck and the Wilders</h1>
+
+            <p>
+                Franck and The Wilders, c’est comme le vieux chaudron de Mamie, ils n’ont rien inventé, mais qu’est ce que c’est bon ! <br> La voix suave de Franck Wild est transcendée par les riffs péchus et énervés de Kyle Git. Que dire des performances live de BrokenGuigui, si ce n’est que ses inspirations relèvent du génie. </p>
+
+            <p>Pour finir, Axel Pink vient compléter le quatuor improbable en vous faisant vibrer sous la vibe de sa GROSSE BASSE.</p>
+
+            <p>Les FATW, c’est de l’énergie, du rock qui tâche comme on en entend plus, pour le plus grand bonheur des amoureux d’une époque où faire du Rock avait encore une signification.</p>
+
+                <p>En tournée dans le monde entier de l’Alsace en 2018, n’hésitez pas à venir nombreux!!!!</p>
+        </div>
+    </div>
+
+    {# Photos membres du groupe #}
+    <div class="container-fluid fondNoir">
+
+        <div class="row membres">
+
+            <figure class="col-lg-3 col-md-6 col-sm-10 photoMb">
+                <img src="/assets/images/PhotosGroupe/Franck.jpg">
+                <br><br>
+                <figcaption>Franck WILD</figcaption>
+            </figure>
+
+            <figure class="col-lg-3 col-md-6 col-sm-10 photoMb">
+                <img src="/assets/images/PhotosGroupe/Axel.jpg">
+                <br><br>
+                <figcaption>Axl PINK</figcaption>
+
+            </figure>
+
+            <figure class="col-lg-3 col-md-6 col-sm-10 photoMb">
+                <img src="/assets/images/PhotosGroupe/Guillaume.jpg">
+                <br><br>
+                <figcaption>BROCKEN Guigui</figcaption>
+            </figure>
+
+            <figure class="col-lg-3 col-md-6 col-sm-10 photoMb">
+                <img src="/assets/images/PhotosGroupe/Kyle.jpg">
+                <br><br>
+                <figcaption>Kyle GITHACK</figcaption>
+            </figure>
+
+        </div>
+
+    </div>
+
+    {# actualité #}
+    <div class="container newActu">
+        <h2> ACTUALITE </h2>
+        <div class="row ">
+        {% for entity in article %}
+
+
+            <div class="actu">
+                <div class="titreActu">
+
+                    <h3>{{ entity.titre }}</h3>
+
+                </div>
+
+                <div class="textActu">
+                    <hr color='black'>
+                    <p>{{ entity.article }}</p>
+                </div>
+
+            </div>
+
+        {% endfor %}
+        </div>
+    </div>
+
+
+
+    {# Dernières photos #}
+
+
+            <div class=" photoLast">
+                <div class="container lastPhotos">
+                    <h2> CONCERTS LES PLUS WILD </h2>
+                    <br>
+                    <div class="row text-center text-lg-left newPhotos ">
+                        <div class="col-lg-3 col-md-4 col-xs-6">
+                            <img src="/assets/images/Galerie/concert _resize.jpg" onclick="openModal();currentSlide(1)" class="hover-shadow cursor img-fluid img-thumbnail">
+                        </div>
+                        <div class="col-lg-3 col-md-4 col-xs-6">
+                            <img src="/assets/images/Galerie/concert2_resize.jpg" onclick="openModal();currentSlide(2)" class="hover-shadow cursor img-fluid img-thumbnail">
+                        </div>
+                        <div class="col-lg-3 col-md-4 col-xs-6">
+                            <img src="/assets/images/Galerie/foule_resize.jpg" onclick="openModal();currentSlide(3)" class="hover-shadow cursor img-fluid img-thumbnail">
+                        </div>
+                        <div class="col-lg-3 col-md-4 col-xs-6">
+                            <img src="/assets/images/Galerie/performance-3158570_960_720.jpg" onclick="openModal();currentSlide(4)" class="hover-shadow cursor img-fluid img-thumbnail">
+                        </div>
+                    </div>
+
+                    <div id="myModal" class="modal my-auto">
+                        <span class="close cursor" onclick="closeModal()">&times;</span>
+                        <div class="modal-content">
+
+                            <div class="mySlides mx-auto">
+
+                                <div class="numbertext">1 / 4</div>
+                                <img src="/assets/images/Galerie/concert.jpg" />
+                            </div>
+
+                            <div class="mySlides mx-auto">
+                                <div class="numbertext">2 / 4</div>
+                                <img src="/assets/images/Galerie/concert2.jpg" />
+                            </div>
+
+                            <div class="mySlides mx-auto">
+                                <div class="numbertext">3 / 4</div>
+                                <img src="/assets/images/Galerie/foule.jpg" />
+                            </div>
+
+                            <div class="mySlides mx-auto">
+                                <div class="numbertext">4 / 4</div>
+                                <img src="/assets/images/Galerie/performance-3158570_960_720.jpg" />
+                            </div>
+
+                            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+                            <div class="caption-container">
+                                <p id="caption"></p>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+{% endblock %}
+
+
+{% block javascript %}
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="/assets/js/accueil.js"></script
+{% endblock %}

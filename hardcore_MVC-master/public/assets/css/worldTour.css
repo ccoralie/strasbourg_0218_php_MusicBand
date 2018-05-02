@@ -1,0 +1,43 @@
+
+/* Partie Title */
+
+.worldTitle
+{
+    background-color: black;
+    text-align: center;
+}
+
+.worldTitle h1
+{
+    color: white;
+    font-size: 2em;
+    margin-bottom: 0;
+    padding:2% 0 2% 0;
+    padding-top: 140px;
+
+}
+
+/* Corps de la page */
+
+body{
+    background: url("../images/Galerie/guitar-3131895_960_720.jpg") no-repeat center fixed  ;
+    -webkit-background-size: cover;
+    background-size: cover;
+    }
+
+/* table */
+
+.table
+{
+    margin:5% 30% 5% 0;
+    background-color: white;
+    font-size: 1em;
+    font-weight: bolder;
+    color: white;
+    text-shadow: 2px 0 0 black;
+}
+
+.tablechild
+{
+    width: 100%;
+}

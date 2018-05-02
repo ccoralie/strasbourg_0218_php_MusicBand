@@ -1,1 +1,41 @@
 {% extends 'layout.html.twig' %}
+
+    {% block stylesheet %}
+        {{ parent() }}
+        <link rel="stylesheet" href="/assets/css/worldTour.css">
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    {% endblock %}
+
+    {% block content %}
+        <!-- Encart visuel Prochains Concerts BLOB -->
+        <section class="worldTitle">
+            <h1>Prochains concerts</h1>
+        </section>
+
+        <!-- Corps de la page + Insertion tableau SQL -->
+        <section class="worldSection">
+            <div class="container">
+                    <div class="row">
+                    <table class="table  col-xs-8">
+                        <div class="tablechild">
+
+                            <tbody>
+                            {% for entity in worldtour %}
+
+
+                                <tr>
+                                    <td>{{ entity.dateconcert }}</td>
+                                    <td>{{ entity.ville }}</td>
+                                    <td>{{ entity.salle }}</td>
+                                </tr>
+                            {% endfor %}
+
+
+                            </tbody>
+                        </div>
+                    </table>
+                </div>
+            </div>
+        </section>
+    {% endblock %}
+

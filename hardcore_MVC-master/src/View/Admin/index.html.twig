@@ -1,1 +1,69 @@
-Bonjour je suis dans le twig de l'admin
+{% extends 'layout.html.twig' %}
+
+
+{% block stylesheet %}
+    {{ parent () }}
+    <link rel="stylesheet" href="/assets/css/login.css">
+{% endblock %}
+
+{% block header %}
+{% endblock %}
+
+    {% block content %}
+
+        <div class="container py-5">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="logoFATW">
+                    <img class="logo" src="assets/images/FATW.jpg">
+                    </div>
+                        <div class="row">
+                        <div class="col-md-6 mx-auto">
+
+                            <!-- form card login -->
+                            <div class="card rounded-0">
+                                <div class="card-header">
+                                    <h3 class="mb-0">Login</h3>
+                                </div>
+                                <div class="card-body">
+                                    <form action="/admin" class="form" role="form" autocomplete="off" name="formLogin" novalidate="" method="POST">
+                                        <div class="form-group">
+                                            <label for="uname1">Nom d'utilisateur</label>
+                                            <input type="text" class="form-control form-control-lg rounded-0" name="user" id="uname1" required="">
+                                            <div class="invalid-feedback">Veuillez entrer votre nom d'utlisateur</div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Mot de passe</label>
+                                            <input type="password" class="form-control form-control-lg rounded-0" name="pwd" required="" autocomplete="new-password">
+                                            <div class="invalid-feedback">Veuillez entrer votre mot de passe</div>
+                                        </div>
+                                            {{ Error }}
+                                        <button type="submit" class="btn btn-success btn-lg float-right" id="btnLogin">Se connecter</button>
+                                    </form>
+                                </div>
+                                <!--/card-block-->
+                            </div>
+                            <!-- /form card login -->
+
+                        </div>
+
+
+                    </div>
+                    <!--/row-->
+
+                </div>
+                <!--/col-->
+            </div>
+            <!--/row-->
+        </div>
+        <!--/container-->
+    {% endblock %}
+    {% block footer %}
+
+    {% endblock %}
+
+    {% block javascript %}
+       {{  parent() }}
+
+        <script type="text/javascript" src="/assets/js/login.js"></script>
+    {% endblock %}

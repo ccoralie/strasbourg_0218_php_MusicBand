@@ -1,0 +1,82 @@
+{% extends 'layout.html.twig' %}
+
+{% block stylesheet %}
+    {{ parent() }}
+
+    <link rel="stylesheet" href="/assets/css/admin.css">
+{% endblock %}
+
+{% block header %}
+    <nav class="navbar navbar-toggleable-md navbar-inverse fixed-top bg-inverse">
+
+        <a class="navbar-brand" href="/logoutAdmin">Déconnexion</a>
+        <h5>Bonjour Franck-O !!!</h5>
+    </nav>
+
+
+<div class="container-fluid">
+    <div class="row">
+        <nav class="col-sm-3 col-md-2 hidden-xs-down bg-faded sidebar">
+            <ul class="nav nav-pills flex-column">
+
+                <li class="nav-item">
+                    <h4>Tableau de bord </h4>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/adminArticle">Actualité</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/adminWorldtour">Prochains concerts</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/adminDiscographie">Discographie </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/adminGalerie">Galerie photos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/adminGoodies/1">Goodies</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link active" href="/adminFanclub">Newsletter<span class="sr-only">(current)</span></a>
+                </li>
+            </ul>
+
+
+        </nav>
+
+        {% endblock %}
+
+        {% block content %}
+
+
+
+
+        <main class="col-sm-9 offset-sm-3 col-md-10 offset-md-2 pt-3">
+            <h1>Newsletter</h1>
+
+
+            <div class="container">
+
+                <form action="/sendMails" method="post">
+                    <div class="form-group">
+                        <label for="exampleFormControlTextarea1">Ecrivez votre newsletter</label>
+                        <textarea class="form-control" id="TEXT" name="TEXT" rows="3"></textarea>
+                        <button type="submit" value="submit" name="submit"><i class="fa fa-newspaper-o"></i> Envoyer</button>
+                    </div>
+                </form>
+
+            </div>
+        </main>
+    </div>
+</div>
+
+
+
+
+{% endblock %}
+
+{% block footer %}
+{% endblock %}
+

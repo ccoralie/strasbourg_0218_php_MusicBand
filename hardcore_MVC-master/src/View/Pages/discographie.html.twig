@@ -1,1 +1,114 @@
 {% extends 'layout.html.twig' %}
+
+
+{% block stylesheet %}
+    {{ parent() }}
+    <link rel="stylesheet" href="/assets/css/discographie.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+{% endblock %}
+
+
+{% block content %}
+
+<section>
+    <div class="contentAlbum">
+    <ul class="slides">
+
+        <!-- ALBUM 1 -->
+
+        <input type="radio" name="radio-btn" id="img-1" checked />
+        <li class="slide-container">
+            <div class="slide">
+                <img src="{{ Album.0.pochetteAlbum }}" id="st" />
+            </div>
+
+            <div class="nav">
+                <label for="img-2" id="1" class="next">&raquo;</label>
+            </div>
+        </li>
+
+            <input type="radio" name="radio-btn" id="img-2" />
+        <li class="slide-container">
+            <div class="slide">
+                <img src="{{ Album.1.pochetteAlbum }}"  id="ver"/>
+            </div>
+            <div class="nav">
+                <label for="img-3" id="2" class="next">&raquo;</label>
+            </div>
+        </li>
+
+        <input type="radio" name="radio-btn" id="img-3" />
+        <li class="slide-container">
+            <div class="slide">
+                <img src="{{ Album.2.pochetteAlbum }}" id="bg" />
+            </div>
+            <div class="nav">
+                <label for="img-1" id="3" class="next">&raquo;</label>
+            </div>
+        </li>
+
+        <li class="nav-dots">
+            <label for="img-1" class="nav-dot" id="img-dot-1"></label>
+            <label for="img-2" class="nav-dot" id="img-dot-2"></label>
+            <label for="img-3" class="nav-dot" id="img-dot-3"></label>
+        </li>
+    </ul>
+            <div id="volet_clos">
+            <div id="volet">
+
+                <p id='test'>
+                {% for i,chanson in Chanson %}
+                    {% if chanson.album_id == 1 %}
+                    {{ chanson.chanson }}<br>
+                    {% endif %}
+                {% endfor %}
+                </p>
+
+                <a href="#volet" class="ouvrir">Ouvrir !</a>
+                <a href="#volet_clos" class="fermer">fermer !</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}
+
+{% block javascript %}
+<script type="text/javascript" src="/assets/js/discographie.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.js"></script>
+    <script>$(document).ready(function () {
+            $('#1').click(function () {
+                $('#test').replaceWith(" <p id='test'>\n" +
+                    "                {% for i,chanson in Chanson %}\n" +
+                    "                    {% if chanson.album_id == 2 %}\n" +
+                    "                    {{ chanson.chanson }}<br>\n" +
+                    "                    {% endif %}\n" +
+                    "                {% endfor %}\n" +
+                    "                </p>");
+            })});
+            $(document).ready(function () {
+            $('#2').click(function () {
+                $('#test').replaceWith(" <p id='test'>\n" +
+                    "                {% for i,chanson in Chanson %}\n" +
+                    "                    {% if chanson.album_id == 3 %}\n" +
+                    "                    {{ chanson.chanson }}<br>\n" +
+                    "                    {% endif %}\n" +
+                    "                {% endfor %}\n" +
+                    "                </p>");
+            })});
+            $(document).ready(function () {
+            $('#3').click(function () {
+                $('#test').replaceWith(" <p id='test'>\n" +
+                    "                {% for i,chanson in Chanson %}\n" +
+                    "                    {% if chanson.album_id == 1 %}\n" +
+                    "                    {{ chanson.chanson }}<br>\n" +
+                    "                    {% endif %}\n" +
+                    "                {% endfor %}\n" +
+                    "                </p>");
+            })});
+    </script>
+{% endblock %}
+{% block footer %}
+{% endblock %}

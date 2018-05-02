@@ -1,0 +1,32 @@
+{% extends 'layout.html.twig' %}
+
+    {% block stylesheet %}
+        {{ parent() }}
+        <link rel="stylesheet" href="/assets/css/fanClub.css">
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    {% endblock %}
+
+{% block content %}
+
+
+
+    <section>
+    <form action="/addMail" method="post">
+        <div class="container">
+            <h2>Newsletter</h2>
+            <p><i class="fa fa-fire"></i> Recevez les dernières actus de votre groupe préféré !</p>
+        </div>
+        <div class="container">
+            <input type="text" placeholder="Name" name="nom" required>
+            <input type="text" placeholder="Email" name="mail" required>
+            <button type="submit" value="submit"><i class="fa fa-newspaper-o"></i> Inscription</button>
+        </div>
+    </form>
+    </section>
+
+
+
+
+
+
+{% endblock %}

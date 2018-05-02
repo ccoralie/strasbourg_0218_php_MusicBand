@@ -1,0 +1,39 @@
+/*
+
+.fondBlack h4{
+    color:white;
+    font-family: 'Lateef', cursive;
+}
+
+
+*/
+.page-footer{
+    background:url(https://ua-1.cdn-fullscreendirect.com/10523/2018_0125_10523_7930.jpeg) top repeat;
+    width: 100%;
+}
+
+.page-footer{
+    color: white;
+    text-align: center;
+}
+
+.listenTo img{
+    width: 30px;
+    height: 30px;
+}
+.followers img{
+    width: 30px;
+    height: 30px;
+}
+.followers{
+    text-align: center;
+
+}
+
+.listenTo{
+    text-align: center;
+}
+
+/*.followers{
+    float: right;
+}

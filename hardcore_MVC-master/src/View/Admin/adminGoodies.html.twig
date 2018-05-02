@@ -1,0 +1,136 @@
+    {% extends 'layout.html.twig' %}
+
+{% block stylesheet %}
+    {{ parent() }}
+
+    <link rel="stylesheet" href="/assets/css/admin.css">
+{% endblock %}
+
+{% block header %}
+    <nav class="navbar navbar-toggleable-md navbar-inverse fixed-top bg-inverse">
+
+        <a class="navbar-brand" href="/logoutAdmin">Déconnexion</a>
+        <h5>Bonjour Franck-O !!!</h5>
+    </nav>
+
+
+<div class="container-fluid">
+    <div class="row">
+        <nav class="col-sm-3 col-md-2 hidden-xs-down bg-faded sidebar">
+            <ul class="nav nav-pills flex-column">
+
+                <li class="nav-item">
+                    <h4>Tableau de bord </h4>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/adminArticle">Actualité</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/adminWorldtour">Prochains concerts</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/adminDiscographie">Discographie </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/adminGalerie">Galerie photos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="/adminGoodies/1">Goodies<span class="sr-only">(current)</span></a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/adminFanclub">Newsletter</a>
+                </li>
+            </ul>
+
+
+        </nav>
+
+        {% endblock %}
+
+        {% block content %}
+
+
+
+
+        <main class="col-sm-9 offset-sm-3 col-md-10 offset-md-2 pt-3">
+            <h1>Goodies</h1>
+
+            <div class="container">
+                <form action="/addGoodies" method="post" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <label for="exampleFormControlSelect1">Catégorie</label>
+                            <select class="form-control" name="categorie_id">
+                            {% for entity in menuAdminGoodies %}
+                                <option value="{{ entity.id }}">{{ entity.type }}</option>
+                            {% endfor %}
+                           </select>
+                    </div>
+
+                    <div class="form-group">
+                        <input type="hidden" name="MAX_FILE_SIZE" value="2000000" />
+                        <input type="file" name="fichier[]" multiple="multiple" />
+                        <p>Formats autorisés : jpeg, png, jpg, gif. Poids max: 2Mo</p>
+                    </div>
+                    <div class="form-group">
+                            <label for="formGroupExampleInput2">Référence</label>
+                            <input type="text" class="form-control" name="reference" id="formGroupExampleInput2" >
+                    </div>
+                    <div class="form-group">
+                            <label for="formGroupExampleInput2">Prix (en €)</label>
+                            <input type="text" class="form-control" name="prix" id="formGroupExampleInput2" >
+
+                    </div>
+                    <div class="form-group">
+                        <select class="form-control" name="stock">
+                            <option value="dispo">disponible</option>
+                            <option value="rupture">rupture de stock</option>
+                        </select>
+                    </div>
+                <input type="submit" name="submit_envoyer" value="Submit" class="btn btn-success">
+            </form>
+        </div>
+        <br>
+            <div class="container">
+                <div class="row">
+                        <form action="/deleteGoodies" method="post">
+                            <div class="form-group" style="display: flex">
+
+                                {% for uneCategorie in menuAdminGoodies %}
+                                    <a class="nav-item nav-link" href="/adminGoodies/{{ uneCategorie.id }}">
+                                        {{ uneCategorie.type }}
+                                    </a>
+                                {% endfor %}
+                            </div>
+
+                        <div class="form-group">
+                            <div class="row" style="display: flex;">
+                            {% for REF in affichageParGoodiesCategorie %}
+                            <div class="col-md-4" >
+                                <div class="card" style="margin: 1.5em 0 0 0" >
+                                    <a class="lightbox" href="{{ REF.goodies }}" style="height: 350px">
+                                        <img src="{{ REF.goodies }}" alt="Park" class="card-img-top" style="max-height: 350px">
+                                        <input type="hidden" class="btn btn-danger" name="id" value="{{ REF.id }}">
+                                    </a>
+                                </div>
+                                <input type="submit" name="submit_delete" class="btn btn-danger" value="Supprimer" style="width: 100%">
+                                </input>
+                            </div>
+                            {% endfor %}
+                            </div>
+                        </div>
+                        </form>
+
+            </div>
+            </div>
+        </main>
+
+
+
+
+
+
+{% endblock %}
+
+{% block footer %}
+{% endblock %}
