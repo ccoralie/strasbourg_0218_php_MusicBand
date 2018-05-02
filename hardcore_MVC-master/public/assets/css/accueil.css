@@ -7,28 +7,15 @@ body p{
 
 /*CAROUSEL*/
 
-/*CARROUSSEL GENERAL*/
-.carousel-control-prev-icon,
-.carousel-control-next-icon {
-    height: 100px;
-    width: 100px;
-    background-size: 100%, 100%;
-    background-image: none;
+.carousel {
+    overflow: hidden;
+;
 }
 
-.carousel-control-next-icon:after
-{
-    content: '>';
-    font-size: 60px;
-    color: white;
-    font-weight: bolder;
-}
+.img{
 
-.carousel-control-prev-icon:after {
-    content: '<';
-    font-size: 60px;
-    color: white;
-    font-weight: bolder;
+    text-align: center;
+
 }
 
 /* Histoire du groupe*/
@@ -107,10 +94,16 @@ img.hoverShadow {
     margin-bottom: 50px;
 }
 .lastPhotos h2{
-    color: white;
+    color: black;
     font-family: 'Mina', sans-serif;
     text-align: center;
     font-weight: bold;
+}
+
+img.img-fluid.img-thumbnail{
+    width:400px;
+    height:200px;
+
 }
 
 .row:after {
