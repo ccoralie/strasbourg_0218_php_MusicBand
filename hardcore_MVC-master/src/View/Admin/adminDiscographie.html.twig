@@ -53,29 +53,26 @@
 
 
                     <main class="col-sm-9 offset-sm-3 col-md-10 offset-md-2 pt-3">
-                        <h1>Discographie</h1>
 
                         <div class="container">
 
-                                <form action="/uploadDiscographie" method="post" enctype="multipart/form-data">
-                                    <label for='file'>Pochette album:</label>
-                                    <input type="hidden" name="MAX_FILE_SIZE" value="2000000" />
-                                    <input type="file" name="fichier[]" multiple="multiple" />
-                                    <input type="submit" name="submit" value="Insérer">
-                                </form>
 
-                                <form action="/addDiscographie" method="post" enctype="multipart/form-data">
 
-                                    <label for="formGroupExampleInput">Album</label>
-                                    <input type="text" class="form-control" name="album" id="formGroupExampleInput" >
-                                    <br>
-                                    <label for="formGroupExampleInput2">Chanson</label>
-                                    <input type="text" class="form-control" name="chanson" id="formGroupExampleInput2" >
-                                    <br>
-                                    <input type="submit" name="submit" value="Insérer" class="btn btn-success">
-                                </form>
+                        <h1>You Released a New Album?</h1>
+
+
+                        <div class="container">
+
+                            <form action="/sendUsAMail" method="post">
+                                <div class="form-group">
+                                    <label for="exampleFormControlTextarea1">Tell Us What You Want To Display!</label>
+                                    <textarea class="form-control" id="TEXT" name="TEXT" rows="3"></textarea>
+                                    <button type="submit" value="submit" name="submit"><i class="fa fa-newspaper-o"></i> Send</button>
+                                </div>
+                            </form>
+
                         </div>
-                   </main>
+                    </main>
                 </div>
             </div>
 
