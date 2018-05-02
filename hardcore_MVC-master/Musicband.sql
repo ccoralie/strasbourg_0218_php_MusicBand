@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  localhost
--- Généré le :  Ven 27 Avril 2018 à 14:51
+-- Généré le :  Mer 02 Mai 2018 à 12:01
 -- Version du serveur :  5.7.21-0ubuntu0.16.04.1
 -- Version de PHP :  7.0.28-0ubuntu0.16.04.1
 
@@ -80,10 +80,10 @@ CREATE TABLE `Article` (
 --
 
 INSERT INTO `Article` (`id`, `article`, `titre`) VALUES
-(1, 'Découvrez en exclusivité notre prochain album "Rock\'n\'Wild" le 10 septembre 2018 !', 'Nouvel album !!'),
-(2, 'De retour sur scène à partir du 4 décembre 2018 à la salle polyvalente de Ruffach !', 'Prochaine tournée'),
-(3, 'Rendez-vous chez Kyle le 10 janvier 2019 pour une soirée wild ', 'Evénement '),
-(4, 'Devenez membre de notre fan club, et recevez en exclusivité toute l\'actu de Franck and the Wilders', 'Fan club ');
+(1, 'Le nouveau titre The Handler vient de sortir.\r\nPreuve que le nouvel album de Franck&TheWilders, “A.i.” ne cesse d\'étonner: déjà cinq titres de dévoilés. après un Psycho Robot, un Dead & Happy qui renoue avec la joie, le déjà célèbre Mercy et un Reapers tout en guitares, voici un dernier titre à l\'atmosphère anxiogène. Le groupe avait également rappelé sa volonté d’explorer une nouvelle palette d’émotions. C\'est ici chose faite.\r\nLe fameux timbre de voix du chanteur Franck Wild porte cette chanson oppressante. Les paroles vont de pair: «J\'ai été programmé pour obéir, j\'exécuterai vos ordres». Tout un programme. Ce nouveau titre reste dans leur répertoire habituel. L\'album “A.i.” se conçoit comme une histoire à lui seul: The Handler est le dernier épisode avant le combat du héros face à des forces obscures qui l\'asservissent. La puissance de ce titre colle à cette idée d\'une tentative d\'empêcher la transformation de l\'humanité en Intelligence Artificielle.\r\n', 'On parle de nous dans Olivier Magazine!!!'),
+(2, 'Genre : Scène Française\r\nLe groupe à l\'énergie fracassante remonte sur scène en 2018 avec The MonkAdelic Tour et prépare un live spectaculaire ! Franck & The Wilders sur scène, ce sont des geeks survitaminés qui imaginent le concert du futur : un punk numérique où la technologie vient sublimer la frénésie rock du groupe.\r\nDernière News : RESERVEZ / Trois nouvelles dates à La Cigale pour FATW en Novembre !', 'Evénement\r\n'),
+(3, 'Genre : Scène Française\r\nLe groupe à l\'énergie fracassante remonte sur scène en 2018 avec The MonkAdelic Tour et prépare un live spectaculaire ! Franck & The Wilders sur scène, ce sont des geeks survitaminés qui imaginent le concert du futur : un punk numérique où la technologie vient sublimer la frénésie rock du groupe.\r\nDernière News : RESERVEZ / Trois nouvelles dates à La Cigale pour FATW en Novembre !', 'Evénement '),
+(4, 'Ton endroit préféré pour voir tes potes à Lille ?\r\nIl y a une brasserie typique du Nord dans le vieux Lille : Les Compagnons de la Grappe. J’habitais pas très loin, c’est devenu ma cantine et les mecs qui y bossent sont des amis maintenant. Et en tant qu’expatrié, j’adore passer par la friterie Sensas ou m’acheter des gaufres Meert.\r\nEst-ce que tu serais capable de réparer toi-même un vélo ?\r\nJe n’ai plus de vélo, mais je savais le faire. Changer une roue ou une chaîne, ça devrait aller. Et au pire, mon beau-père est un super cycliste donc il peut toujours me coacher.\r\nEst-ce que ça te tente de travailler pour faire tes courses dans un supermarché collaboratif ?\r\nJ’habite à Los Angeles depuis trois ans, et c’est quelque chose qui est déjà pas mal répandu là-bas. Je trouve le concept très bien parce que les gens peuvent mieux manger, avec des produits bio ou de meilleure qualité moyennant un peu de travail. Ça permet aussi de mieux comprendre le fonctionnement de la distribution et donc d’être acteur de la cause qu’on défend.\r\nLe truc qui n’a jamais été inventé et qui changerait ta vie de musicien ?\r\nUne machine pour se téléporter ! Ça me permettrait de partir en tournée et d’avoir une vie normale. Même si ma femme est chanteuse et connaît ce genre de problème, c’est une vie spéciale. Et vu que j’écris pas mal sur la société, j’ai besoin de rencontrer les gens. Donc oui, la téléportation.\r\nQu’est-ce qui est le plus ringard en concert, l’Auto-Tune ou un hologramme ?\r\nPeut-être un peu plus l’hologramme parce que c’est forcément un retour vers le passé. Je trouve pas que l’Auto-Tune soit dépassé mais juste naze, c’est un autre délire. Pourquoi se prendre la tête à bien chanter si on peut retoucher la voix après ? Au final, c’est ultra ringard de faire un concert humain avec juste guitare, basse, batterie et ordi, mais j’en suis fier.\r\n', 'Interview du TURFU de Franck Wild');
 
 -- --------------------------------------------------------
 
@@ -121,11 +121,11 @@ CREATE TABLE `Categorie` (
 --
 
 INSERT INTO `Categorie` (`id`, `type`) VALUES
-(1, 'Vêtements'),
+(1, 'Vetements'),
 (2, 'Chapeaux'),
-(3, 'Médiators'),
+(3, 'Mediators'),
 (4, 'Pins'),
-(5, 'Porteclés'),
+(5, 'Portecles'),
 (6, 'Mugs'),
 (7, 'Sacs');
 
@@ -173,7 +173,13 @@ CREATE TABLE `Galerie` (
 
 INSERT INTO `Galerie` (`id`, `photo`) VALUES
 (6, '/assets/images/Galerie/guitar-3131895_960_720.jpg'),
-(7, '/assets/images/Galerie/guitar-3264304_960_720.jpg');
+(7, '/assets/images/Galerie/guitar-3264304_960_720.jpg'),
+(8, 'assets/images/Galerie/img_5ae84f6adbd92.jpg'),
+(9, 'assets/images/Galerie/img_5ae84f93c3b41.jpg'),
+(11, 'assets/images/Galerie/img_5ae84fc92887e.jpg'),
+(12, 'assets/images/Galerie/img_5ae84fd3d0921.jpg'),
+(14, 'assets/images/Galerie/img_5ae84ffcdf9ee.jpg'),
+(15, 'assets/images/Galerie/img_5ae8501e08f25.jpg');
 
 -- --------------------------------------------------------
 
@@ -195,38 +201,61 @@ CREATE TABLE `Goodies` (
 --
 
 INSERT INTO `Goodies` (`id`, `goodies`, `prix`, `reference`, `categorie_id`, `stock`) VALUES
-(1, '/assets/images/goodies/Vetements/t-shirts-1_Blanc.png', '29.00', 'A0111', 1, NULL),
-(2, '/assets/images/goodies/Vetements/t-shirts-1_Blanc.png', '29.00', 'A0113', 1, NULL),
-(3, '/assets/images/goodies/Vetements/t-shirts-1.jpg', '29.00', 'A0112', 1, NULL),
-(4, '/assets/images/goodies/Vetements/t-shirts-1.jpg', '29.00', 'A0114', 1, NULL),
-(5, '/assets/images/goodies/Vetements/sweat.jpg', '49.00', 'A0212', 1, NULL),
-(6, '/assets/images/goodies/Vetements/sweat.jpg', '49.00', 'A0214', 1, NULL),
-(7, '/assets/images/goodies/Vetements/sweat.jpg', '49.00', 'A0215', 1, NULL),
-(8, '/assets/images/goodies/Vetements/short.jpg', '29.00', 'A0412', 1, NULL),
-(9, '/assets/images/goodies/Vetements/short.jpg', '29.00', 'A0414', 1, NULL),
-(10, '/assets/images/goodies/Chapeaux/bob.jpg', '19.00', 'B0111', 2, NULL),
-(11, '/assets/images/goodies/Chapeaux/bob.jpg', '19.00', 'B0112', 2, NULL),
-(12, '/assets/images/goodies/Chapeaux/bonnet.jpg', '19.00', 'B0211', 2, NULL),
-(13, '/assets/images/goodies/Chapeaux/bonnet.jpg', '19.00', 'B0212', 2, NULL),
-(14, '/assets/images/goodies/Chapeaux/casquettes.jpg', '19.00', 'B0311', 2, NULL),
-(15, '/assets/images/goodies/Chapeaux/casquettes.jpg', '19.00', 'B0311', 2, NULL),
-(16, '/assets/images/goodies/Mediators/jazz-tones-black-horn-1-guitar-pick-4801-p[ekm]850x850[ekm].jpg', '5.00', 'C0111', 3, NULL),
-(17, '/assets/images/goodies/Mediators/jazz-tones-black-horn-1-guitar-pick-4801-p[ekm]850x850[ekm].jpg', '5.00', 'C0112', 3, NULL),
-(18, '/assets/images/goodies/Pins/badge-rond-a-epingle-de-76-mm.jpg', '5.00', 'D0111', 4, NULL),
-(19, '/assets/images/goodies/Pins/badge-rond-a-epingle-de-76-mm.jpg', '5.00', 'D0112', 4, NULL),
-(20, '/assets/images/goodies/porteclé/porteclesimple.jpg', '5.00', 'E0111', 5, NULL),
-(21, '/assets/images/goodies/porteclé/porteclesimple.jpg', '5.00', 'E0112', 5, NULL),
-(22, '/assets/images/goodies/porteclé/tourdecoutissu.jpg', '5.00', 'E0211', 5, NULL),
-(23, '/assets/images/goodies/porteclé/tourdecoutissu.jpg', '5.00', 'E0212', 5, NULL),
-(24, '/assets/images/goodies/Mugs/mug-sublimable-blanc.jpg', '15.00', 'F0111', 6, NULL),
-(25, '/assets/images/goodies/Mugs/mug-sublimable-blanc.jpg', '15.00', 'F0112', 6, NULL),
-(26, '/assets/images/goodies/Mugs/mug2.png', '15.00', 'F0211', 6, NULL),
-(27, '/assets/images/goodies/Mugs/mug2.png', '15.00', 'F0212', 6, NULL),
-(28, '/assets/images/goodies/Sacs/sac.jpg', '29.00', 'G0111', 7, NULL),
-(29, '/assets/images/goodies/Sacs/sac.jpg', '29.00', 'G0112', 7, NULL),
-(30, '/assets/images/goodies/Sacs/besace.jpg', '29.00', 'G0211', 7, NULL),
-(31, '/assets/images/goodies/Sacs/besace.jpg', '29.00', 'G0212', 7, NULL),
-(32, '/assets/images/goodies/Vetements/img_5ae2fba98b6d3.jpg', '25.00', 'test', 1, 'dispo');
+(1, '/assets/images/goodies/Vetements/1.png', '29.00', 'A0111', 1, NULL),
+(2, '/assets/images/goodies/Vetements/2.png', '29.00', 'A0113', 1, NULL),
+(3, '/assets/images/goodies/Vetements/3.png', '29.00', 'A0112', 1, NULL),
+(4, '/assets/images/goodies/Vetements/4.png', '29.00', 'A0114', 1, NULL),
+(5, '/assets/images/goodies/Vetements/5.png', '49.00', 'A0212', 1, NULL),
+(6, '/assets/images/goodies/Vetements/6.png', '49.00', 'A0214', 1, NULL),
+(7, '/assets/images/goodies/Vetements/7.png', '49.00', 'A0215', 1, NULL),
+(8, '/assets/images/goodies/Vetements/8.png', '29.00', 'A0412', 1, NULL),
+(9, '/assets/images/goodies/Vetements/9.png', '29.00', 'A0414', 1, NULL),
+(10, '/assets/images/goodies/chapeaux/1.png', '19.00', 'B0111', 2, NULL),
+(11, '/assets/images/goodies/chapeaux/2.png', '19.00', 'B0112', 2, NULL),
+(12, '/assets/images/goodies/chapeaux/3.png', '19.00', 'B0211', 2, NULL),
+(13, '/assets/images/goodies/chapeaux/4.png', '19.00', 'B0212', 2, NULL),
+(14, '/assets/images/goodies/chapeaux/5.png', '19.00', 'B0311', 2, NULL),
+(15, '/assets/images/goodies/chapeaux/6.png', '19.00', 'B0311', 2, NULL),
+(16, '/assets/images/goodies/mediators/1.png', '5.00', 'C0111', 3, NULL),
+(17, '/assets/images/goodies/mediators/2.png', '5.00', 'C0112', 3, NULL),
+(18, '/assets/images/goodies/pins/1.png', '5.00', 'D0111', 4, NULL),
+(19, '/assets/images/goodies/pins/2.png', '5.00', 'D0112', 4, NULL),
+(20, '/assets/images/goodies/Portecles/1.png', '5.00', 'E0111', 5, NULL),
+(21, '/assets/images/goodies/Portecles/2.png', '5.00', 'E0112', 5, NULL),
+(22, '/assets/images/goodies/Portecles/3.png', '5.00', 'E0211', 5, NULL),
+(24, '/assets/images/goodies/Mugs/1.png', '15.00', 'F0111', 6, NULL),
+(25, '/assets/images/goodies/Mugs/2.png', '15.00', 'F0112', 6, NULL),
+(26, '/assets/images/goodies/Mugs/3.png', '15.00', 'F0211', 6, NULL),
+(28, '/assets/images/goodies/Sacs/1.png', '29.00', 'G0111', 7, NULL),
+(29, '/assets/images/goodies/Sacs/2.png', '29.00', 'G0112', 7, NULL),
+(30, '/assets/images/goodies/Sacs/3.png', '29.00', 'G0211', 7, NULL),
+(31, '/assets/images/goodies/Sacs/4.png', '29.00', 'G0212', 7, NULL),
+(34, '/assets/images/goodies/Vetements/10.png', '29.00', 'A0115', 1, 'disponible'),
+(37, '/assets/images/goodies/Vetements/11.png', '29.00', 'A0116', 1, ''),
+(38, '/assets/images/goodies/Vetements/12.png', '29.00', 'A0117', 1, NULL),
+(39, '/assets/images/goodies/Vetements/13.png', '29.00', 'A0118', 1, NULL),
+(40, '/assets/images/goodies/Vetements/14.png', '29.00', 'A0119', 1, 'disponible'),
+(41, '/assets/images/goodies/Vetements/15.png', '29.00', 'A0120', 1, NULL),
+(62, '/assets/images/goodies/Vetements/16.png', '29.00', 'A0121', 1, NULL),
+(63, '/assets/images/goodies/Vetements/17.png', '29.00', 'A0122', 1, NULL),
+(64, '/assets/images/goodies/Vetements/18.png', '29.00', 'A0123', 1, NULL),
+(65, '/assets/images/goodies/Vetements/19.png', '29.00', 'A0124', 1, NULL),
+(66, '/assets/images/goodies/Vetements/20.png', '29.00', 'A0125', 1, NULL),
+(67, '/assets/images/goodies/Vetements/21.png', '29.00', 'A0126', 1, NULL),
+(68, '/assets/images/goodies/Vetements/22.png', '29.00', 'A0127', 1, NULL),
+(69, '/assets/images/goodies/Vetements/23.png', '29.00', 'A0128', 1, NULL),
+(70, '/assets/images/goodies/Vetements/24.png', '29.00', 'A0129', 1, NULL),
+(71, '/assets/images/goodies/Vetements/25.png', '29.00', 'A0130', 1, NULL),
+(72, '/assets/images/goodies/chapeaux/7.png', '19.00', 'B0312', 2, NULL),
+(73, '/assets/images/goodies/chapeaux/8.png', '19.00', 'B0313', 2, NULL),
+(74, '/assets/images/goodies/chapeaux/9.png', '19.00', 'B0314', 2, NULL),
+(75, '/assets/images/goodies/chapeaux/10.png', '19.00', 'B0315', 2, NULL),
+(76, '/assets/images/goodies/chapeaux/11.png', '19.00', 'B0316', 2, NULL),
+(77, '/assets/images/goodies/Sacs/5.png', '29.00', 'G0213', 7, NULL),
+(78, '/assets/images/goodies/pins/3.png', '5.00', 'D0113', 4, NULL),
+(79, '/assets/images/goodies/pins/4.png', '5.00', 'D0114', 4, NULL),
+(80, '/assets/images/goodies/pins/6.png', '5.00', 'D0116', 4, NULL),
+(81, '/assets/images/goodies/pins/8.png', '5.00', 'D0118', 4, NULL);
 
 -- --------------------------------------------------------
 
@@ -245,7 +274,8 @@ CREATE TABLE `Newsletter` (
 --
 
 INSERT INTO `Newsletter` (`id`, `nom`, `mail`) VALUES
-(1, 'ccc', 'ccc@gmail.com');
+(1, 'ccc', 'ccc@gmail.com'),
+(2, 'coralie', 'coraliecc@gmail.com');
 
 -- --------------------------------------------------------
 
@@ -258,43 +288,6 @@ CREATE TABLE `Stock` (
   `stock` int(20) DEFAULT NULL,
   `reference_id` int(20) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Contenu de la table `Stock`
---
-
-INSERT INTO `Stock` (`id`, `stock`, `reference_id`) VALUES
-(1, 50, 1),
-(2, 50, 2),
-(3, 50, 3),
-(4, 50, 4),
-(5, 50, 5),
-(6, 50, 6),
-(7, 50, 7),
-(8, 50, 8),
-(9, 50, 9),
-(10, 50, 10),
-(11, 50, 11),
-(12, 50, 12),
-(13, 50, 13),
-(14, 50, 14),
-(15, 50, 15),
-(16, 50, 16),
-(17, 50, 17),
-(18, 50, 18),
-(19, 50, 19),
-(20, 50, 20),
-(21, 50, 21),
-(22, 50, 22),
-(23, 50, 23),
-(24, 50, 24),
-(25, 50, 25),
-(26, 50, 26),
-(27, 50, 27),
-(28, 50, 28),
-(29, 50, 29),
-(30, 50, 30),
-(31, 50, 31);
 
 -- --------------------------------------------------------
 
@@ -314,9 +307,20 @@ CREATE TABLE `Worldtour` (
 --
 
 INSERT INTO `Worldtour` (`id`, `dateconcert`, `ville`, `salle`) VALUES
-(34, '2019-02-02', ',jpoij', 'pojpo'),
-(35, '2019-02-03', 'sa', 'jpo'),
-(36, '2019-03-03', 'lkhoih', 'jpo');
+(37, '2018-09-01', 'Strasbourg ', 'Zénith'),
+(38, '2018-11-10', 'Kelh', 'Chez Kyle'),
+(39, '2018-12-04', 'Ruffach', 'Salle Polyvalente'),
+(40, '2018-12-06', 'Vendeheim', 'Paroisse Communale'),
+(41, '2018-12-10', 'Brumath', 'Salle des Fêtes'),
+(42, '2018-12-13', 'Haguenau', 'Marché de Noël'),
+(43, '2018-12-20', 'Strasbourg', 'Cathédrale'),
+(44, '2019-01-04', 'Bentdorf', 'Place de l\'église'),
+(45, '2019-01-10', 'Kehl', 'Chez Kyle'),
+(46, '2019-01-11', 'Karlsruhe', 'Fête de la bière (avec Kyle)'),
+(47, '2019-01-17', 'Metz', 'Ecole primaire les rosiers'),
+(48, '2019-01-28', 'Amiens', 'Franck Arena'),
+(49, '2019-12-06', 'Paris', 'Aux Trois Maillets'),
+(50, '2019-02-13', 'Paris', 'Le café Oscar');
 
 --
 -- Index pour les tables exportées
@@ -418,27 +422,27 @@ ALTER TABLE `Chanson`
 -- AUTO_INCREMENT pour la table `Galerie`
 --
 ALTER TABLE `Galerie`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 --
 -- AUTO_INCREMENT pour la table `Goodies`
 --
 ALTER TABLE `Goodies`
-  MODIFY `id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
+  MODIFY `id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=82;
 --
 -- AUTO_INCREMENT pour la table `Newsletter`
 --
 ALTER TABLE `Newsletter`
-  MODIFY `id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT pour la table `Stock`
 --
 ALTER TABLE `Stock`
-  MODIFY `id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
+  MODIFY `id` int(20) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT pour la table `Worldtour`
 --
 ALTER TABLE `Worldtour`
-  MODIFY `id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
+  MODIFY `id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
 --
 -- Contraintes pour les tables exportées
 --

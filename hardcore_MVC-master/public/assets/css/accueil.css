@@ -44,7 +44,8 @@ body p{
 }
 
 .photoMb img {
-    width: 70%;
+    width: 90%;
+    height: 90%;
 }
 
 figcaption{
@@ -85,12 +86,11 @@ img.hoverShadow {
 
 /*DERNIERES PHOTOS */
 .photoLast{
-    padding-bottom: 10px;
-    margin-bottom: -20px;
+    margin-top: 0;
 }
 .lastPhotos {
     box-sizing: border-box;
-    padding-top: 40px;
+    padding-top: 20px;
     margin-bottom: 50px;
 }
 .lastPhotos h2{
