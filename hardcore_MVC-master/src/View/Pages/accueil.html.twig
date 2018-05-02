@@ -2,7 +2,7 @@
 
       {% block stylesheet %}
           {{ parent() }}
-          <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
 
           <link rel="stylesheet" href="/assets/css/accueil.css">
       {% endblock %}
@@ -10,43 +10,19 @@
 
     {% block content %}
 
+
+
                 {#carousel#}
-<section>
 
-
-    <!--Carrousel-->
-    <div class="slider">
-        <div id="carouselIndicators" class="carousel slide" data-ride="carousel">
-            <!-- Carousel indicators -->
-            <ol class="carousel-indicators">
-                <li data-target="#carouselIndicators" data-slide-to="0" class="active"></li>
-                <li data-target="#carouselIndicators" data-slide-to="1"></li>
-                <li data-target="#carouselIndicators" data-slide-to="2"></li>
-            </ol>
-
-
-            <!-- Wrapper for carousel items -->
-            <div class="carousel-inner">
+        <div class="carousel-container">
+            <div class="carousel">
                 {% for entity in carousel %}
-                    <div class="carousel-item {% if loop.index == 1 %} active {% endif %}">
-                        <!-- le reste des images -->
-                        <img class="d-block w-100" src="{{ entity.url_image }}" alt="Other Slide">
+                    <div id="item{{ entity.id }}" class="carousel-item">
+                        <img src="{{ entity.url_image }}" style="width:100%;">
                     </div>
                 {% endfor %}
             </div>
 
-            <!-- Wrapper for slides -->
-            <div class="carousel-inner" role="listbox">
-                <!-- Carousel controls -->
-                <a class="carousel-control-prev" href="#carouselIndicators" role="button" data-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Previous</span>
-                </a>
-                <a class="carousel-control-next" href="#carouselIndicators" role="button" data-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Next</span>
-                </a>
-            </div>
         </div>
 
     {# histoire du groupe #}
@@ -68,24 +44,24 @@
         <div class="row membres">
 
             <figure class="col-lg-3 col-md-6 col-sm-10 photoMb">
-                <img src="/assets/images/Portrait_Placeholder.png"  class="hoverShadow ">
-                <figcaption>Nom</figcaption>
+                <img src="/assets/images/PhotosGroupe/Franck.png"  class="hoverShadow ">
+                <figcaption>Franck WILD</figcaption>
             </figure>
 
             <figure class="col-lg-3 col-md-6 col-sm-10 photoMb">
-                <img src="/assets/images/Portrait_Placeholder.png"  class="hoverShadow ">
-                <figcaption>Nom</figcaption>
+                <img src="/assets/images/PhotosGroupe/Axel.jpg">
+                <figcaption>Axl PINK</figcaption>
 
             </figure>
 
             <figure class="col-lg-3 col-md-6 col-sm-10 photoMb">
-                <img src="/assets/images/Portrait_Placeholder.png"  class="hoverShadow ">
-                <figcaption>Nom</figcaption>
+                <img src="/assets/images/PhotosGroupe/Guillaume.jpg">
+                <figcaption>BROCKEN Guigui</figcaption>
             </figure>
 
             <figure class="col-lg-3 col-md-6 col-sm-10 photoMb">
-                <img src="/assets/images/Portrait_Placeholder.png"  class="hoverShadow ">
-                <figcaption>Nom</figcaption>
+                <img src="/assets/images/PhotosGroupe/Kyle.jpg">
+                <figcaption>Kyle GITHACK</figcaption>
             </figure>
 
         </div>
@@ -114,7 +90,7 @@
             </div>
 
         {% endfor %}
-    </div>
+        </div>
     </div>
 
 
@@ -122,22 +98,22 @@
     {# Dernières photos #}
 
 
-            <div class="fondNoir photoLast">
+            <div class=" photoLast">
                 <div class="container lastPhotos">
-                    <h2> DERNIERES PHOTOS </h2>
-
-                    <div class="row newPhotos ">
-                        <div class="column col-lg-3 col-md-6 col-sm-10">
-                            <img src="/assets/images/Galerie/concert _resize.jpg" onclick="openModal();currentSlide(1)" class="hover-shadow cursor">
+                    <h2> CONCERTS LES PLUS WILD </h2>
+                    <br>
+                    <div class="row text-center text-lg-left newPhotos ">
+                        <div class="col-lg-3 col-md-4 col-xs-6">
+                            <img src="/assets/images/Galerie/concert _resize.jpg" onclick="openModal();currentSlide(1)" class="hover-shadow cursor img-fluid img-thumbnail">
                         </div>
-                        <div class="column col-lg-3 col-md-6 col-sm-10">
-                            <img src="/assets/images/Galerie/concert2_resize.jpg" onclick="openModal();currentSlide(2)" class="hover-shadow cursor">
+                        <div class="col-lg-3 col-md-4 col-xs-6">
+                            <img src="/assets/images/Galerie/concert2_resize.jpg" onclick="openModal();currentSlide(2)" class="hover-shadow cursor img-fluid img-thumbnail">
                         </div>
-                        <div class="column col-lg-3 col-md-6 col-sm-10">
-                            <img src="/assets/images/Galerie/foule_resize.jpg" onclick="openModal();currentSlide(3)" class="hover-shadow cursor">
+                        <div class="col-lg-3 col-md-4 col-xs-6">
+                            <img src="/assets/images/Galerie/foule_resize.jpg" onclick="openModal();currentSlide(3)" class="hover-shadow cursor img-fluid img-thumbnail">
                         </div>
-                        <div class="column col-lg-3 col-md-6 col-sm-10">
-                            <img src="/assets/images/Galerie/elvis_resize.jpg" onclick="openModal();currentSlide(4)" class="hover-shadow cursor">
+                        <div class="col-lg-3 col-md-4 col-xs-6">
+                            <img src="/assets/images/Galerie/performance-3158570_960_720.jpg" onclick="openModal();currentSlide(4)" class="hover-shadow cursor img-fluid img-thumbnail">
                         </div>
                     </div>
 
@@ -163,7 +139,7 @@
 
                             <div class="mySlides mx-auto">
                                 <div class="numbertext">4 / 4</div>
-                                <img src="/assets/images/Galerie/elvis.jpg" />
+                                <img src="/assets/images/Galerie/performance-3158570_960_720.jpg" />
                             </div>
 
                             <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
@@ -173,31 +149,18 @@
                                 <p id="caption"></p>
                             </div>
 
-
-                            <!--    <div class="column">
-                                  <img class="demo cursor" src="http://via.placeholder.com/200x200"  onclick="currentSlide(1)" >
-                                </div>
-                                <div class="column">
-                                  <img class="demo cursor" src="http://via.placeholder.com/200x200"  onclick="currentSlide(2)" >
-                                </div>
-                                <div class="column">
-                                  <img class="demo cursor" src="http://via.placeholder.com/200x200"  onclick="currentSlide(3)" >
-                                </div>
-                                <div class="column">
-                                  <img class="demo cursor" src="http://via.placeholder.com/200x200"  onclick="currentSlide(4)" >
-                                </div>
-                              </div>-->
                         </div>
                     </div>
                 </div>
             </div>
 
-    </div>
 
-</section>
+
+
 {% endblock %}
 
 
 {% block javascript %}
-    <script type="text/javascript" src="/assets/js/accueil.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="/assets/js/accueil.js"></script
 {% endblock %}

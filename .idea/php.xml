@@ -7,6 +7,7 @@
       <path value="$PROJECT_DIR$/hardcore_MVC-master/vendor/twig/twig" />
       <path value="$PROJECT_DIR$/hardcore_MVC-master/vendor/nikic/fast-route" />
       <path value="$PROJECT_DIR$/hardcore_MVC-master/vendor/composer" />
+      <path value="$PROJECT_DIR$/hardcore_MVC-master/vendor/phpmailer/phpmailer" />
     </include_path>
   </component>
 </project>
