@@ -35,8 +35,8 @@ $dispatcher = FastRoute\simpleDispatcher(function(FastRoute\RouteCollector $r) {
 
 
     $r->addRoute('GET', '/adminDiscographie', 'Admin/adminDiscographie');
-    $r->addRoute('POST', '/adminDiscographie', 'Admin/adminDiscographie');
-    $r->addRoute('POST', '/uploadDiscographie', 'Admin/uploadDiscographie');
+    $r->addRoute('POST', '/addDiscographie', 'Admin/insertDiscographie');
+    $r->addRoute('POST', '/sendUsAMail', 'sendMeAMail/envoiMeMail');
 
 
     $r->addRoute('GET', '/adminGalerie', 'Admin/adminGalerie');
