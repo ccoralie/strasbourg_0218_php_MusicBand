@@ -91,7 +91,7 @@ class AdminController extends AbstractController
     {
         $allowed_files = array(
             "image/gif",
-            "image/pjpeg",
+            "image/jpg",
             "image/jpeg",
             "image/png");
 
