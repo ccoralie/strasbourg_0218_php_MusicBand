@@ -57,6 +57,7 @@
 
 
             <form action="/uploadGalerie" method="post" enctype="multipart/form-data">
+                <p>Formats autorisés : jpeg, png, jpg, gif. Poids max: 2Mo</p>
                 <input type="hidden" name="MAX_FILE_SIZE" value="2000000" />
                 <input type="file" name="fichier[]" multiple="multiple" />
                 <input type="submit" value="Envoyer" name="submit_envoyer" />

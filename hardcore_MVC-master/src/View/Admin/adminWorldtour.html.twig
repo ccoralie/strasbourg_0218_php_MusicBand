@@ -80,21 +80,22 @@
                     <br><br>
                 </form>
 
-                <div class="row" style="display: flex; flex-direction: column">
+                <div class="row" style="display: flex; flex-direction: column;">
                     {% for entity in worldtour %}
                     <form action="/deleteWorldtour" method="post">
-                    <table class="table  col-xs-8">
+                    <table class="table">
+                        <div class="tablechild">
                             <tbody>
                                 <tr>
                                     <td>{{ entity.dateconcert }}</td>
                                     <td>{{ entity.ville }}</td>
                                     <td>{{ entity.salle }}</td>
                                     <td><input type="hidden" class="btn btn-danger" name="id" value="{{ entity.id }}"></td>
-
                                     <td><input type="submit" class="btn btn-danger" name="{{ entity.id }}" value="Supprimer"></td>
                                 </tr>
 
                             </tbody>
+                        </div>
                     </table>
                     </form>
                     {% endfor %}
